@@ -861,3 +861,99 @@ hr {
 .archive-nav a:hover {
     text-decoration: underline;
 }
+
+/* Publications Redesign */
+.volumes-list {
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.volume-item {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+}
+
+.volume-cover-container {
+    flex-shrink: 0;
+    width: 250px;
+}
+
+.volume-cover-placeholder {
+    width: 100%;
+    aspect-ratio: 3/2;
+    /* Landscape ratio roughly matching image */
+    background-color: #f0f0f0;
+    background-image: linear-gradient(135deg, #f5f5f5 25%, #e0e0e0 25%, #e0e0e0 50%, #f5f5f5 50%, #f5f5f5 75%, #e0e0e0 75%, #e0e0e0 100%);
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    /* Drop shadow */
+    border: 1px solid #fff;
+    position: relative;
+}
+
+.cover-vol-num {
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+.volume-content {
+    padding-top: 0.5rem;
+}
+
+.volume-title {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.5rem;
+    /* ~24px */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    color: #222;
+}
+
+.volume-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.volume-meta {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.volume-meta .author {
+    font-weight: 500;
+}
+
+.volume-meta .date {
+    color: #555;
+}
+
+.volume-desc {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #222;
+}
+
+@media (max-width: 768px) {
+    .volume-item {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .volume-cover-container {
+        width: 100%;
+        max-width: 300px;
+    }
+}
