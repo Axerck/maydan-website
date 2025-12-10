@@ -416,12 +416,89 @@ details p {
     border: 1px solid #222;
     border-radius: 4px;
     text-decoration: none;
-    color: #222;
-    font-size: .85rem;
-    transition: all 0.2s;
 }
 
-.btn-outline:hover {
-    background-color: #222;
-    color: #fff;
+.page-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.volumes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.volume-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s;
+}
+
+.volume-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.volume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.75rem;
+}
+
+.volume-header h2 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.volume-header h2 a {
+    text-decoration: none;
+    color: #222;
+}
+
+.volume-header h2 a:hover {
+    text-decoration: underline;
+}
+
+.volume-year {
+    font-weight: 700;
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.volume-desc {
+    color: #555;
+    flex-grow: 1;
+    /* Pushes footer down */
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.volume-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+}
+
+.download-link:hover {
+    color: #222;
+    text-decoration: underline;
 }
