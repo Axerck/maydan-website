@@ -1,0 +1,75 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const volumes = [
+  {
+    id: "vol-4",
+    title: "Maydan Vol. 4",
+    year: "2024",
+    description: "Quarto volume della rivista. Include un focus speciale sulle nuove prospettive di ricerca nel Maghreb e una sezione dedicata ai working papers.",
+    cover: "/img/covers/vol-4-placeholder.jpg", // Opzionale: se hai le copertine
+    link: "/pubblicazioni/vol-4"
+  },
+  {
+    id: "vol-3",
+    title: "Maydan Vol. 3",
+    year: "2023",
+    description: "Terzo volume annuale. Raccolta di saggi critici sulla decolonizzazione degli studi d'area e contributi sulla diaspora.",
+    cover: "/img/covers/vol-3-placeholder.jpg",
+    link: "/pubblicazioni/vol-3"
+  },
+  {
+    id: "vol-2",
+    title: "Maydan Vol. 2",
+    year: "2022",
+    description: "Secondo numero della rivista. Atti delle giornate di studio e rassegna di ricerche originali.",
+    cover: "/img/covers/vol-2-placeholder.jpg",
+    link: "/pubblicazioni/vol-2"
+  },
+  {
+    id: "vol-1",
+    title: "Maydan Vol. 1",
+    year: "2021",
+    description: "Numero inaugurale della Rivista Maydan. Introduzione al progetto editoriale e prime ricerche sul campo.",
+    cover: "/img/covers/vol-1-placeholder.jpg",
+    link: "/pubblicazioni/vol-1"
+  }
+];
+---
+
+<Layout title="Pubblicazioni - Rivista Maydan">
+  <header class="page-header">
+    <h1>Archivio Pubblicazioni</h1>
+    <p>
+      Tutti i numeri della rivista sono disponibili in <strong>Open Access</strong>. 
+      Clicca su un volume per consultare l'indice e scaricare i singoli contributi in PDF.
+    </p>
+  </header>
+
+  <hr />
+
+  <section class="volumes-grid">
+    {volumes.map((vol) => (
+      <article class="volume-card">
+        <div class="volume-header">
+          <h2>
+            <a href={vol.link}>{vol.title}</a>
+          </h2>
+          <span class="volume-year">{vol.year}</span>
+        </div>
+        
+        <p class="volume-desc">{vol.description}</p>
+        
+        <footer class="volume-actions">
+          <a href={vol.link} role="button" class="btn-outline">
+            Consulta Indice &rarr;
+          </a>
+          <a href={`/pdf/${vol.id}/completo.pdf`} class="download-link" download>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+             PDF Completo
+          </a>
+        </footer>
+      </article>
+    ))}
+  </section>
+</Layout>

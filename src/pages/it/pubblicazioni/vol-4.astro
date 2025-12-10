@@ -1,0 +1,88 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { FileText, Download } from 'lucide-react';
+---
+
+<Layout title="Volume 4 | Pubblicazioni">
+	<header>
+		<hgroup>
+			<h1>Volume 4 (2025)</h1>
+			<p>Analisi Comparativa delle Lingue Semitiche</p>
+		</hgroup>
+		<p><small>Pubblicato il: 10 Gennaio 2025</small></p>
+	</header>
+
+	<section id="toc">
+		<h2>Indice</h2>
+		<table class="striped">
+			<thead>
+				<tr>
+					<th scope="col">Autore</th>
+					<th scope="col">Titolo</th>
+					<th scope="col">Pag.</th>
+					<th scope="col">Download</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Mario Rossi</td>
+					<td>Introduzione alla Filologia Semitica</td>
+					<td>1-15</td>
+					<td><a href="#" aria-label="Scarica PDF"><FileText className="inline-icon" size={18} /> PDF</a></td>
+				</tr>
+				<tr>
+					<td>Giulia Bianchi</td>
+					<td>Il Dialetto di Damasco</td>
+					<td>16-45</td>
+					<td><a href="#" aria-label="Scarica PDF"><FileText className="inline-icon" size={18} /> PDF</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<hr />
+
+	<section id="abstracts">
+		<h2>Abstracts</h2>
+
+		<details>
+			<summary><strong>Mario Rossi - Introduzione alla Filologia Semitica</strong></summary>
+			<p>
+				Questo articolo propone una nuova metodologia per l'insegnamento della filologia...
+				<!-- Abstract content -->
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</p>
+			<a href="#" class="btn-outline">
+				<Download size={16} /> Scarica Articolo Completo
+			</a>
+		</details>
+
+		<details>
+			<summary><strong>Giulia Bianchi - Il Dialetto di Damasco</strong></summary>
+			<p>
+				Uno studio approfondito sulle variazioni fonetiche nel dialetto damasceno contemporaneo...
+			</p>
+			<a href="#" class="btn-outline">
+				<Download size={16} /> Scarica Articolo Completo
+			</a>
+		</details>
+	</section>
+</Layout>
+
+<style>
+	/* Optional inline styles for specific iconic alignments if needed */
+	.inline-icon {
+		vertical-align: middle;
+		margin-right: 4px;
+	}
+    /* Flex utility since we are avoiding utility classes but need alignment */
+    .flex {
+        display: flex;
+    }
+    .items-center {
+        align-items: center;
+    }
+    .gap-2 {
+        gap: 0.5rem;
+    }
+</style>

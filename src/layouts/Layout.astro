@@ -1,16 +1,29 @@
 ---
 import '../styles/custom.css';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 interface Props {
 	title?: string;
 }
 
 const { title = "Maydan – Rivista sui mondi arabi, semitici e islamici" } = Astro.props;
+const currentLocale = Astro.currentLocale || 'it';
 const year = new Date().getFullYear();
+
+// Helper to get localized path
+const tPath = (path: string) => getRelativeLocaleUrl(currentLocale, path);
+
+// Helper to switch language
+const switchLang = (targetLang: string) => {
+	const currentPath = Astro.url.pathname;
+    // Remove the current locale prefix (e.g. /it/ or /en/)
+	const pathWithoutLocale = currentPath.replace(`/${currentLocale}`, '') || '/';
+	return getRelativeLocaleUrl(targetLang, pathWithoutLocale);
+};
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang={currentLocale}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,27 +41,27 @@ const year = new Date().getFullYear();
 			<div class="header-top-bar">
 				<!-- Switch lingua -->
 				<div class="lang-switch">
-					<button class="lang lang-active">🇮🇹 IT</button>
-					<button class="lang">🇬🇧 EN</button>
+					<a href={switchLang('it')} class={`lang ${currentLocale === 'it' ? 'lang-active' : ''}`}>🇮🇹 IT</a>
+					<a href={switchLang('en')} class={`lang ${currentLocale === 'en' ? 'lang-active' : ''}`}>🇬🇧 EN</a>
 				</div>
 			</div>
 
 			<div class="header-main">
 				<div class="site-logo">
-					<a href="/">
+					<a href={tPath('/')}>
 						<img src="/logo.png" alt="Maydan Logo" class="logo-img" />
 					</a>
 				</div>
 
 				<nav class="main-nav" aria-label="Menu principale">
 					<ul>
-						<li><a href="/chi-siamo">CHI SIAMO</a></li>
-						<li><a href="/call-e-linee-guida">CALL E LINEE GUIDA</a></li>
-						<li><a href="/pubblicazioni">NUMERI</a></li>
-						<li><a href="/chi-siamo#comitato">COMITATO EDITORIALE</a></li>
-						<li><a href="/chi-siamo#scientifico">COMITATO SCIENTIFICO</a></li>
-						<li><a href="/attivita">ATTIVITA’</a></li>
-						<li><a href="/contatti">CONTATTI</a></li>
+						<li><a href={tPath('/chi-siamo')}>CHI SIAMO</a></li>
+						<li><a href={tPath('/call-e-linee-guida')}>CALL E LINEE GUIDA</a></li>
+						<li><a href={tPath('/pubblicazioni')}>NUMERI</a></li>
+						<li><a href={tPath('/chi-siamo#comitato')}>COMITATO EDITORIALE</a></li>
+						<li><a href={tPath('/chi-siamo#scientifico')}>COMITATO SCIENTIFICO</a></li>
+						<li><a href={tPath('/attivita')}>ATTIVITA’</a></li>
+						<li><a href={tPath('/contatti')}>CONTATTI</a></li>
 					</ul>
 				</nav>
 			</div>
