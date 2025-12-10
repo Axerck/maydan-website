@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { teamMembers } from '../../../data/team';
+
+export function getStaticPaths() {
+  return teamMembers.map(member => ({
+    params: { slug: member.slug },
+    props: { member },
+  }));
+}
+
+const { member } = Astro.props;
+---
+
+<Layout title={`${member.name} | Rivista Maydan`}>
+  <div class="member-profile">
+    <h1>{member.name}</h1>
+    <p class="member-role"><strong>{member.role}</strong></p>
+    <p class="member-affiliation"><em>{member.affiliation}</em></p>
+    
+    <hr />
+    
+    <div class="member-bio">
+      <p>Biografia in aggiornamento...</p>
+    </div>
+    
+    <div class="back-link">
+      <a href="/it/comitato-editoriale">← Torna al Comitato Editoriale</a>
+    </div>
+  </div>
+
+  <style>
+    .member-profile {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .member-role {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .member-affiliation {
+        font-size: 1.1rem;
+        color: #555;
+    }
+    .member-bio {
+        margin: 2rem 0;
+        line-height: 1.8;
+    }
+    .back-link {
+        margin-top: 3rem;
+    }
+    .back-link a {
+        color: #666;
+        text-decoration: none;
+    }
+    .back-link a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</Layout>

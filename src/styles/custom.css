@@ -622,3 +622,39 @@ details p {
         margin-right: auto;
     }
 }
+
+/* COMMITTEE STYLES (Scientific & Editorial) */
+.committee-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.committee-section ul,
+.committee-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.committee-section li,
+.committee-list li {
+    margin-bottom: 0.5rem;
+}
+
+.committee-section a,
+.committee-list a {
+    text-decoration: none;
+    color: #222;
+    border-bottom: 1px dotted #666;
+}
+
+.committee-section a:hover,
+.committee-list a:hover {
+    border-bottom-style: solid;
+}
+
+hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #000;
+}
