@@ -1,29 +1,26 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+const posts = await Astro.glob('./*.md');
+
+// Sort posts by date descending
+posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 ---
 
 <Layout title="Attività | Rivista Maydan">
 	<!-- <h1>Attività</h1> -->
-	<p>Seminari, convegni e presentazioni organizzati dalla rivista e dai suoi partner.</p>
+	<header class="page-header">
+		<p>Seminari, convegni e presentazioni organizzati dalla rivista e dai suoi partner.</p>
+	</header>
 
-	<div class="home-grid">
-		<article class="home-card">
-			<header>
-				<h3>Convegno Internazionale di Semitistica</h3>
-			</header>
-			<p><strong>Data:</strong> 20-22 Settembre 2024</p>
-			<p><strong>Luogo:</strong> Università di Torino</p>
-			<p>
-				Un incontro di tre giorni dedicato alle nuove frontiere della ricerca semitistica...
-			</p>
-		</article>
+	<section class="activities-list">
+		{posts.map((post) => (
+			<article class="activity-card">
+				<div class="activity-date">{new Date(post.frontmatter.date).toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+				<h2><a href={post.url}>{post.frontmatter.title}</a></h2>
+				<p>{post.frontmatter.description}</p>
+			</article>
+		))}
+	</section>
 
-		<article class="home-card">
-			<header>
-				<h3>Presentazione Volume 3</h3>
-			</header>
-			<p><strong>Data:</strong> 15 Dicembre 2024</p>
-			<p><strong>Luogo:</strong> Libreria X, Torino</p>
-		</article>
-	</div>
+
 </Layout>

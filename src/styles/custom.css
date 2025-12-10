@@ -712,3 +712,152 @@ hr {
     border: 0;
     border-top: 1px solid #000;
 }
+
+/* --- REFACTORED INLINE STYLES --- */
+
+/* Utility Icons */
+.inline-icon {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+/* Chi Siamo */
+.text-justify {
+    text-align: justify;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-justify p {
+    margin-bottom: 1.5rem;
+}
+
+/* Attività (Dynamic List) */
+.activities-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.activity-card {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+}
+
+.activity-card:last-child {
+    border-bottom: none;
+}
+
+.activity-date {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.activity-card h2 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+}
+
+.activity-card h2 a {
+    text-decoration: none;
+    color: #000;
+}
+
+.activity-card h2 a:hover {
+    text-decoration: underline;
+}
+
+.activity-card p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Comitato Editoriale: Member Profile */
+.member-profile {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.profile-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.member-image-container {
+    flex-shrink: 0;
+    width: 300px;
+}
+
+.member-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.member-bio {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.member-role {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-affiliation {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.back-link {
+    margin-top: 3rem;
+}
+
+.back-link a {
+    color: #666;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+    .profile-layout {
+        flex-direction: column;
+    }
+
+    .member-image-container {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Comitato Editoriale: Archive */
+.archive-nav a {
+    font-family: inherit;
+    /* Inherit Palatino from body/header */
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.archive-nav a:hover {
+    text-decoration: underline;
+}
