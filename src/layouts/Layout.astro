@@ -76,6 +76,7 @@ const switchLang = (targetLang: string) => {
         <script>
             const toggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('main-nav');
+            const header = document.querySelector('.site-header');
             
             if (toggle && nav) {
                 toggle.addEventListener('click', () => {
@@ -83,6 +84,15 @@ const switchLang = (targetLang: string) => {
                     toggle.classList.toggle('is-active');
                 });
             }
+
+            // Scroll detection for sticky header
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header?.classList.add('is-scrolled');
+                } else {
+                    header?.classList.remove('is-scrolled');
+                }
+            });
         </script>
 	  
 		<!-- CONTENUTO PRINCIPALE -->
@@ -93,6 +103,15 @@ const switchLang = (targetLang: string) => {
 		<!-- FOOTER -->
 		<footer class="site-footer">
 		  <div class="footer-inner">
+			<div class="footer-collaborations">
+				<p><strong>In collaborazione con:</strong></p>
+				<div class="collab-logos">
+					<div class="logo-placeholder">Ente 1</div>
+					<div class="logo-placeholder">Ente 2</div>
+					<div class="logo-placeholder">Ente 3</div>
+				</div>
+			</div>
+			
 			<p>Editore: Antonio Pacifico, Piazza Nazionale 54, 80143, Napoli</p>
 			<p>ISSN 2785-6976</p>
 			<p>&copy; <span id="year">{year}</span> Maydan</p>
