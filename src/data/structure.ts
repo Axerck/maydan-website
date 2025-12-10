@@ -112,14 +112,96 @@ export const pastBoards: PastBoard[] = [
     },
     {
         year: "2023",
-        groups: []
+        groups: [
+            {
+                title: "Direttore responsabile",
+                members: [{ slug: "antonio-pacifico" }]
+            },
+            {
+                title: "Vicedirettore",
+                members: [{ slug: "daniele-paolini" }]
+            },
+            {
+                title: "Caporedattrice",
+                members: [{ slug: "laura-morreale" }]
+            },
+            {
+                title: "Redazione",
+                members: [
+                    { slug: "alessia-daccardio-berlinguer" },
+                    { slug: "aurora-magliozzi" },
+                    { slug: "pietro-menghini" },
+                    { slug: "federico-pozzoli" },
+                    { slug: "luigi-sausa" },
+                    { slug: "federica-stagni" },
+                    { slug: "pietro-stefanini" }
+                ]
+            },
+            {
+                title: "Collaboratrici",
+                members: [
+                    { slug: "annamaria-bianco" },
+                    { slug: "tamara-taher" }
+                ]
+            }
+        ]
     },
     {
         year: "2022",
-        groups: []
+        groups: [
+            {
+                title: "Direttore responsabile",
+                members: [{ slug: "antonio-pacifico" }]
+            },
+            {
+                title: "Vicedirettore",
+                members: [{ slug: "pietro-menghini" }]
+            },
+            {
+                title: "Caporedattrice",
+                members: [{ slug: "alessia-daccardio-berlinguer" }]
+            },
+            {
+                title: "Redazione",
+                members: [
+                    { slug: "annamaria-bianco" },
+                    { slug: "giulia-guidotti" },
+                    { slug: "federico-pozzoli" },
+                    { slug: "luigi-sausa" },
+                    { slug: "federica-stagni" },
+                    { slug: "pietro-stefanini" },
+                    { slug: "tamara-taher" }
+                ]
+            }
+        ]
     },
     {
         year: "2021",
-        groups: []
+        groups: [
+            {
+                title: "Direttore responsabile",
+                members: [{ slug: "antonio-pacifico" }]
+            },
+            {
+                title: "Vicedirettrice",
+                members: [{ slug: "giulia-guidotti" }]
+            },
+            {
+                title: "Caporedattrice",
+                members: [{ slug: "annamaria-bianco" }]
+            },
+            {
+                title: "Redazione",
+                members: [
+                    { slug: "manuel-capomaccio" },
+                    { slug: "alessia-daccardio-berlinguer" },
+                    { slug: "pietro-menghini" },
+                    { slug: "federico-pozzoli" },
+                    { slug: "luigi-sausa" },
+                    { slug: "pietro-stefanini" },
+                    { slug: "tamara-taher" }
+                ]
+            }
+        ]
     }
 ];

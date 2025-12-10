@@ -224,6 +224,24 @@ export const teamMembers = [
         role: "Archivio",
         affiliation: "Università degli Studi di Torino"
     },
+    {
+        name: "Federico Pozzoli",
+        slug: "federico-pozzoli",
+        role: "Archivio",
+        affiliation: "Università degli Studi di Milano"
+    },
+    {
+        name: "Giulia Guidotti",
+        slug: "giulia-guidotti",
+        role: "Archivio",
+        affiliation: "Università degli Studi di Napoli “L’Orientale”"
+    },
+    {
+        name: "Manuel Capomaccio",
+        slug: "manuel-capomaccio",
+        role: "Archivio",
+        affiliation: "Università degli Studi di Napoli “L’Orientale”"
+    },
     { name: "Redazione 2024", slug: "archivio-2024", role: "Archivio", affiliation: "" },
     { name: "Redazione 2023", slug: "archivio-2023", role: "Archivio", affiliation: "" },
     { name: "Redazione 2022", slug: "archivio-2022", role: "Archivio", affiliation: "" },
