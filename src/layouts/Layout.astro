@@ -52,8 +52,14 @@ const switchLang = (targetLang: string) => {
 						<img src="/logo.png" alt="Maydan Logo" class="logo-img" />
 					</a>
 				</div>
+                
+                <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
 
-				<nav class="main-nav" aria-label="Menu principale">
+				<nav id="main-nav" class="main-nav" aria-label="Menu principale">
 					<ul>
 						<li><a href={tPath('/chi-siamo')}>CHI SIAMO</a></li>
 						<li><a href={tPath('/call-e-linee-guida')}>CALL E LINEE GUIDA</a></li>
@@ -66,6 +72,18 @@ const switchLang = (targetLang: string) => {
 				</nav>
 			</div>
 		</header>
+        
+        <script>
+            const toggle = document.getElementById('menu-toggle');
+            const nav = document.getElementById('main-nav');
+            
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => {
+                    nav.classList.toggle('nav-open');
+                    toggle.classList.toggle('is-active');
+                });
+            }
+        </script>
 	  
 		<!-- CONTENUTO PRINCIPALE -->
 		<main id="contenuto" class="site-main">
