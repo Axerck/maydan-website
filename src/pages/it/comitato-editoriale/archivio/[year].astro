@@ -1,0 +1,57 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { pastBoards } from '../../../../data/structure';
+import { teamMembers } from '../../../../data/team';
+
+export async function getStaticPaths() {
+  return pastBoards.map((board) => ({
+    params: { year: board.year },
+    props: { board },
+  }));
+}
+
+const { board } = Astro.props;
+---
+
+<Layout title={`Comitato Editoriale ${board.year} - Rivista Maydan`}>
+  <h1>Comitato Editoriale {board.year}</h1>
+
+  <div class="archive-nav">
+      <a href="/it/comitato-editoriale">← Torna al Comitato Editoriale corrente</a>
+  </div>
+  <br/>
+
+  {board.groups.map((group) => (
+    <section class="committee-section">
+      <h2>{group.title}</h2>
+      <ul>
+        {group.members.map((memberStruct) => {
+          const memberData = teamMembers.find(m => m.slug === memberStruct.slug);
+          if (!memberData) return null;
+
+          return (
+            <li>
+              <strong>
+                <a href={`/it/comitato-editoriale/${memberData.slug}`}>{memberData.name}</a>
+              </strong>
+              {memberData.affiliation && ` – `}
+              {memberData.affiliation && <em>{memberData.affiliation}</em>}
+            </li>
+          );
+        })}
+      </ul>
+      <hr />
+    </section>
+  ))}
+</Layout>
+
+<style>
+    .archive-nav a {
+        font-family: var(--font-header);
+        text-decoration: none;
+        font-size: 0.9em;
+    }
+    .archive-nav a:hover {
+        text-decoration: underline;
+    }
+</style>

@@ -170,9 +170,60 @@ export const teamMembers = [
         personalLink: "https://unimb.academia.edu/ViolaAbsinta",
         image: "/team/viola-absinta.png"
     },
-    { name: "Annamaria Bianco", slug: "annamaria-bianco", role: "Collaboratori", affiliation: "Université Toulouse 2 – Jean Jaurès / Aix-Marseille Université, IREMAM" },
-    { name: "Alessia D’Accardio Berlinguer", slug: "alessia-daccardio-berlinguer", role: "Collaboratori", affiliation: "Aix-Marseille Université — IREMAM / INALCO — LACNAD" },
-    { name: "Pietro Stefanini", slug: "pietro-stefanini", role: "Collaboratori", affiliation: "The University of Edinburgh" },
+    {
+        name: "Annamaria Bianco",
+        slug: "annamaria-bianco",
+        role: "Collaboratori",
+        affiliation: "Université Toulouse 2 – Jean Jaurès / Aix-Marseille Université, IREMAM",
+        bio: "Annamaria Bianco ha conseguito una laurea in “Lingue, letterature e culture comparate” presso l’Università degli Studi di Napoli L’Orientale e un master in “Scienze delle lingue, storia e della cultura del Mediterraneo e dei Paesi islamici”. Ha inoltre completato un anno accademico presso l’INALCO (Parigi) ed è stata tirocinante per la rivista Banipal- Magazine of Arabic Modern Literature in Translation (Londra). Successivamente, si è specializzata in Traduzione editoriale dall’arabo presso la SSML di Vicenza e ha iniziato a lavorare part-time come sottotitolatrice, traduttrice e interprete. Nel 2022 ha conseguito un dottorato di ricerca in Letteratura araba contemporanea presso l’Università di Aix-Marseille (Francia), in co-tutela con l’Università di Napoli “L’Orientale”, con una tesi dal titolo: « Adab al-malǧa’ : représenter le refuge dans le roman arabe du XXIe siècle ». Attualmente è assistente alla ricerca e alla didattica presso l’Università di Tolosa 2 – Jean Jaurès e ricercatrice associata presso l’IREMAM. I suoi interessi di ricerca si concentrano su  rapporti tra creatività e diaspora, la circolazione e la traduzione della letteratura araba, le produzioni letterarie di esuli e rifugiati arabi, nonché sulla rappresentazione del campo umanitario e della retorica sui diritti umani nella narrativa. È stata tesoriera dell’associazione francese “Halqa: Association des doctorants en sciences sociales sur les mondes musulmans modernes et contemporains” (https://halqa.hypotheses.org/) e caporedattore della rivista studentesca italiana Maydan (https://rivistamaydan.com/) nell’anno della sua fondazione. È membro di SeSaMo e di EURAMAL.",
+        email: "annamariabianco91@gmail.com",
+        personalLink: "https://iremam.cnrs.fr/spip.php?article5355",
+        image: "/team/annamaria-bianco.png"
+    },
+    {
+        name: "Alessia D’Accardio Berlinguer",
+        slug: "alessia-daccardio-berlinguer",
+        role: "Collaboratori",
+        affiliation: "Aix-Marseille Université — IREMAM / INALCO — LACNAD",
+        bio: "Alessia D’Accardio Berlinguer è attualmente Attachée Temporaire d’Enseignement et de Recherche (ATER) in lingua e dialettologia araba presso l’Università di Aix-Marseille, affiliata all’IREMAM e al LACNAD (INALCO). Ha conseguito la laurea triennale in Mediazione Linguistica presso l’Università degli studi di Palermo e la laurea magistrale in Lingue, Storia e Culture del Mediterraneo e dei Paesi Islamici presso l’Università degli Studi di Napoli L’Orientale. Ha inoltre completato un semestre accademico presso l’Universidad de Granada all’interno del progetto ERASMUS. Ha conseguito un dottorato di ricerca nel 2024 presso l’Università di Napoli L’Orientale, in co-tutela con l’INALCO di Parigi, con una tesi dal titolo “The Arabic Spoken in Kairouan (Tunisia) : towards a Reassessment of the Arabization of Northern Africa”. Diplomata in Lingua araba presso l’Institut Bourguiba des Langues Vivantes (IBLV) di Tunisi, è membro del gruppo di ricerca dell’Atlante Linguistico Mediterraneo per la Tunisia, di Società Italiana di Studi sul Medio Oriente (SeSaMO) e dell’Association internationale de dialectologie arabe (AIDA). I suoi principali interessi di ricerca riguardano la dialettologia, sociolinguistica, lessicografia e linguistica storica in contesto arabofono, con particolare attenzione alle varietà maghrebine.",
+        email: "alessia.daccardioberlinguer@inalco.fr",
+        personalLink: "https://unior.academia.edu/ADAccardio",
+        image: "/team/alessia-daccardio-berlinguer.png"
+    },
+    {
+        name: "Pietro Stefanini",
+        slug: "pietro-stefanini",
+        role: "Collaboratori",
+        affiliation: "The University of Edinburgh",
+        bio: "Pietro Stefanini è dottorando in politica e relazioni internazionali presso l’Università di Edimburgo, il suo progetto di tesi si incentra sullo studio del colonialismo d’insediamento e l’umanitarismo in Palestina/Israele. Le sue ricerche sulla Palestina si sono focalizzate sul processo di ricostruzione postbellica a Gaza, la questione dei rifugiati e dell’UNRWA, e pratiche di resistenza anticoloniale.",
+        email: "P.A.Stefanini@sms.ed.ac.uk",
+        personalLink: "https://www.sps.ed.ac.uk/staff/pietro-stefanini",
+        image: "/team/pietro-stefanini.png"
+    },
+    {
+        name: "Noemi Linardi",
+        slug: "noemi-linardi",
+        role: "Archivio",
+        affiliation: "Université Sorbonne Nouvelle"
+    },
+    {
+        name: "Daniele Paolini",
+        slug: "daniele-paolini",
+        role: "Archivio",
+        affiliation: "Università degli Studi di Perugia"
+    },
+    {
+        name: "Federica Stagni",
+        slug: "federica-stagni",
+        role: "Archivio",
+        affiliation: "Scuola Normale Superiore"
+    },
+    {
+        name: "Tamara Taher",
+        slug: "tamara-taher",
+        role: "Archivio",
+        affiliation: "Università degli Studi di Torino"
+    },
     { name: "Redazione 2024", slug: "archivio-2024", role: "Archivio", affiliation: "" },
     { name: "Redazione 2023", slug: "archivio-2023", role: "Archivio", affiliation: "" },
     { name: "Redazione 2022", slug: "archivio-2022", role: "Archivio", affiliation: "" },
