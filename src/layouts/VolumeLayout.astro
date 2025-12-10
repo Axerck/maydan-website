@@ -1,0 +1,191 @@
+---
+import Layout from './Layout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`${frontmatter.title} - Rivista Maydan`}>
+  <div class="volume-container">
+    <div class="volume-grid">
+      <!-- Left Column: Cover & Action -->
+      <aside class="volume-sidebar">
+        <div class="volume-cover-wrapper">
+            <img src={frontmatter.cover} alt={`Copertina ${frontmatter.title}`} class="volume-cover-img" />
+        </div>
+        
+        {frontmatter.pdf_full_link && (
+            <div class="volume-action">
+                <a href={frontmatter.pdf_full_link} class="btn-download-full" target="_blank" rel="noopener noreferrer">
+                    Download Full Volume
+                </a>
+            </div>
+        )}
+      </aside>
+
+      <!-- Right Column: Content -->
+      <main class="volume-main">
+        <header class="volume-header-detail">
+            <span class="volume-year-label">{frontmatter.year}</span>
+            <h1 class="volume-title-main">{frontmatter.title}</h1>
+            <p class="volume-description-main">{frontmatter.description}</p>
+        </header>
+
+        <div class="volume-toc-content">
+            <slot />
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .volume-container {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  .volume-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* Left Column */
+  .volume-sidebar {
+    position: sticky;
+    top: 120px; /* Adjust based on sticky header height */
+  }
+
+  .volume-cover-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border: 1px solid #eee;
+  }
+
+  .volume-action {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .btn-download-full {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s;
+  }
+
+  .btn-download-full:hover {
+    background-color: #333;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  /* Right Column */
+  .volume-header-detail {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+  }
+
+  .volume-year-label {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .volume-title-main {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+
+  .volume-description-main {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* Markdown Content Styling (TOC) */
+  .volume-toc-content :global(h2) {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 0.5rem;
+    color: #000;
+  }
+
+  .volume-toc-content :global(ul) {
+    list-style: none;
+    padding: 0;
+  }
+
+  .volume-toc-content :global(li) {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .volume-toc-content :global(strong) {
+    display: block;
+    color: #222;
+    font-size: 1.05rem;
+  }
+
+  .volume-toc-content :global(em) {
+    color: #555;
+    font-style: normal;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .volume-toc-content :global(a) {
+    color: #000;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+
+  .volume-toc-content :global(a:hover) {
+    text-decoration: none;
+    color: #444;
+  }
+  
+  /* Numbered lists for Articles */
+  .volume-toc-content :global(ol) {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+  }
+  
+  .volume-toc-content :global(ol li) {
+      margin-bottom: 2rem;
+      padding-left: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .volume-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .volume-sidebar {
+      position: static;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+</style>

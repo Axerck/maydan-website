@@ -1,7 +1,16 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import { currentBoard, pastBoards } from '../../../data/structure';
-import { teamMembers } from '../../../data/team';
+import Layout from '../../../../layouts/Layout.astro';
+import { pastBoards } from '../../../../data/structure';
+import { teamMembers } from '../../../../data/team';
+
+export async function getStaticPaths() {
+  return pastBoards.map((board) => ({
+    params: { year: board.year },
+    props: { board },
+  }));
+}
+
+const { board } = Astro.props;
 
 // Mapping for group titles (IT -> EN)
 const groupTitleMap: Record<string, string> = {
@@ -14,7 +23,7 @@ const groupTitleMap: Record<string, string> = {
   "Redazione": "Editorial Board",
   "Tesoriere": "Treasurer",
   "Tirocinanti": "Interns",
-  "Collaboratori": "Collaborators",
+  "Collaboratori": "Collaborators", 
   "Comitato Scientifico": "Scientific Committee"
 };
 
@@ -23,15 +32,21 @@ function translateTitle(title: string) {
 }
 ---
 
-<Layout title="Editorial Board - Rivista Maydan">
+<Layout title={`Editorial Board ${board.year} - Rivista Maydan`}>
+  <h1>Editorial Board {board.year}</h1>
 
-  {currentBoard.map((group) => (
+  <div class="archive-nav">
+      <a href="/en/comitato-editoriale">← Back to Current Editorial Board</a>
+  </div>
+  <br/>
+
+  {board.groups.map((group) => (
     <section class="committee-section">
       <h2>{translateTitle(group.title)}</h2>
       <ul>
         {group.members.map((memberStruct) => {
           const memberData = teamMembers.find(m => m.slug === memberStruct.slug);
-          if (!memberData) return null; 
+          if (!memberData) return null;
 
           return (
             <li>
@@ -47,14 +62,4 @@ function translateTitle(title: string) {
       <hr />
     </section>
   ))}
-
-  <section class="committee-section">
-    <h2>Past Editorial Boards</h2>
-    <ul>
-      {pastBoards.map((board) => (
-         <li><strong><a href={`/en/comitato-editoriale/archivio/${board.year}`}>{board.year} Editorial Board</a></strong></li>
-      ))}
-    </ul>
-  </section>
-  
 </Layout>
