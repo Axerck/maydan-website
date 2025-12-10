@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Mail, MapPin } from 'lucide-react';
+---
+
+<Layout title="Contatti | Rivista Maydan">
+	<h1>Contatti</h1>
+	
+	<div class="home-grid">
+		<div class="home-card">
+			<h3>Redazione</h3>
+			<address>
+				<p>
+					<MapPin className="inline-icon" size={18} />
+					Dipartimento di Lingue<br />
+					Via Verdi, 10<br />
+					10124 Torino (TO)<br />
+					Italia
+				</p>
+				<p>
+					<Mail className="inline-icon" size={18} />
+					<a href="mailto:info@maydan.it">info@maydan.it</a>
+				</p>
+			</address>
+		</div>
+		
+		<div class="home-card">
+			<h3>Invia un messaggio</h3>
+			<form>
+				<label for="name">
+					Nome
+					<input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+				</label>
+
+				<label for="email">
+					Email
+					<input type="email" id="email" name="email" placeholder="La tua email" required>
+				</label>
+
+				<label for="message">
+					Messaggio
+					<textarea id="message" name="message" placeholder="Scrivi qui il tuo messaggio" rows="5" required></textarea>
+				</label>
+
+				<button type="submit">Invia</button>
+			</form>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.inline-icon {
+		vertical-align: middle;
+		margin-right: 0.5rem;
+	}
+</style>
