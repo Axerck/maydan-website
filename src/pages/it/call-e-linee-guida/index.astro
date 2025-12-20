@@ -1,20 +1,29 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
+import Layout from "../../../layouts/Layout.astro";
 ---
 
 <Layout title="Call & Linee Guida | Rivista Maydan">
 	<!-- <h1>Call & Linee Guida</h1> -->
-	
+
 	<section class="home-card">
 		<h2>Call for Papers Aperte</h2>
-		<article>
-			<header>
-				<h3><a href="/call-e-linee-guida/vol-4">Call for Papers Vol. 4 (2025)</a></h3>
-			</header>
-			<p>Scadenza: 30 Maggio 2025</p>
-			<p>
-				Si invitano gli studiosi a inviare contributi sul tema della filologia semitica comparata...
-			</p>
+		<article class="call-item">
+			<div class="call-image">
+				<div class="placeholder-img" style="background-color: #fff3e0;">
+					Immagine Call Vol. 4
+				</div>
+			</div>
+			<div class="call-content">
+				<header>
+					<h3>
+						<a href="/call-e-linee-guida/vol-4"
+							>Call for Papers Vol. 4 (2025)</a
+						>
+					</h3>
+				</header>
+				<p>Scadenza: 30 Maggio 2025</p>
+				<p>Descrizione call</p>
+			</div>
 		</article>
 	</section>
 
@@ -22,11 +31,248 @@ import Layout from '../../../layouts/Layout.astro';
 
 	<section class="home-card">
 		<h2>Linee Guida per gli Autori</h2>
-		<p>
-			Gli articoli devono essere inviati in formato .doc o .odt e non superare le 40.000 battute...
-		</p>
-		<p>
-			<a href="#" class="btn-outline">Scarica PDF Norme Redazionali</a>
-		</p>
+
+		<ul class="documents-list">
+			<li>
+				<a href="/pdf/calls/Linee-guida-2.pdf" target="_blank"
+					>Linee guida per autrici e autori (PDF)</a
+				>
+			</li>
+			<li>
+				<a href="/pdf/calls/Codice-etico.pdf" target="_blank"
+					>Codice etico (PDF)</a
+				>
+			</li>
+			<li>
+				<a
+					href="/pdf/calls/processo-di-revisione-def.pdf"
+					target="_blank">Processo di revisione (PDF)</a
+				>
+			</li>
+			<li>
+				<a
+					href="/pdf/calls/Peer-review-evaluation-report-.pdf"
+					target="_blank">Questionario per la revisione (PDF)</a
+				>
+			</li>
+			<li>
+				<a href="/pdf/calls/template-abstract-1.pdf" target="_blank"
+					>Template per abstract (PDF)</a
+				>
+			</li>
+		</ul>
 	</section>
+
+	<style>
+		.documents-list {
+			list-style: none;
+			padding: 0;
+			margin-top: 1.5rem;
+		}
+
+		.documents-list li {
+			margin-bottom: 0.8rem;
+		}
+
+		.documents-list a {
+			display: inline-block;
+			color: #333;
+			text-decoration: none;
+			border-left: 3px solid #000;
+			padding-left: 10px;
+			transition:
+				color 0.2s,
+				border-left-color 0.2s;
+		}
+
+		.documents-list a:hover {
+			color: #000;
+			border-left-color: #555;
+			text-decoration: underline;
+		}
+	</style>
+
+	<br />
+
+	<section class="past-calls">
+		<h2>Call for Papers Passate</h2>
+
+		<div class="call-list">
+			<!-- Item 1 -->
+			<article class="call-item">
+				<div class="call-image">
+					<div
+						class="placeholder-img"
+						style="background-color: #fcece4;"
+					>
+						Impressioni
+					</div>
+					<!-- Placeholder -->
+				</div>
+				<div class="call-content">
+					<h3>
+						<a href="#"
+							>CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E
+							SESAMO – SECONDA EDIZIONE</a
+						>
+					</h3>
+				</div>
+			</article>
+
+			<!-- Item 2 -->
+			<article class="call-item">
+				<div class="call-image">
+					<div
+						class="placeholder-img"
+						style="background-color: #e0f2f1;"
+					>
+						Arco
+					</div>
+					<!-- Placeholder -->
+				</div>
+				<div class="call-content">
+					<h3>
+						<a href="#"
+							>CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E
+							SESAMO</a
+						>
+					</h3>
+				</div>
+			</article>
+
+			<!-- Item 3 -->
+			<article class="call-item">
+				<div class="call-image">
+					<div
+						class="placeholder-img"
+						style="background-color: #e8f5e9;"
+					>
+						Bandiera
+					</div>
+					<!-- Placeholder -->
+				</div>
+				<div class="call-content">
+					<h3>
+						<a href="#"
+							>CALL FOR PAPERS – GIORNATE DI STUDIO (01 ed.)</a
+						>
+					</h3>
+				</div>
+			</article>
+
+			<!-- Item 4: Vol 2 -->
+			<article class="call-item">
+				<div class="call-image">
+					<img src="/img/copertina-call-2-1.jpg" alt="Call Vol 2" />
+				</div>
+				<div class="call-content">
+					<h3><a href="#">CALL FOR PAPERS VOL.2</a></h3>
+				</div>
+			</article>
+
+			<!-- Item 5: Vol 1 -->
+			<article class="call-item">
+				<div class="call-image">
+					<img src="/img/call01-1.png" alt="Call Vol 1" />
+				</div>
+				<div class="call-content">
+					<h3><a href="#">CALL FOR PAPERS VOL.1</a></h3>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<style>
+		.past-calls {
+			max-width: 900px;
+			margin: 4rem auto;
+			padding: 0 1rem;
+		}
+
+		.past-calls h2 {
+			font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+			font-size: 1.8rem;
+			margin-bottom: 2rem;
+			border-bottom: 2px solid #000;
+			padding-bottom: 0.5rem;
+			display: inline-block;
+		}
+
+		.call-list {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.call-item {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+			padding: 2rem 0;
+			border-bottom: 1px solid #000;
+		}
+
+		.call-item:last-child {
+			border-bottom: none;
+		}
+
+		.call-image {
+			flex: 0 0 300px; /* Fixed width for image column */
+			width: 300px;
+		}
+
+		.call-image img,
+		.placeholder-img {
+			width: 100%;
+			height: auto;
+			display: block;
+			aspect-ratio: 16/9;
+			object-fit: cover;
+			border: 1px solid #ddd;
+		}
+
+		.placeholder-img {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #777;
+			font-size: 0.9rem;
+		}
+
+		.call-content {
+			flex: 1;
+		}
+
+		.call-content h3 {
+			font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+			font-size: 1.1rem;
+			margin: 0;
+			text-transform: uppercase;
+			font-weight: bold;
+			line-height: 1.4;
+		}
+
+		.call-content h3 a {
+			color: #000;
+			text-decoration: underline;
+			text-underline-offset: 4px;
+		}
+
+		.call-content h3 a:hover {
+			color: #555;
+		}
+
+		@media (max-width: 768px) {
+			.call-item {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1rem;
+			}
+
+			.call-image {
+				flex: 0 0 auto;
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	</style>
 </Layout>
