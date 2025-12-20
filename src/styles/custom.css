@@ -261,6 +261,15 @@ body {
     display: flex;
     gap: .75rem;
     margin-bottom: .75rem;
+    justify-content: center; /* Center image */
+}
+
+.card-images img {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px; /* Limit height to prevent taking too much space */
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Add subtle shadow */
 }
 
 .image-placeholder {
