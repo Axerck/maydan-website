@@ -1,13 +1,14 @@
 ---
-import '../styles/custom.css';
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import "../styles/custom.css";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 interface Props {
 	title?: string;
 }
 
-const { title = "Maydan – Rivista sui mondi arabi, semitici e islamici" } = Astro.props;
-const currentLocale = Astro.currentLocale || 'it';
+const { title = "Maydan – Rivista sui mondi arabi, semitici e islamici" } =
+	Astro.props;
+const currentLocale = Astro.currentLocale || "it";
 const year = new Date().getFullYear();
 
 // Helper to get localized path
@@ -16,8 +17,9 @@ const tPath = (path: string) => getRelativeLocaleUrl(currentLocale, path);
 // Helper to switch language
 const switchLang = (targetLang: string) => {
 	const currentPath = Astro.url.pathname;
-    // Remove the current locale prefix (e.g. /it/ or /en/)
-	const pathWithoutLocale = currentPath.replace(`/${currentLocale}`, '') || '/';
+	// Remove the current locale prefix (e.g. /it/ or /en/)
+	const pathWithoutLocale =
+		currentPath.replace(`/${currentLocale}`, "") || "/";
 	return getRelativeLocaleUrl(targetLang, pathWithoutLocale);
 };
 ---
@@ -27,87 +29,120 @@ const switchLang = (targetLang: string) => {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon/favicon_logo.svg"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-
 		<!-- Skip link -->
 		<a class="skip-link" href="#contenuto">Vai al contenuto</a>
-	  
+
 		<!-- HEADER -->
 		<header class="site-header">
 			<div class="header-top-bar">
 				<!-- Switch lingua -->
 				<div class="lang-switch">
-					<a href={switchLang('it')} class={`lang ${currentLocale === 'it' ? 'lang-active' : ''}`}>🇮🇹 IT</a>
-					<a href={switchLang('en')} class={`lang ${currentLocale === 'en' ? 'lang-active' : ''}`}>🇬🇧 EN</a>
+					<a
+						href={switchLang("it")}
+						class={`lang ${currentLocale === "it" ? "lang-active" : ""}`}
+						>🇮🇹 IT</a
+					>
+					<a
+						href={switchLang("en")}
+						class={`lang ${currentLocale === "en" ? "lang-active" : ""}`}
+						>🇬🇧 EN</a
+					>
 				</div>
 			</div>
 
 			<div class="header-main">
 				<div class="site-logo">
-					<a href={tPath('/')}>
-						<img src="/logo.png" alt="Maydan Logo" class="logo-img" />
+					<a href={tPath("/")}>
+						<img
+							src="/logo_palestina/maydan.svg"
+							alt="Maydan Logo"
+							class="logo-img"
+						/>
 					</a>
 				</div>
-                
-                <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
 
-				<nav id="main-nav" class="main-nav" aria-label="Menu principale">
+				<button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+
+				<nav
+					id="main-nav"
+					class="main-nav"
+					aria-label="Menu principale"
+				>
 					<ul>
-						<li><a href={tPath('/chi-siamo')}>CHI SIAMO</a></li>
-						<li><a href={tPath('/call-e-linee-guida')}>CALL E LINEE GUIDA</a></li>
-						<li><a href={tPath('/pubblicazioni')}>NUMERI</a></li>
-						<li><a href={tPath('/comitato-editoriale')}>COMITATO EDITORIALE</a></li>
-						<li><a href={tPath('/comitato-scientifico')}>COMITATO SCIENTIFICO</a></li>
-						<li><a href={tPath('/attivita')}>ATTIVITA’</a></li>
-						<li><a href={tPath('/contatti')}>CONTATTI</a></li>
+						<li><a href={tPath("/chi-siamo")}>CHI SIAMO</a></li>
+						<li>
+							<a href={tPath("/call-e-linee-guida")}
+								>CALL E LINEE GUIDA</a
+							>
+						</li>
+						<li><a href={tPath("/pubblicazioni")}>NUMERI</a></li>
+						<li>
+							<a href={tPath("/comitato-editoriale")}
+								>COMITATO EDITORIALE</a
+							>
+						</li>
+						<li>
+							<a href={tPath("/comitato-scientifico")}
+								>COMITATO SCIENTIFICO</a
+							>
+						</li>
+						<li><a href={tPath("/attivita")}>ATTIVITA’</a></li>
+						<li><a href={tPath("/contatti")}>CONTATTI</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
-        
-        <script>
-            const toggle = document.getElementById('menu-toggle');
-            const nav = document.getElementById('main-nav');
-            const header = document.querySelector('.site-header');
-            
-            if (toggle && nav) {
-                toggle.addEventListener('click', () => {
-                    nav.classList.toggle('nav-open');
-                    toggle.classList.toggle('is-active');
-                });
-            }
 
-            // Scroll detection for sticky header
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header?.classList.add('is-scrolled');
-                } else {
-                    header?.classList.remove('is-scrolled');
-                }
-            });
-        </script>
-	  
+		<script>
+			const toggle = document.getElementById("menu-toggle");
+			const nav = document.getElementById("main-nav");
+			const header = document.querySelector(".site-header");
+
+			if (toggle && nav) {
+				toggle.addEventListener("click", () => {
+					nav.classList.toggle("nav-open");
+					toggle.classList.toggle("is-active");
+				});
+			}
+
+			// Scroll detection for sticky header
+			window.addEventListener("scroll", () => {
+				if (window.scrollY > 100) {
+					header?.classList.add("is-scrolled");
+				} else {
+					header?.classList.remove("is-scrolled");
+				}
+			});
+		</script>
+
 		<!-- CONTENUTO PRINCIPALE -->
 		<main id="contenuto" class="site-main">
 			<slot />
 		</main>
-	  
+
 		<!-- FOOTER -->
 		<footer class="site-footer">
-		  <div class="footer-inner">
-			<p>Editore: Antonio Pacifico, Piazza Nazionale 54, 80143, Napoli</p>
-			<p>ISSN 2785-6976</p>
-			<p>&copy; <span id="year">{year}</span> Maydan</p>
-		  </div>
+			<div class="footer-inner">
+				<p>
+					Editore: Antonio Pacifico, Piazza Nazionale 54, 80143,
+					Napoli
+				</p>
+				<p>ISSN 2785-6976</p>
+				<p>&copy; <span id="year">{year}</span> Maydan</p>
+			</div>
 		</footer>
-	  
-	  </body>
+	</body>
 </html>

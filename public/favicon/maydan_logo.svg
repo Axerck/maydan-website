@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" width="500" height="250">
+	<style type="text/css">
+		.lone {
+	fill: black;
+}
+.small {
+	fill: black;
+}
+.big {
+	fill: black;
+}
+.title {
+	font-family: Palatino;
+}
+.subject {
+	font-family: Palatino;
+}
+	</style>
+	<defs>
+		<polygon id="baseform" points="0,0 50,0 25,25" />
+		<text id="title" class="title" text-anchor="left" dominant-baseline="hanging" x="0" y="0">Maydan</text>
+		<g id="subject" class="subject">
+			<text text-anchor="left" dominant-baseline="hanging" x="0" y="0">rivista sui mondi</text>
+			<text text-anchor="left" dominant-baseline="hanging" x="0" y="1.15">arabi, semitici e islamici</text>
+		</g>
+	</defs>
+	<g name="canvas" transform="translate(0, 0)">
+		<g name="logo" transform="translate(0, 0)">
+			<use href="#baseform" class="big" transform="translate(50, 0), rotate(90), scale(1,-1)" />
+			<use href="#baseform" class="big" transform="translate(75, 25), rotate(90)" />
+			<use href="#baseform" class="big" transform="translate(50, 50), rotate(90), scale(1,-1)" />
+			<use href="#baseform" class="big" transform="translate(50, 100), scale(1,-1)" />
+			<use href="#baseform" class="lone" transform="translate(0, 100)" />
+			<use href="#baseform" class="big" transform="translate(50, 100)" />
+			<use href="#baseform" class="big" transform="translate(75, 125), scale(1, -1)" />
+			<use href="#baseform" class="big" transform="translate(100, 100)" />
+			<use href="#baseform" class="big" transform="translate(75, 125)" />
+			<use href="#baseform" class="big" transform="translate(100, 150), scale(1, -1)" />
+			<use href="#baseform" class="small" transform="translate(50, 150), rotate(90)" />
+			<use href="#baseform" class="small" transform="translate(50, 150), rotate(90), scale(1, -1)" />
+			<use href="#baseform" class="big" transform="translate(100, 150)" />
+			<use href="#baseform" class="big" transform="translate(125, 175), scale(1, -1)" />
+			<use href="#baseform" class="small" transform="translate(0, 200), scale(1, -1)" />
+			<use href="#baseform" class="small" transform="translate(50, 200), scale(1, -1)" />
+			<use href="#baseform" class="big" transform="translate(125, 175)" />
+			<use href="#baseform" class="big" transform="translate(150, 200), scale(1, -1)" />
+			<use href="#baseform" class="small" transform="translate(50, 200)" />
+			<use href="#baseform" class="small" transform="translate(75, 225), scale(1, -1)" />
+			<use href="#baseform" class="big" transform="translate(150, 200)" />
+			<use href="#baseform" class="small" transform="translate(75, 225)" />
+			<use href="#baseform" class="big" transform="translate(200, 200), rotate(90)" />
+		</g>
+		<g name="name" transform="translate(225, 100), scale(25, 25)">
+			<use href="#title" font-size="3"/>
+			<use href="#subject" font-size="1" transform="translate(0, 4.05)"/>
+		</g>
+	</g>
+</svg>
