@@ -179,32 +179,37 @@ body {
     .site-logo {
         flex: 0 1 auto;
         min-width: 0;
-        /* CRITICAL: Allows flex item to shrink below content size */
         flex-shrink: 1;
-        /* Explicitly allow shrinking */
-        overflow: hidden;
-        /* Cut off if absolutely necessary (safety) */
+        /* overflow: hidden;  <-- REMOVED as per request to stop clipping */
         margin-right: auto;
-        max-width: 70%;
-        /* Safety cap */
+        max-width: 85%;
+        /* Relaxed from 70%, but kept to prevent full overlap */
+        padding-right: 10px;
+        /* Give it breathing room */
     }
 
     .site-logo a {
         display: block;
         min-width: 0;
-        /* Pass the shrink down */
         max-width: 100%;
+        width: auto;
+        /* Ensure container adapts */
     }
 
     .logo-img {
-        width: 100%;
-        /* Force it to fill the now-shrinkable container */
+        width: auto;
+        /* Allow natural width up to max-width */
+        max-width: 100%;
+        /* Constraint */
         height: auto;
-        max-width: 180px;
-        /* Realistic max width for mobile */
+        max-height: 100px;
+        /* Still need a cap or it fills screen */
         object-fit: contain;
+        /* CRITICAL: Never crop */
+        object-position: left center;
     }
 }
+
 
 @media (max-width: 480px) {
     .logo-img {
