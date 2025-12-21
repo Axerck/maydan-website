@@ -18,12 +18,18 @@ const { frontmatter } = Astro.props;
             </div>
             <h1 class="activity-title">{frontmatter.title}</h1>
             {
-                frontmatter.cover && (
-                    <img
-                        src={frontmatter.cover}
-                        alt={frontmatter.title}
-                        class="activity-cover"
-                    />
+                frontmatter.cover && !frontmatter.hide_cover && (
+                    <a
+                        href={frontmatter.cover}
+                        download
+                        class="cover-download-link"
+                    >
+                        <img
+                            src={frontmatter.cover}
+                            alt={frontmatter.title}
+                            class="activity-cover"
+                        />
+                    </a>
                 )
             }
         </div>

@@ -1,12 +1,44 @@
 ---
 layout: ../../../layouts/ActivityLayout.astro
-title: "Scrittura, editing e ricerca scientifica"
+title: "Scrittura, editing e divulgazione scientifica: tra metodologia e innovazione."
 date: "2021-03-05"
-description: "Ciclo di seminari sulla scrittura accademica, l’editing e la divulgazione scientifica."
-cover: "/img/attivita/scrittura-editing-ricerca-2021.jpg"
+description: "Ciclo di seminari su scrittura, editing e divulgazione scientifica organizzato con Università L'Orientale e SeSaMO."
+cover: "/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_1.jpeg"
+hide_cover: true
 ---
 
-Il ciclo di seminari, organizzato con le professoresse Daniela Pioppi e Antonia Soriente (Università “L’Orientale”) e con il patrocinio di SeSaMO, è rivolto a studentesse/i e dottorande/i interessati a migliorare la propria scrittura accademica.
+Il ciclo di seminari, organizzato in collaborazione con le professoresse Daniela Pioppi e Antonia Soriente dell’Università degli Studi di Napoli “L’Orientale” e con il patrocinio della Società Italiana di Studi sul Medio Oriente (SeSaMO), si rivolge a studenti e dottorandi.
 
-Gli incontri introducono alle fasi principali dell’editing e forniscono strumenti metodologici per redigere articoli, rassegne bibliografiche e recensioni.  
-Si discutono anche forme di divulgazione scientifica e modalità per rendere più accessibili i risultati della ricerca senza rinunciare alla precisione.
+Il seminario ha l’obiettivo di illustrare le fasi principali dei processi di editing e di fornire gli strumenti metodologici necessari per la redazione di articoli accademici, rassegne bibliografiche e recensioni.
+
+<div class="image-gallery">
+  <a href="/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_1.jpeg" download>
+    <img src="/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_1.jpeg" alt="Locandina Parte 1">
+  </a>
+  <a href="/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_2.jpeg" download>
+    <img src="/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_2.jpeg" alt="Locandina Parte 2">
+  </a>
+</div>
+
+<style>
+  .image-gallery {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .image-gallery img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  @media (max-width: 600px) {
+    .image-gallery {
+      flex-direction: column;
+    }
+    .image-gallery img {
+      width: 100%;
+    }
+  }
+</style>

@@ -1,12 +1,11 @@
 ---
 layout: ../../../layouts/ActivityLayout.astro
-title: "SeSaMO Online Doctoral Workshop 2021"
+title: "Researching the Middle East and North Africa as Doctoral Students: doubts, difficulties, perspectives."
 date: "2021-04-20"
 description: "Tavola rotonda sulle difficoltà della ricerca dottorale su Medio Oriente e Nord Africa."
-cover: "/img/attivita/sesamo-doctoral-workshop-2021.jpg"
+cover: "/img/attivita/sesamo_online_doctoral_workshop.webp"
 ---
 
-La tavola rotonda, rivolta alle/ai dottorande/i e organizzata da Maydan, fa parte dell’Online Doctoral Workshop 2021 promosso da SeSaMO e dal Dipartimento di Scienze Politiche e Sociali dell’Università di Bologna.
+La tavola rotonda, rivolta ai dottorandi e organizzata da Maydan, è parte dell’Online Doctoral Workshop 2021 promosso da SeSaMO e dal dipartimento di Scienze Politiche e Sociali dell’Università di Bologna.
 
-L’attività crea uno spazio di confronto sui problemi più ricorrenti che emergono durante il dottorato: ostacoli di ricerca, difficoltà logistiche e istituzionali, isolamento accademico, gestione del tempo e delle aspettative.  
-Attraverso il dialogo tra dottorande/i e studiose/i più avanzati si discutono possibili strategie per affrontare questi nodi.
+L’attività mira a creare uno spazio di riflessione riguardo le maggiori difficoltà affrontate dai dottorandi durante il loro percorso di ricerca e a proporre possibili soluzioni.
