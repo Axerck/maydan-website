@@ -1,60 +1,68 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import { currentBoard, pastBoards } from '../../../data/structure';
-import { teamMembers } from '../../../data/team';
+import Layout from "../../../layouts/Layout.astro";
+import { currentBoard, pastBoards } from "../../../data/structure";
+import { teamMembers } from "../../../data/team";
 
-// Mapping for group titles (IT -> EN)
-const groupTitleMap: Record<string, string> = {
+// Mapping Italian titles to English
+const roleTranslations: Record<string, string> = {
   "Direttore responsabile": "Editor-in-Chief",
-  "Direttrice responsabile": "Editor-in-Chief",
-  "Vicedirettrice": "Deputy Editor",
-  "Vicedirettore": "Deputy Editor",
-  "Caporedattrice": "Managing Editor",
-  "Caporedattore": "Managing Editor",
-  "Redazione": "Editorial Board",
-  "Tesoriere": "Treasurer",
-  "Tirocinanti": "Interns",
-  "Collaboratori": "Collaborators",
-  "Comitato Scientifico": "Scientific Committee"
+  Vicedirettrice: "Deputy Editor",
+  Vicedirettore: "Deputy Editor",
+  Caporedattrice: "Managing Editor",
+  Redazione: "Editorial Board",
+  Tesoriere: "Treasurer",
+  Tirocinanti: "Interns",
+  Collaboratori: "Collaborators",
+  Collaboratrici: "Collaborators",
 };
 
-function translateTitle(title: string) {
-    return groupTitleMap[title] || title;
-}
+const translateTitle = (title: string) => roleTranslations[title] || title;
 ---
 
-<Layout title="Editorial Board - Rivista Maydan">
+<Layout title="Editorial Board - Maydan Journal">
+  {
+    currentBoard.map((group) => (
+      <section class="committee-section">
+        <h2>{translateTitle(group.title)}</h2>
+        <ul>
+          {group.members.map((memberStruct) => {
+            const memberData = teamMembers.find(
+              (m) => m.slug === memberStruct.slug,
+            );
+            if (!memberData) return null;
 
-  {currentBoard.map((group) => (
-    <section class="committee-section">
-      <h2>{translateTitle(group.title)}</h2>
-      <ul>
-        {group.members.map((memberStruct) => {
-          const memberData = teamMembers.find(m => m.slug === memberStruct.slug);
-          if (!memberData) return null; 
-
-          return (
-            <li>
-              <strong>
-                <a href={`/en/comitato-editoriale/${memberData.slug}`}>{memberData.name}</a>
-              </strong>
-              {memberData.affiliation && ` – `}
-              {memberData.affiliation && <em>{memberData.affiliation}</em>}
-            </li>
-          );
-        })}
-      </ul>
-      <hr />
-    </section>
-  ))}
+            return (
+              <li>
+                <strong>
+                  <a href={`/en/comitato-editoriale/${memberData.slug}`}>
+                    {memberData.name}
+                  </a>
+                </strong>
+                {memberData.affiliation && ` – `}
+                {memberData.affiliation && <em>{memberData.affiliation}</em>}
+              </li>
+            );
+          })}
+        </ul>
+        <hr />
+      </section>
+    ))
+  }
 
   <section class="committee-section">
     <h2>Past Editorial Boards</h2>
     <ul>
-      {pastBoards.map((board) => (
-         <li><strong><a href={`/en/comitato-editoriale/archivio/${board.year}`}>{board.year} Editorial Board</a></strong></li>
-      ))}
+      {
+        pastBoards.map((board) => (
+          <li>
+            <strong>
+              <a href={`/en/comitato-editoriale/archivio/${board.year}`}>
+                {board.year} Editorial Board
+              </a>
+            </strong>
+          </li>
+        ))
+      }
     </ul>
   </section>
-  
 </Layout>

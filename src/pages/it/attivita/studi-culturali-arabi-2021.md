@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Studi culturali arabi e ricerca sul campo"
 date: "2021-11-16"
 description: "Tavola rotonda su metodologia, etica e sicurezza nella ricerca sul campo negli studi culturali arabi."

@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Ricerca e prospettive lavorative"
 date: "2021-01-21"
 description: "Seminario sulle opportunità professionali per giovani studiosi del Medio Oriente in Italia e all’estero."

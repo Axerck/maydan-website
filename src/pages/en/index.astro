@@ -1,73 +1,75 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Maydan – Journal on Arab, Semitic, and Islamic Worlds">
-    <!-- Sezione Call for Papers / Hero -->
-    <section class="hero" id="call-linee-guida">
-      <div class="hero-inner">
-        <!-- <h1>Call for Papers</h1> -->
-        <h2>Call for Papers</h2>
-        <p>
-          Maydan is the first Italian journal of studies on Arab, Semitic, and Islamic worlds,
-          directed by young scholars.
-        </p>
-        <a href="/en/call-e-linee-guida/vol-4" class="btn-primary">Read the full Call</a>
+<Layout title="Maydan – Journal of Arab, Semitic and Islamic Worlds">
+  <!-- Call for Papers / Hero Section -->
+  <section class="hero" id="call-linee-guida">
+    <div class="hero-inner">
+      <!-- <h1>Call for Papers</h1> -->
+      <h2>Call for Papers</h2>
+      <p>
+        Maydan is the first Italian journal of Arab, Semitic, and Islamic
+        studies managed by young scholars.
+      </p>
+      <a href="/call-e-linee-guida" class="btn-primary">Read the full Call</a>
+    </div>
+  </section>
+
+  <!-- Main Blocks -->
+  <section class="home-grid">
+    <!-- Latest Issue -->
+    <article class="home-card" id="numeri">
+      <h2>Maydan vol. 4, 2025</h2>
+      <div class="card-images">
+        <img
+          src="/img/copertina4_compressed_page-0001-1.jpg"
+          alt="Vol 4 Cover"
+        />
       </div>
-    </section>
+      <p>
+        Issue dedicated to new perspectives on Arab, Semitic, and Islamic
+        studies.
+      </p>
+      <a href="/pubblicazioni/vol-4" class="card-link">Go to Issue &rarr;</a>
+    </article>
 
-    <!-- Blocchi principali -->
-    <section class="home-grid">
-
-      <!-- Ultimo numero -->
-      <article class="home-card" id="numeri">
-        <h2>Maydan Vol. 4, 2025</h2>
-        <div class="card-images">
-          <div class="image-placeholder">Cover 1</div>
-          <div class="image-placeholder">Cover 2</div>
-        </div>
-        <p>
-          Issue dedicated to new perspectives on studies of Arab, Semitic, and Islamic worlds.
-        </p>
-        <a href="/en/pubblicazioni/vol-4" class="card-link">Go to issue &rarr;</a>
-      </article>
-
-      <!-- Comunicato -->
-      <article class="home-card">
-        <h2>Editorial Board Statement</h2>
-        <p>
-          Statement on the decolonization of knowledge and colonial violence.
-        </p>
-        <a href="#" class="card-link">Read the statement &rarr;</a>
-      </article>
-
-      <!-- Altre attività -->
-      <section class="home-card" id="attivita">
-        <h2>Activities</h2>
-        <ul class="activity-list">
-          <li>Maydan and SeSaMO Study Days</li>
-          <li>Seminars and online training</li>
-          <li>Annual Call for Papers</li>
-        </ul>
-        <a href="/en/attivita" class="card-link">Discover all activities &rarr;</a>
-      </section>
-
-    </section>
-
-    <!-- Collaborazioni -->
-    <section class="collaborazioni">
-      <h2>Maydan collaborates with:</h2>
-      <div class="collab-logos">
-        <div class="logo-placeholder">Logo 1</div>
-        <div class="logo-placeholder">Logo 2</div>
-        <div class="logo-placeholder">Logo 3</div>
-        <div class="logo-placeholder">Logo 4</div>
+    <!-- Editorial Board Statement -->
+    <article class="home-card">
+      <div class="card-images">
+        <img src="/img/melone_comunicato.jpg" alt="Maydan Statement" />
       </div>
+      <h2>Editorial Board Statement</h2>
+      <p>Statement on the decolonization of knowledge and colonial violence.</p>
+      <a href="/it/comunicato" class="card-link">Read the statement &rarr;</a>
+    </article>
 
-      <div class="social-links">
-        <span>Follow us on:</span>
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
-      </div>
+    <!-- Other Activities -->
+    <section class="home-card" id="attivita">
+      <h2>Activities</h2>
+      <ul class="activity-list">
+        <li>Maydan and SeSaMO Study Days</li>
+        <li>Online Seminars and Training</li>
+        <li>Annual Call for Papers</li>
+      </ul>
+      <a href="/attivita" class="card-link">Discover all activities &rarr;</a>
     </section>
+  </section>
+
+  <!-- Collaborations -->
+  <section class="collaborazioni">
+    <h2>Maydan collaborates with:</h2>
+    <div class="collab-logos">
+      <div class="logo-placeholder">Logo 1</div>
+      <div class="logo-placeholder">Logo 2</div>
+      <div class="logo-placeholder">Logo 3</div>
+      <div class="logo-placeholder">Logo 4</div>
+    </div>
+
+    <div class="social-links">
+      <span>Follow us on:</span>
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,117 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`${frontmatter.title} | Attività`}>
+    <div class="activity-container">
+        <div class="activity-header">
+            <div class="activity-date">
+                {
+                    new Date(frontmatter.date).toLocaleDateString("it-IT", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })
+                }
+            </div>
+            <h1 class="activity-title">{frontmatter.title}</h1>
+            {
+                frontmatter.cover && (
+                    <img
+                        src={frontmatter.cover}
+                        alt={frontmatter.title}
+                        class="activity-cover"
+                    />
+                )
+            }
+        </div>
+
+        <div class="activity-content">
+            <slot />
+        </div>
+
+        <div class="activity-footer">
+            <a href="/it/attivita" class="back-link">← Torna alle attività</a>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .activity-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .activity-header {
+        margin-bottom: 3rem;
+        text-align: left;
+    }
+
+    .activity-date {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+        font-family: var(--font-sans, sans-serif);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .activity-title {
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+
+    .activity-cover {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-top: 1.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .activity-content {
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #222;
+        margin-bottom: 4rem;
+    }
+
+    .activity-content :global(h2) {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .activity-content :global(p) {
+        margin-bottom: 1.5rem;
+    }
+
+    .activity-content :global(a) {
+        color: var(--primary-color, #0056b3);
+        text-decoration: underline;
+    }
+
+    .activity-footer {
+        border-top: 1px solid #eee;
+        padding-top: 2rem;
+    }
+
+    .back-link {
+        font-family: var(--font-sans, sans-serif);
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: #000;
+    }
+</style>

@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Scrittura, editing e ricerca scientifica"
 date: "2021-03-05"
 description: "Ciclo di seminari sulla scrittura accademica, l’editing e la divulgazione scientifica."

@@ -1,20 +1,19 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Mail, MapPin } from 'lucide-react';
+import Layout from "../../layouts/Layout.astro";
+import { Mail, MapPin } from "lucide-react";
 ---
 
-<Layout title="Contatti | Rivista Maydan">
-	
+<Layout title="Contacts | Maydan Journal">
 	<div class="home-grid">
 		<div class="home-card">
-			<h3>Redazione</h3>
+			<h3>Editorial Office</h3>
 			<address>
 				<p>
 					<MapPin className="inline-icon" size={18} />
-					Dipartimento di Lingue<br />
+					Department of Languages<br />
 					Via Verdi, 10<br />
-					10124 Torino (TO)<br />
-					Italia
+					10124 Turin (TO)<br />
+					Italy
 				</p>
 				<p>
 					<Mail className="inline-icon" size={18} />
@@ -22,29 +21,44 @@ import { Mail, MapPin } from 'lucide-react';
 				</p>
 			</address>
 		</div>
-		
+
 		<div class="home-card">
-			<h3>Invia un messaggio</h3>
+			<h3>Send a message</h3>
 			<form>
 				<label for="name">
-					Nome
-					<input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+					Name
+					<input
+						type="text"
+						id="name"
+						name="name"
+						placeholder="Your name"
+						required
+					/>
 				</label>
 
 				<label for="email">
 					Email
-					<input type="email" id="email" name="email" placeholder="La tua email" required>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Your email"
+						required
+					/>
 				</label>
 
 				<label for="message">
-					Messaggio
-					<textarea id="message" name="message" placeholder="Scrivi qui il tuo messaggio" rows="5" required></textarea>
+					Message
+					<textarea
+						id="message"
+						name="message"
+						placeholder="Write your message here"
+						rows="5"
+						required></textarea>
 				</label>
 
-				<button type="submit">Invia</button>
+				<button type="submit">Send</button>
 			</form>
 		</div>
 	</div>
 </Layout>
-
-

@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Prospettive lavorative per chi studia il Medio Oriente"
 date: "2021-03-26"
 description: "Seminario su sbocchi professionali per chi si occupa di Medio Oriente: media, cooperazione, sicurezza."

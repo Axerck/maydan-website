@@ -1,54 +1,83 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import { teamMembers } from '../../../data/team';
+import Layout from "../../../layouts/Layout.astro";
+import { teamMembers } from "../../../data/team";
 
 export function getStaticPaths() {
-  return teamMembers.map(member => ({
+  return teamMembers.map((member) => ({
     params: { slug: member.slug },
     props: { member },
   }));
 }
 
 const { member } = Astro.props;
+
+// Mapping role for display if needed, though structure.ts handles the main grouping.
+// For individual profile, we can display the existing Italian role or map it again.
+// Let's use the translation map again for consistency.
+const roleTranslations: Record<string, string> = {
+  "Direttore responsabile": "Editor-in-Chief",
+  Vicedirettrice: "Deputy Editor",
+  Vicedirettore: "Deputy Editor",
+  Caporedattrice: "Managing Editor",
+  Redazione: "Editorial Board",
+  Tesoriere: "Treasurer",
+  Tirocinanti: "Interns",
+  Collaboratori: "Collaborators",
+  Collaboratrici: "Collaborators",
+  Archivio: "Archive",
+};
+
+const displayRole = roleTranslations[member.role] || member.role;
 ---
 
-<Layout title={`${member.name} | Rivista Maydan`}>
+<Layout title={`${member.name} | Maydan Journal`}>
   <div class="member-profile">
     <h1>{member.name}</h1>
-    
-    <p class="member-role"><strong>{member.role}</strong></p>
+
+    <p class="member-role"><strong>{displayRole}</strong></p>
     <p class="member-affiliation"><em>{member.affiliation}</em></p>
-    
+
     <hr />
-    
+
     <div class="profile-layout">
-        {member.image && (
-            <div class="member-image-container">
-                <img src={member.image} alt={member.name} class="member-image" />
-            </div>
-        )}
-        
-        <div class="member-bio">
-            {member.bio ? <p>{member.bio}</p> : <p>Biography coming soon...</p>}
-            
-            {member.personalLink && (
-                <p>
-                More info: <a href={member.personalLink} target="_blank" rel="noopener noreferrer"><strong>{member.personalLink}</strong></a>
-                </p>
-            )}
-            
-            {member.email && (
-                <p>
-                E-mail: <a href={`mailto:${member.email}`}>{member.email}</a>
-                </p>
-            )}
-        </div>
+      {
+        member.image && (
+          <div class="member-image-container">
+            <img src={member.image} alt={member.name} class="member-image" />
+          </div>
+        )
+      }
+
+      <div class="member-bio">
+        {member.bio ? <p>{member.bio}</p> : <p>Bio update in progress...</p>}
+
+        {
+          member.personalLink && (
+            <p>
+              For more info:{" "}
+              <a
+                href={member.personalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <strong>{member.personalLink}</strong>
+              </a>
+            </p>
+          )
+        }
+
+        {
+          member.email && (
+            <p>
+              E-mail: <a href={`mailto:${member.email}`}>{member.email}</a>
+            </p>
+          )
+        }
+      </div>
     </div>
-    
+
     <div class="back-link">
-      <a href="/en/comitato-editoriale">← Back to Editorial Committee</a>
+      <a href="/en/comitato-editoriale">← Back to Editorial Board</a>
     </div>
   </div>
-
-
 </Layout>

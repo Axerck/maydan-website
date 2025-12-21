@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Decolonizing Research and the Fieldwork"
 date: "2022-04-27"
 description: "Incontro dedicato alla decolonizzazione delle pratiche di ricerca e del lavoro sul campo."

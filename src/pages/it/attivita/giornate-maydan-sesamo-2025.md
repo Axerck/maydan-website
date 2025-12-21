@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Le giornate di studio di Maydan e SeSaMO – seconda edizione"
 date: "2025-02-12"
 description: "Terza edizione in presenza delle giornate di studio Maydan–SeSaMO dedicate ai mondi arabi, semitici e islamici."

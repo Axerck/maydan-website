@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "SeSaMO Online Doctoral Workshop 2021"
 date: "2021-04-20"
 description: "Tavola rotonda sulle difficoltà della ricerca dottorale su Medio Oriente e Nord Africa."

@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Le giornate di studio di Maydan e SeSaMO"
 date: "2023-09-29"
 description: "Secondo evento in presenza di Maydan e SeSaMO dedicato alla ricerca sui mondi arabi, semitici e islamici."

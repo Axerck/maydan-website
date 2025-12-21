@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Le giornate di studio di Maydan"
 date: "2023-02-09"
 description: "Primo evento in presenza di Maydan dedicato a riflessioni sui mondi arabi, semitici e islamici."
