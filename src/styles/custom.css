@@ -261,15 +261,18 @@ body {
     display: flex;
     gap: .75rem;
     margin-bottom: .75rem;
-    justify-content: center; /* Center image */
+    justify-content: center;
+    /* Center image */
 }
 
 .card-images img {
     max-width: 100%;
     height: auto;
-    max-height: 250px; /* Limit height to prevent taking too much space */
+    max-height: 250px;
+    /* Limit height to prevent taking too much space */
     border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Add subtle shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add subtle shadow */
 }
 
 .image-placeholder {
@@ -359,9 +362,34 @@ body {
 .footer-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 1rem 1.5rem 2rem;
+    padding: 2rem 1.5rem;
     font-size: .85rem;
     color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.footer-inner .social-links {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-inner .social-icon {
+    color: #444;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.footer-inner .social-icon:hover {
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.footer-inner p {
+    margin: 0;
 }
 
 

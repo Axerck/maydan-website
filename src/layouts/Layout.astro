@@ -1,6 +1,7 @@
 ---
 import "../styles/custom.css";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { Instagram, Facebook } from "lucide-react";
 
 interface Props {
 	title?: string;
@@ -136,6 +137,24 @@ const switchLang = (targetLang: string) => {
 		<!-- FOOTER -->
 		<footer class="site-footer">
 			<div class="footer-inner">
+				<div class="social-links">
+					<a
+						href="https://www.instagram.com/rivistamaydan/"
+						target="_blank"
+						aria-label="Instagram"
+						class="social-icon"
+					>
+						<Instagram size={24} />
+					</a>
+					<a
+						href="https://www.facebook.com/RivistaMaydan"
+						target="_blank"
+						aria-label="Facebook"
+						class="social-icon"
+					>
+						<Facebook size={24} />
+					</a>
+				</div>
 				<p>
 					Editore: Antonio Pacifico, Piazza Nazionale 54, 80143,
 					Napoli
