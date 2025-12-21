@@ -1,50 +1,105 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Mail, MapPin } from 'lucide-react';
+import Layout from "../../layouts/Layout.astro";
+const title = "Contatti | Rivista Maydan";
 ---
 
 <Layout title="Contatti | Rivista Maydan">
-	
-	<div class="home-grid">
-		<div class="home-card">
-			<h3>Redazione</h3>
-			<address>
-				<p>
-					<MapPin className="inline-icon" size={18} />
-					Dipartimento di Lingue<br />
-					Via Verdi, 10<br />
-					10124 Torino (TO)<br />
-					Italia
-				</p>
-				<p>
-					<Mail className="inline-icon" size={18} />
-					<a href="mailto:info@maydan.it">info@maydan.it</a>
-				</p>
-			</address>
+	<div class="contacts-container">
+		<h1>Contatti</h1>
+
+		<div class="contact-section">
+			<h2>Proposte e Contributi</h2>
+			<p>Per l’invio delle proposte e dei contributi:</p>
+			<a href="mailto:submission.rivista@maydan.it" class="email-link"
+				>submission.rivista@maydan.it</a
+			>
 		</div>
-		
-		<div class="home-card">
-			<h3>Invia un messaggio</h3>
-			<form>
-				<label for="name">
-					Nome
-					<input type="text" id="name" name="name" placeholder="Il tuo nome" required>
-				</label>
 
-				<label for="email">
-					Email
-					<input type="email" id="email" name="email" placeholder="La tua email" required>
-				</label>
+		<div class="contact-section">
+			<h2>Reclami</h2>
+			<p>Per eventuali reclami:</p>
+			<a href="mailto:direzione.rivista@maydan.it" class="email-link"
+				>direzione.rivista@maydan.it</a
+			>
+		</div>
 
-				<label for="message">
-					Messaggio
-					<textarea id="message" name="message" placeholder="Scrivi qui il tuo messaggio" rows="5" required></textarea>
-				</label>
+		<div class="contact-section newsletter-section">
+			<h2>Newsletter</h2>
+			<p>
+				Iscriviti alla nostra Newsletter per essere sempre aggiornato
+				sulle nostre iniziative
+			</p>
+			<!-- Placeholder for newsletter form if needed later, for now just text as requested -->
+		</div>
 
-				<button type="submit">Invia</button>
-			</form>
+		<div class="contact-section info-section">
+			<h2>Collabora con noi</h2>
+			<p>
+				Hai suggerimenti per Maydan? Vuoi unirti al comitato editoriale?
+				Vuoi proporci delle attività?
+			</p>
+			<p>
+				Scrivi a <a href="mailto:direzione.rivista@maydan.it"
+					>direzione.rivista@maydan.it</a
+				> oppure a <a href="mailto:submission.rivista@maydan.it"
+					>submission.rivista@maydan.it</a
+				>!
+			</p>
 		</div>
 	</div>
+
+	<style>
+		.contacts-container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 2rem 1rem;
+		}
+
+		h1 {
+			font-family: var(--font-serif, serif);
+			font-size: 2.5rem;
+			margin-bottom: 3rem;
+			color: #1a1a1a;
+			text-align: center;
+		}
+
+		.contact-section {
+			margin-bottom: 3rem;
+			padding: 2rem;
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+			text-align: center;
+		}
+
+		.contact-section h2 {
+			font-family: var(--font-sans, sans-serif);
+			font-size: 1.5rem;
+			color: #444;
+			margin-bottom: 1rem;
+		}
+
+		.email-link {
+			display: inline-block;
+			margin-top: 0.5rem;
+			font-size: 1.2rem;
+			color: var(--color-primary, #0056b3);
+			text-decoration: none;
+			font-weight: 500;
+		}
+
+		.email-link:hover {
+			text-decoration: underline;
+		}
+
+		.info-section p {
+			margin-bottom: 0.5rem;
+			line-height: 1.6;
+		}
+
+		.newsletter-section {
+			background-color: #f8f9fa;
+			border: 1px solid #e9ecef;
+		}
+	</style>
 </Layout>
-
-
