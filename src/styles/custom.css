@@ -151,12 +151,20 @@ body {
 .logo-img {
     height: 150px;
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
     transition: height 0.1s ease-out;
 }
 
 .site-header.is-scrolled .logo-img {
     height: 50px;
     /* Smaller logo on scroll */
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 100px;
+    }
 }
 
 /* NAV */
