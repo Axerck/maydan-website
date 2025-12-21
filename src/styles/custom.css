@@ -166,11 +166,9 @@ body {
 
     /* Increase space/reduce size slightly to prevent cutoff */
     .logo-img {
-        max-height: 80px;
-        /* Slightly smaller height to help width */
-        max-width: calc(100% - 110px);
-        /* Explicitly leave room for lang switch */
-        margin-right: 0;
+        max-height: 90px;
+        margin-right: 10px;
+        /* Add a little "space" if needed on right */
     }
 }
 
