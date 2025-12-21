@@ -148,27 +148,44 @@ body {
     justify-content: center;
 }
 
+/* Logo Fluid Image */
 .logo-img {
     height: auto;
-    max-height: 150px;
     width: auto;
+    /* Default for desktop */
+    max-height: 150px;
+    /* Cap desktop height */
     max-width: 100%;
+    /* Fluidity */
     object-fit: contain;
-    transition: max-height 0.1s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .site-header.is-scrolled .logo-img {
     max-height: 50px;
-    /* Smaller logo on scroll */
+}
+
+/* Mobile specific adjustments to Logo and Header Padding */
+@media (max-width: 768px) {
+    .header-main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        /* Reduce side padding for more room */
+    }
+
+    .site-logo {
+        max-width: 75%;
+        /* Force container to leave space */
+        /* This effectively prevents the logo from exceeding 75% of screens width */
+    }
 }
 
 @media (max-width: 480px) {
-
-    /* Increase space/reduce size slightly to prevent cutoff */
     .logo-img {
-        max-height: 90px;
-        margin-right: 10px;
-        /* Add a little "space" if needed on right */
+        /* Remove fixed pixel height restriction if relying on width, 
+            or keep a sane max to prevent huge logos on landscape phones. 
+            Let's rely on width, but keep a safety max-height. */
+        max-height: 100px;
     }
 }
 
