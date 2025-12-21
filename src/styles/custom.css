@@ -149,21 +149,26 @@ body {
 }
 
 .logo-img {
-    height: 150px;
+    height: auto;
+    max-height: 150px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
-    transition: height 0.1s ease-out;
+    transition: max-height 0.1s ease-out;
 }
 
 .site-header.is-scrolled .logo-img {
-    height: 50px;
+    max-height: 50px;
     /* Smaller logo on scroll */
 }
 
 @media (max-width: 480px) {
+
+    /* Increase space/reduce size slightly to prevent cutoff */
     .logo-img {
-        height: 100px;
+        max-height: 90px;
+        margin-right: 10px;
+        /* Add a little "space" if needed on right */
     }
 }
 
