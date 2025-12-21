@@ -191,10 +191,11 @@ body {
 
     .logo-img {
         height: auto;
-        width: 100%;
-        /* Fill the constrained container */
-        max-height: 100px;
-        /* Cap height */
+        width: auto;
+        /* Let aspect ratio consume width naturally */
+        max-height: 70px;
+        /* significantly smaller to ensure fit */
+        max-width: 100%;
     }
 }
 
