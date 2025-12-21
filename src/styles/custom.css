@@ -171,31 +171,38 @@ body {
 @media (max-width: 768px) {
     .header-main {
         flex-wrap: nowrap;
-        /* Prevent unwanted wrapping if possible, or control it */
+        /* Prevent unwanted wrapping */
         padding-left: 1rem;
         padding-right: 1rem;
-        /* Reduce side padding for more room */
     }
 
     .site-logo {
         flex: 0 1 auto;
-        /* Allow shrinking */
         min-width: 0;
         /* CRITICAL: Allows flex item to shrink below content size */
+        flex-shrink: 1;
+        /* Explicitly allow shrinking */
+        overflow: hidden;
+        /* Cut off if absolutely necessary (safety) */
         margin-right: auto;
         max-width: 70%;
         /* Safety cap */
-        /* Force container to leave space */
-        /* This effectively prevents the logo from exceeding 75% of screens width */
+    }
+
+    .site-logo a {
+        display: block;
+        min-width: 0;
+        /* Pass the shrink down */
+        max-width: 100%;
     }
 
     .logo-img {
+        width: 100%;
+        /* Force it to fill the now-shrinkable container */
         height: auto;
-        width: auto;
-        /* Let aspect ratio consume width naturally */
-        max-height: 70px;
-        /* significantly smaller to ensure fit */
-        max-width: 100%;
+        max-width: 180px;
+        /* Realistic max width for mobile */
+        object-fit: contain;
     }
 }
 
