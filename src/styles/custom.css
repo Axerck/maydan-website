@@ -366,16 +366,25 @@ body {
     font-size: .85rem;
     color: #666;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Align bottom or center? Usually center looks better, but text blocks... let's try flex-end or center */
     align-items: center;
-    text-align: center;
-    gap: 0.5rem;
+    gap: 2rem;
+}
+
+.footer-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .footer-inner .social-links {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .footer-inner .social-icon {
@@ -392,13 +401,22 @@ body {
     margin: 0;
 }
 
-
-
-/* Responsive */
-
 @media (max-width: 768px) {
     .header-inner {
         flex-wrap: wrap;
+    }
+
+    .footer-inner {
+        flex-direction: column-reverse;
+        /* Socials on top or bottom? Usually socials on bottom is fine, or top. User didn't specify mobile. Let's stack naturally text top, socials bottom, or social top text bottom. Let's do Standard stack: Text top, Social bottom */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .footer-inner .social-links {
+        align-self: flex-start;
     }
 
     .main-nav {
