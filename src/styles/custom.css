@@ -150,14 +150,16 @@ body {
 
 /* Logo Fluid Image */
 .logo-img {
-    height: auto;
+    display: block;
+    /* Remove inline spacing issues */
     width: auto;
-    /* Default for desktop */
+    height: auto;
     max-height: 150px;
-    /* Cap desktop height */
     max-width: 100%;
-    /* Fluidity */
     object-fit: contain;
+    /* Ensure it fits */
+    object-position: left center;
+    /* Anchor to left */
     transition: all 0.2s ease-out;
 }
 
@@ -168,15 +170,31 @@ body {
 /* Mobile specific adjustments to Logo and Header Padding */
 @media (max-width: 768px) {
     .header-main {
+        flex-wrap: nowrap;
+        /* Prevent unwanted wrapping if possible, or control it */
         padding-left: 1rem;
         padding-right: 1rem;
         /* Reduce side padding for more room */
     }
 
     .site-logo {
-        max-width: 75%;
+        flex: 0 1 auto;
+        /* Allow shrinking */
+        min-width: 0;
+        /* CRITICAL: Allows flex item to shrink below content size */
+        margin-right: auto;
+        max-width: 70%;
+        /* Safety cap */
         /* Force container to leave space */
         /* This effectively prevents the logo from exceeding 75% of screens width */
+    }
+
+    .logo-img {
+        height: auto;
+        width: 100%;
+        /* Fill the constrained container */
+        max-height: 100px;
+        /* Cap height */
     }
 }
 
