@@ -1,9 +1,9 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Maydan Study Days"
 date: "2023-02-09"
 description: "First in-person event by Maydan dedicated to reflections on Arab, Semitic, and Islamic worlds."
-cover: "/img/attivita/giornate-maydan-2023.jpg"
+cover: "/img/attivita/locandina_giornate di studio di maydan.webp"
 ---
 
 The Maydan study days, organized in collaboration with SeSaMO, the Department of Cultures, Politics and Society of the University of Turin, and the University of Bologna, are the first in-person event promoted by the journal.

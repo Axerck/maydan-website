@@ -2,14 +2,20 @@
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
+const locale = Astro.currentLocale || "it";
+const isEn = locale === "en";
+
+const dateFormat = isEn ? "en-GB" : "it-IT";
+const backLinkText = isEn ? "← Back to activities" : "← Torna alle attività";
+const backLinkUrl = isEn ? "/en/attivita" : "/it/attivita";
 ---
 
-<Layout title={`${frontmatter.title} | Attività`}>
+<Layout title={`${frontmatter.title} | ${isEn ? "Activities" : "Attività"}`}>
     <div class="activity-container">
         <div class="activity-header">
             <div class="activity-date">
                 {
-                    new Date(frontmatter.date).toLocaleDateString("it-IT", {
+                    new Date(frontmatter.date).toLocaleDateString(dateFormat, {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
@@ -39,7 +45,7 @@ const { frontmatter } = Astro.props;
         </div>
 
         <div class="activity-footer">
-            <a href="/it/attivita" class="back-link">← Torna alle attività</a>
+            <a href={backLinkUrl} class="back-link">{backLinkText}</a>
         </div>
     </div>
 </Layout>

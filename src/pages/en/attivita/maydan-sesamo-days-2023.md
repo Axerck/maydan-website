@@ -1,9 +1,9 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Maydan and SeSaMO Study Days"
 date: "2023-09-29"
 description: "Second in-person event by Maydan and SeSaMO dedicated to research on Arab, Semitic, and Islamic worlds."
-cover: "/img/attivita/giornate-maydan-sesamo-2023.jpg"
+cover: "/img/attivita/locandina_giornate di studio di maydan e sesamo_prima edizione.png"
 ---
 
 The Maydan and SeSaMO study days, organized together with the Italian Society for Middle Eastern Studies and the ISO Department of Sapienza University of Rome, represent the second in-person appointment promoted by the journal.

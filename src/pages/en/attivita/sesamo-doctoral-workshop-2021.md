@@ -1,9 +1,9 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "SeSaMO Online Doctoral Workshop 2021"
 date: "2021-04-20"
 description: "Roundtable on the difficulties of doctoral research on the Middle East and North Africa."
-cover: "/img/attivita/sesamo-doctoral-workshop-2021.jpg"
+cover: "/img/attivita/sesamo_online_doctoral_workshop.webp"
 ---
 
 The roundtable, aimed at PhD students and organized by Maydan, is part of the Online Doctoral Workshop 2021 promoted by SeSaMO and the Department of Political and Social Sciences of the University of Bologna.

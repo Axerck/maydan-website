@@ -1,9 +1,9 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Research and Career Perspectives"
 date: "2021-01-21"
 description: "Seminar on professional opportunities for young scholars of the Middle East in Italy and abroad."
-cover: "/img/attivita/ricerca-e-prospettive-lavorative-2021.jpg"
+cover: "/img/attivita/richeca e prospettive lavorative.jpg"
 ---
 
 The seminar, organized in collaboration with Professor Matteo Legrenzi (Ca’ Foscari University of Venice), is primarily aimed at PhD students and master's graduates dealing with the Middle East.

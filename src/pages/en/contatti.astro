@@ -1,64 +1,243 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, FileText, AlertCircle, Users, Newspaper } from "lucide-react";
+
+const title = "Contacts | Maydan Journal";
 ---
 
-<Layout title="Contacts | Maydan Journal">
-	<div class="home-grid">
-		<div class="home-card">
-			<h3>Editorial Office</h3>
-			<address>
-				<p>
-					<MapPin className="inline-icon" size={18} />
-					Department of Languages<br />
-					Via Verdi, 10<br />
-					10124 Turin (TO)<br />
-					Italy
-				</p>
-				<p>
-					<Mail className="inline-icon" size={18} />
-					<a href="mailto:info@maydan.it">info@maydan.it</a>
-				</p>
-			</address>
-		</div>
+<Layout title={title}>
+	<div class="contacts-container">
+		<header class="contacts-header"></header>
 
-		<div class="home-card">
-			<h3>Send a message</h3>
-			<form>
-				<label for="name">
-					Name
-					<input
-						type="text"
-						id="name"
-						name="name"
-						placeholder="Your name"
-						required
-					/>
-				</label>
+		<div class="contacts-grid">
+			<!-- Proposals and Contributions -->
+			<div class="contact-card primary">
+				<div class="icon-wrapper">
+					<FileText size={32} />
+				</div>
+				<h2>Proposals and Contributions</h2>
+				<p>For the submission of proposals and contributions:</p>
+				<a
+					href="mailto:submission.rivista@maydan.it"
+					class="email-link"
+				>
+					submission.rivista@maydan.it
+				</a>
+			</div>
 
-				<label for="email">
-					Email
-					<input
-						type="email"
-						id="email"
-						name="email"
-						placeholder="Your email"
-						required
-					/>
-				</label>
+			<!-- Complaints -->
+			<div class="contact-card secondary">
+				<div class="icon-wrapper">
+					<AlertCircle size={32} />
+				</div>
+				<h2>Complaints</h2>
+				<p>For any complaints:</p>
+				<a href="mailto:direzione.rivista@maydan.it" class="email-link">
+					direzione.rivista@maydan.it
+				</a>
+			</div>
 
-				<label for="message">
-					Message
-					<textarea
-						id="message"
-						name="message"
-						placeholder="Write your message here"
-						rows="5"
-						required></textarea>
-				</label>
+			<!-- Collaborate -->
+			<div class="contact-card info full-width">
+				<div class="icon-wrapper">
+					<Users size={32} />
+				</div>
+				<div class="content">
+					<h2>Collaborate with us</h2>
+					<p>
+						Do you have suggestions for Maydan? Do you want to join
+						the editorial board? Do you want to propose activities?
+					</p>
+					<p class="email-row">
+						Write to <a href="mailto:info@maydan.it"
+							>info@maydan.it</a
+						>, to
+						<a href="mailto:direzione.rivista@maydan.it"
+							>direzione.rivista@maydan.it</a
+						>
+						or to <a href="mailto:submission.rivista@maydan.it"
+							>submission.rivista@maydan.it</a
+						>!
+					</p>
+				</div>
+			</div>
 
-				<button type="submit">Send</button>
-			</form>
+			<!-- Newsletter -->
+			<div class="contact-card newsletter full-width">
+				<div class="icon-wrapper">
+					<Newspaper size={32} />
+				</div>
+				<div class="content">
+					<h2>Newsletter</h2>
+					<p>
+						Subscribe to our Newsletter to stay updated on our
+						initiatives.
+					</p>
+					<a
+						href="http://eepurl.com/ho92En"
+						target="_blank"
+						class="cta-button"
+					>
+						Subscribe here
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
+
+	<style>
+		.contacts-container {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 4rem 1.5rem;
+		}
+
+		.contacts-header {
+			text-align: center;
+			margin-bottom: 4rem;
+		}
+
+		h1 {
+			font-family: var(--font-serif, serif);
+			font-size: 3rem;
+			color: #1a1a1a;
+			margin-bottom: 1rem;
+		}
+
+		.subtitle {
+			font-size: 1.25rem;
+			color: #666;
+			font-weight: 300;
+		}
+
+		.contacts-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		.contact-card {
+			background: #fff;
+			padding: 2.5rem;
+			border-radius: 12px;
+			border: 1px solid #eee;
+			text-align: center;
+			transition:
+				transform 0.2s,
+				box-shadow 0.2s;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1.5rem;
+		}
+
+		.contact-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+			border-color: transparent;
+		}
+
+		.full-width {
+			grid-column: 1 / -1;
+			flex-direction: row;
+			text-align: left;
+			justify-content: flex-start;
+		}
+
+		.icon-wrapper {
+			width: 64px;
+			height: 64px;
+			background: #f8f9fa;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--color-primary, #0056b3);
+			margin-bottom: 0.5rem;
+		}
+
+		.full-width .icon-wrapper {
+			margin-bottom: 0;
+			margin-right: 1.5rem;
+			flex-shrink: 0;
+		}
+
+		h2 {
+			font-family: var(--font-sans, sans-serif);
+			font-size: 1.5rem;
+			color: #1a1a1a;
+			margin: 0;
+		}
+
+		p {
+			color: #555;
+			line-height: 1.6;
+			margin: 0;
+		}
+
+		.email-link {
+			color: var(--color-primary, #0056b3);
+			font-weight: 600;
+			font-size: 1.1rem;
+			text-decoration: none;
+			padding-bottom: 2px;
+			border-bottom: 2px solid rgba(0, 86, 179, 0.1);
+			transition: border-color 0.2s;
+		}
+
+		.email-link:hover {
+			border-color: currentColor;
+		}
+
+		/* Specific Card Styles */
+		.newsletter {
+			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+			border: none;
+		}
+
+		.cta-button {
+			display: inline-block;
+			margin-top: 1rem;
+			padding: 0.875rem 2rem;
+			background-color: var(--color-primary, #0056b3);
+			color: white;
+			text-decoration: none;
+			border-radius: 50px;
+			font-weight: 600;
+			box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
+			transition: all 0.2s;
+		}
+
+		.cta-button:hover {
+			background-color: #004494;
+			transform: scale(1.02);
+			box-shadow: 0 6px 16px rgba(0, 86, 179, 0.3);
+		}
+
+		.full-width .cta-button {
+			margin-top: 1rem;
+		}
+
+		.email-row a {
+			color: var(--color-primary, #0056b3);
+			font-weight: 500;
+			text-decoration: none;
+		}
+
+		.email-row a:hover {
+			text-decoration: underline;
+		}
+
+		@media (max-width: 768px) {
+			.full-width {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.full-width .icon-wrapper {
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+		}
+	</style>
 </Layout>

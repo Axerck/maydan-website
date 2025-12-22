@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: ../../../layouts/ActivityLayout.astro
 title: "Maydan and SeSaMO Study Days – Second Edition"
 date: "2025-02-12"
 description: "Third in-person edition of the Maydan–SeSaMO study days dedicated to Arab, Semitic, and Islamic worlds."
