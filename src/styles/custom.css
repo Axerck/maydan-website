@@ -270,7 +270,47 @@ body {
 }
 
 .hero-inner {
-    max-width: 700px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 0 0 300px; /* Fixed width for image similar to Call list */
+    max-width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hero-layout {
+        flex-direction: column-reverse; /* Image on top? Or Text on top? Usually Image top or Text top. Let's start with Text top (column) or Image top (column-reverse if we want image first). The user didn't specify. Let's do standard column (Text top) as it's cleaner for mobile reading flow, but often Hero images are top. Let's do column-reverse to put image on top for visual impact */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px; /* Limit width on mobile so it's not massive? Or full width? Let's say 100% is fine but maybe max-width */
+        margin-top: 1rem;
+    }
 }
 
 .hero h1 {
