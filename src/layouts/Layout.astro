@@ -1,5 +1,6 @@
 ---
 import "../styles/custom.css";
+import { ui } from "../data/ui";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { Instagram, Facebook } from "lucide-react";
 
@@ -11,6 +12,8 @@ const { title = "Maydan – Rivista sui mondi arabi, semitici e islamici" } =
 	Astro.props;
 const currentLocale = Astro.currentLocale || "it";
 const year = new Date().getFullYear();
+
+const t = currentLocale in ui ? ui[currentLocale as keyof typeof ui] : ui.it;
 
 // Helper to get localized path
 const tPath = (path: string) => getRelativeLocaleUrl(currentLocale, path);
@@ -83,25 +86,31 @@ const switchLang = (targetLang: string) => {
 					aria-label="Menu principale"
 				>
 					<ul>
-						<li><a href={tPath("/chi-siamo")}>CHI SIAMO</a></li>
+						<li><a href={tPath("/chi-siamo")}>{t.nav.about}</a></li>
 						<li>
 							<a href={tPath("/call-e-linee-guida")}
-								>CALL E LINEE GUIDA</a
+								>{t.nav.calls}</a
 							>
 						</li>
-						<li><a href={tPath("/pubblicazioni")}>NUMERI</a></li>
+						<li>
+							<a href={tPath("/pubblicazioni")}>{t.nav.issues}</a>
+						</li>
 						<li>
 							<a href={tPath("/comitato-editoriale")}
-								>COMITATO EDITORIALE</a
+								>{t.nav.editorial_board}</a
 							>
 						</li>
 						<li>
 							<a href={tPath("/comitato-scientifico")}
-								>COMITATO SCIENTIFICO</a
+								>{t.nav.scientific_board}</a
 							>
 						</li>
-						<li><a href={tPath("/attivita")}>ATTIVITA’</a></li>
-						<li><a href={tPath("/contatti")}>CONTATTI</a></li>
+						<li>
+							<a href={tPath("/attivita")}>{t.nav.activities}</a>
+						</li>
+						<li>
+							<a href={tPath("/contatti")}>{t.nav.contacts}</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
