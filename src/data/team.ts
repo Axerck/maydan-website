@@ -5,6 +5,8 @@ export const teamMembers = [
         role: "Direttore responsabile",
         affiliation: "Université Jean Moulin Lyon 3",
         bio: "Antonio Pacifico è dottorando presso l’Institut d’Études Transtextuelles et Transculturelles (IETT) dell’Université Jean-Moulin di Lione III. Ha conseguito la laurea magistrale in Letterature e Culture Comparate presso l’Università di Napoli “L’Orientale”. Il suo progetto di ricerca, condotto sotto la supervisione congiunta della Prof.ssa Elisabeth Vauthier e della Prof.ssa Monica Ruocco, si concentra da una prospettiva sociologica su una generazione specifica di scrittori iracheni, la cosiddetta “generazione delle due guerre”, e soprattutto sui dibattiti intervenuti fra questi ultimi. I suoi interessi di ricerca comprendono la letteratura e il teatro iracheno, la sociologia della cultura, nonché la storia culturale e intellettuale dei paesi arabi.",
+        bio_en: "", // Add English bio here
+        affiliation_en: "", // Add English affiliation here
         image: "/team/antonio-pacifico.jpg"
     },
     {
@@ -146,6 +148,7 @@ export const teamMembers = [
         role: "Redazione",
         affiliation: "Università Ca’ Foscari Venezia – Universiteit van Amsterdam",
         bio: "Carolina Toso è dottoranda in co-tutela tra l’Università Ca’ Foscari di Venezia e l’Universiteit van Amsterdam. Ha conseguito un BA in spagnolo e arabo all’Università di Oxford, per il quale ha trascorso un anno presso l’IFPO di Amman e redatto una tesi in letteratura comparata sulla poesia in carcere in Siria e Uruguay. Ha poi ottenuto una laurea magistrale in sociologia e ricerca sociale all’Università di Trento con un anno a Parigi, dove ha frequentato l’EHESS/ENS-PSL e svolto ricerca etnografica sulla diaspora palestinese. Dopo alcuni anni di lavoro in ambito no profit, si dedica ora ad un progetto dottorale sulla letteratura palestinese, con particolare attenzione ai romanzi scritti da autori e autrici che hanno fatto ritorno in Palestina dopo gli Accordi di Oslo del 1993. La sua ricerca interdisciplinare, condotta sotto la supervisione di Simone Sibilio e Ihab Saloul, si colloca all’intersezione tra letteratura, memoria culturale e trauma.",
+        bio_en: "Carolina Toso is a doctoral candidate in a joint PhD between Ca’ Foscari University of Venice and the University of Amsterdam. She read for a BA in Spanish and Arabic at the University of Oxford, for which she spent a year at IFPO Amman and submitted a thesis in comparative literature on prison poetry in Syria and Uruguay. She went on to earn an MA in Sociology and Social Research from the University of Trento including one year at EHESS/ENS-PSL in Paris, where she also conducted an ethnography on the Palestinian diaspora. After some years in the non-profit sector, she is now pursuing a PhD on Palestinian literature, focusing on novels by authors who returned to Palestine after the Oslo Accords of 1993. Her interdisciplinary research, conducted under the supervision of Simone Sibilio and Ihab Saloul, lies at the intersection between literature, cultural memory, and trauma.",
         email: "tosocarolina@gmail.com",
         personalLink: "https://www.unive.it/data/persone/28964258",
         image: "/team/carolina-toso.jpg"

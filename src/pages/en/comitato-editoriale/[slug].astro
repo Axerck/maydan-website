@@ -35,7 +35,9 @@ const displayRole = roleTranslations[member.role] || member.role;
     <h1>{member.name}</h1>
 
     <p class="member-role"><strong>{displayRole}</strong></p>
-    <p class="member-affiliation"><em>{member.affiliation}</em></p>
+    <p class="member-affiliation">
+      <em>{member.affiliation_en || member.affiliation}</em>
+    </p>
 
     <hr />
 
@@ -49,7 +51,13 @@ const displayRole = roleTranslations[member.role] || member.role;
       }
 
       <div class="member-bio">
-        {member.bio ? <p>{member.bio}</p> : <p>Bio update in progress...</p>}
+        {
+          member.bio_en || member.bio ? (
+            <p>{member.bio_en || member.bio}</p>
+          ) : (
+            <p>Bio update in progress...</p>
+          )
+        }
 
         {
           member.personalLink && (
