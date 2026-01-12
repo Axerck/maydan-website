@@ -12,19 +12,19 @@ export const currentBoard: BoardGroup[] = [
     {
         title: "Direttore responsabile",
         members: [
-            { slug: "antonio-pacifico" }
+            { slug: "giulia-gozzini" }
         ]
     },
     {
         title: "Vicedirettrice",
         members: [
-            { slug: "aurora-magliozzi" }
+            { slug: "sebastiano-siviero" }
         ]
     },
     {
         title: "Caporedattrice",
         members: [
-            { slug: "gaia-sorge" }
+            { slug: "chiara-scarfo" }
         ]
     },
     {
@@ -32,15 +32,12 @@ export const currentBoard: BoardGroup[] = [
         members: [
             { slug: "federica-bucci" },
             { slug: "lorenzo-ghione" },
-            { slug: "giulia-gozzini" },
             { slug: "enrico-maria-la-forgia" },
             { slug: "sara-manna" },
-            { slug: "laura-morreale" },
             { slug: "viola-pacini" },
             { slug: "leonardo-palombini" },
             { slug: "luigi-sausa" },
-            { slug: "chiara-scarfo" },
-            { slug: "sebastiano-siviero" },
+            { slug: "gaia-sorge" },
             { slug: "marco-spagnoletti" },
             { slug: "carolina-toso" }
         ]
@@ -60,14 +57,58 @@ export const currentBoard: BoardGroup[] = [
     {
         title: "Collaboratori",
         members: [
-            { slug: "annamaria-bianco" },
             { slug: "alessia-daccardio-berlinguer" },
-            { slug: "pietro-stefanini" }
+            { slug: "aurora-magliozzi" },
+            { slug: "antonio-pacifico" },
+            { slug: "luigi-sausa" }
         ]
     }
 ];
 
 export const pastBoards: PastBoard[] = [
+    {
+        year: "2025",
+        groups: [
+            {
+                title: "Direttore responsabile",
+                members: [{ slug: "antonio-pacifico" }]
+            },
+            {
+                title: "Vicedirettrice",
+                members: [{ slug: "aurora-magliozzi" }]
+            },
+            {
+                title: "Caporedattrice",
+                members: [{ slug: "gaia-sorge" }]
+            },
+            {
+                title: "Redazione",
+                members: [
+                    { slug: "alessia-daccardio-berlinguer" },
+                    { slug: "lorenzo-ghione" },
+                    { slug: "noemi-linardi" },
+                    { slug: "laura-morreale" },
+                    { slug: "viola-pacini" },
+                    { slug: "daniele-paolini" },
+                    { slug: "luigi-sausa" },
+                    { slug: "pietro-stefanini" }
+                ]
+            },
+            {
+                title: "Tesoriere",
+                members: [{ slug: "pietro-menghini" }]
+            },
+            {
+                title: "Collaboratrici",
+                members: [
+                    { slug: "annamaria-bianco" },
+                    { slug: "federica-stagni" },
+                    { slug: "tamara-taher" }
+                ]
+            }
+        ]
+    },
+
     {
         year: "2024",
         groups: [
