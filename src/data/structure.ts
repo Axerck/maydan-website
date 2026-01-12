@@ -10,13 +10,13 @@ export interface PastBoard {
 
 export const currentBoard: BoardGroup[] = [
     {
-        title: "Direttore responsabile",
+        title: "Direttrice responsabile",
         members: [
             { slug: "giulia-gozzini" }
         ]
     },
     {
-        title: "Vicedirettrice",
+        title: "Vicedirettore",
         members: [
             { slug: "sebastiano-siviero" }
         ]
@@ -85,13 +85,12 @@ export const pastBoards: PastBoard[] = [
                 title: "Redazione",
                 members: [
                     { slug: "alessia-daccardio-berlinguer" },
+                    { slug: "federica-bucci" },
                     { slug: "lorenzo-ghione" },
-                    { slug: "noemi-linardi" },
-                    { slug: "laura-morreale" },
+                    { slug: "giulia-gozzini" },
                     { slug: "viola-pacini" },
-                    { slug: "daniele-paolini" },
                     { slug: "luigi-sausa" },
-                    { slug: "pietro-stefanini" }
+                    { slug: "marco-spagnoletti" }
                 ]
             },
             {
@@ -99,10 +98,11 @@ export const pastBoards: PastBoard[] = [
                 members: [{ slug: "pietro-menghini" }]
             },
             {
-                title: "Collaboratrici",
+                title: "Collaboratori",
                 members: [
                     { slug: "annamaria-bianco" },
                     { slug: "federica-stagni" },
+                    { slug: "pietro-stefanini" },
                     { slug: "tamara-taher" }
                 ]
             }
