@@ -1,14 +1,14 @@
 ---
 layout: ../../../layouts/VolumeLayout.astro
-title: "Maydan Volume 4"
+title: "Maydan Issue 4"
 year: "2025"
 cover: "/img/copertina4_compressed_page-0001-1.jpg"
 description: "Fourth issue of Maydan: journal on Arab, Semitic, and Islamic worlds."
 ---
 
-## Full Volume
+## Full Issue
 
-- [Download full volume](/pdf/vol-4/Maydan-Vol-4.pdf)
+- [Download full Issue](/pdf/vol-4/Maydan-Vol-4.pdf)
 
 ## Editorial
 

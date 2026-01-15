@@ -1,14 +1,14 @@
 ---
 layout: ../../../layouts/VolumeLayout.astro
-title: "Maydan Volume 1"
+title: "Maydan Issue 1"
 year: "2021"
 cover: "/img/copertina-maydan-1-1.jpg"
 description: "First issue of Maydan: journal on Arab, Semitic, and Islamic worlds."
 ---
 
-## Full Volume
+## Full Issue
 
-- [Download full volume](/pdf/vol-1/maydan-1-2021-3-1.pdf)
+- [Download full Issue](/pdf/vol-1/maydan-1-2021-3-1.pdf)
 
 ## Preface
 

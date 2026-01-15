@@ -1,14 +1,14 @@
 ---
 layout: ../../../layouts/VolumeLayout.astro
-title: "Maydan Volume 3"
+title: "Maydan Issue 3"
 year: "2024"
 cover: "/img/CopertinaRivista_vol3.jpg"
 description: "Third issue of Maydan: journal on Arab, Semitic, and Islamic worlds."
 ---
 
-## Full Volume
+## Full Issue
 
-- [Download full volume](/pdf/vol-3/Maydan-Vol.-3.pdf)
+- [Download full Issue](/pdf/vol-3/Maydan-Vol.-3.pdf)
 
 ## Editorial
 

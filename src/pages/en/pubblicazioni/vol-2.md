@@ -1,14 +1,14 @@
 ---
 layout: ../../../layouts/VolumeLayout.astro
-title: "Maydan Volume 2"
+title: "Maydan Issue 2"
 year: "2023"
 cover: "/img/02_vol2_copertina.jpg"
 description: "Second issue of Maydan: journal on Arab, Semitic, and Islamic worlds."
 ---
 
-## Full Volume
+## Full Issue
 
-- [Download full volume](/pdf/vol-2/Maydan-Vol.-2.pdf)
+- [Download full Issue](/pdf/vol-2/Maydan-Vol.-2.pdf)
 
 ## Editorial
 
