@@ -36,7 +36,6 @@ export const currentBoard: BoardGroup[] = [
             { slug: "sara-manna" },
             { slug: "viola-pacini" },
             { slug: "leonardo-palombini" },
-            { slug: "luigi-sausa" },
             { slug: "gaia-sorge" },
             { slug: "marco-spagnoletti" },
             { slug: "carolina-toso" }
