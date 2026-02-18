@@ -44,7 +44,7 @@ export const currentBoard: BoardGroup[] = [
     {
         title: "Tesoriere",
         members: [
-            { slug: "pietro-menghini" }
+            { slug: "-" }
         ]
     },
     {
