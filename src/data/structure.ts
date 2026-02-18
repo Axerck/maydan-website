@@ -83,7 +83,6 @@ export const pastBoards: PastBoard[] = [
             {
                 title: "Redazione",
                 members: [
-                    { slug: "alessia-daccardio-berlinguer" },
                     { slug: "federica-bucci" },
                     { slug: "lorenzo-ghione" },
                     { slug: "giulia-gozzini" },
@@ -99,10 +98,9 @@ export const pastBoards: PastBoard[] = [
             {
                 title: "Collaboratori",
                 members: [
+                    { slug: "alessia-daccardio-berlinguer" },
                     { slug: "annamaria-bianco" },
-                    { slug: "federica-stagni" },
-                    { slug: "pietro-stefanini" },
-                    { slug: "tamara-taher" }
+                    { slug: "pietro-stefanini" }
                 ]
             }
         ]
