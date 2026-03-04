@@ -10,7 +10,12 @@ const backLinkText = isEn ? "← Back to activities" : "← Torna alle attività
 const backLinkUrl = isEn ? "/en/attivita" : "/it/attivita";
 ---
 
-<Layout title={`${frontmatter.title} | ${isEn ? "Activities" : "Attività"}`}>
+<Layout
+    title={`${frontmatter.title} | ${isEn ? "Activities" : "Attività"}`}
+    description={frontmatter.description || frontmatter.title}
+    image={frontmatter.cover || "/logo.png"}
+    ogType="article"
+>
     <div class="activity-container">
         <div class="activity-header">
             <div class="activity-date">
