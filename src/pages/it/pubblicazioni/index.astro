@@ -9,7 +9,7 @@ const volumes = await Astro.glob('./*.md');
 volumes.sort((a, b) => parseInt(b.frontmatter.year) - parseInt(a.frontmatter.year));
 ---
 
-<Layout title="Numeri - Rivista Maydan">
+<Layout title="Numeri - Rivista Maydan" description="Esplora tutti i volumi pubblicati della rivista Maydan. Leggi gli articoli e le ricerche sui mondi arabi, semitici e islamici.">
  
 
   <section class="numeri-list">

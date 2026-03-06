@@ -1,7 +1,7 @@
 ---
-import Layout from '../../../../layouts/Layout.astro';
-import { pastBoards } from '../../../../data/structure';
-import { teamMembers } from '../../../../data/team';
+import Layout from "../../../../layouts/Layout.astro";
+import { pastBoards } from "../../../../data/structure";
+import { teamMembers } from "../../../../data/team";
 
 export async function getStaticPaths() {
   return pastBoards.map((board) => ({
@@ -16,50 +16,59 @@ const { board } = Astro.props;
 const groupTitleMap: Record<string, string> = {
   "Direttore responsabile": "Editor-in-Chief",
   "Direttrice responsabile": "Editor-in-Chief",
-  "Vicedirettrice": "Deputy Editor",
-  "Vicedirettore": "Deputy Editor",
-  "Caporedattrice": "Managing Editor",
-  "Caporedattore": "Managing Editor",
-  "Redazione": "Editorial Board",
-  "Tesoriere": "Treasurer",
-  "Tirocinanti": "Interns",
-  "Collaboratori": "Collaborators", 
-  "Comitato Scientifico": "Scientific Committee"
+  Vicedirettrice: "Deputy Editor",
+  Vicedirettore: "Deputy Editor",
+  Caporedattrice: "Managing Editor",
+  Caporedattore: "Managing Editor",
+  Redazione: "Editorial Board",
+  Tesoriere: "Treasurer",
+  Tirocinanti: "Interns",
+  Collaboratori: "Collaborators",
+  "Comitato Scientifico": "Scientific Committee",
 };
 
 function translateTitle(title: string) {
-    return groupTitleMap[title] || title;
+  return groupTitleMap[title] || title;
 }
 ---
 
-<Layout title={`Editorial Board ${board.year} - Rivista Maydan`}>
+<Layout
+  title={`Editorial Board ${board.year} - Maydan Journal`}
+  description={`Members of the editorial board of the Maydan journal for the year ${board.year}.`}
+>
   <h1>Editorial Board {board.year}</h1>
 
   <div class="archive-nav">
-      <a href="/en/comitato-editoriale">← Back to Current Editorial Board</a>
+    <a href="/en/comitato-editoriale">← Back to Current Editorial Board</a>
   </div>
-  <br/>
+  <br />
 
-  {board.groups.map((group) => (
-    <section class="committee-section">
-      <h2>{translateTitle(group.title)}</h2>
-      <ul>
-        {group.members.map((memberStruct) => {
-          const memberData = teamMembers.find(m => m.slug === memberStruct.slug);
-          if (!memberData) return null;
+  {
+    board.groups.map((group) => (
+      <section class="committee-section">
+        <h2>{translateTitle(group.title)}</h2>
+        <ul>
+          {group.members.map((memberStruct) => {
+            const memberData = teamMembers.find(
+              (m) => m.slug === memberStruct.slug,
+            );
+            if (!memberData) return null;
 
-          return (
-            <li>
-              <strong>
-                <a href={`/en/comitato-editoriale/${memberData.slug}`}>{memberData.name}</a>
-              </strong>
-              {memberData.affiliation && ` – `}
-              {memberData.affiliation && <em>{memberData.affiliation}</em>}
-            </li>
-          );
-        })}
-      </ul>
-      <hr />
-    </section>
-  ))}
+            return (
+              <li>
+                <strong>
+                  <a href={`/en/comitato-editoriale/${memberData.slug}`}>
+                    {memberData.name}
+                  </a>
+                </strong>
+                {memberData.affiliation && ` – `}
+                {memberData.affiliation && <em>{memberData.affiliation}</em>}
+              </li>
+            );
+          })}
+        </ul>
+        <hr />
+      </section>
+    ))
+  }
 </Layout>

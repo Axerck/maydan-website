@@ -31,7 +31,10 @@ const roleTranslations: Record<string, string> = {
 const displayRole = roleTranslations[member.role] || member.role;
 ---
 
-<Layout title={`${member.name} | Maydan Journal`}>
+<Layout
+  title={`${member.name} | Maydan Journal`}
+  description={`Profile of ${member.name}, ${displayRole} of the Maydan journal.`}
+>
   <div class="member-profile">
     <h1>{member.name}</h1>
 

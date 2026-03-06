@@ -12,7 +12,10 @@ export function getStaticPaths() {
 const { member } = Astro.props;
 ---
 
-<Layout title={`${member.name} | Rivista Maydan`}>
+<Layout
+  title={`${member.name} | Rivista Maydan`}
+  description={`Profilo di ${member.name}, ${member.role} della rivista Maydan.`}
+>
   <div class="member-profile">
     <h1>{member.name}</h1>
 

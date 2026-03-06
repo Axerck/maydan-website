@@ -20,7 +20,10 @@ const roleTranslations: Record<string, string> = {
 const translateTitle = (title: string) => roleTranslations[title] || title;
 ---
 
-<Layout title="Editorial Board - Maydan Journal">
+<Layout
+  title="Editorial Board - Maydan Journal"
+  description="The members of the editorial board of the Maydan journal: editors, editorial staff, and collaborators."
+>
   {
     currentBoard.map((group) => (
       <section class="committee-section">

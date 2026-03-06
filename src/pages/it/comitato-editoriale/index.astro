@@ -1,45 +1,59 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import { currentBoard, pastBoards } from '../../../data/structure';
-import { teamMembers } from '../../../data/team';
+import Layout from "../../../layouts/Layout.astro";
+import { currentBoard, pastBoards } from "../../../data/structure";
+import { teamMembers } from "../../../data/team";
 ---
 
-<Layout title="Comitato Editoriale - Rivista Maydan">
+<Layout
+  title="Comitato Editoriale - Rivista Maydan"
+  description="I membri del comitato editoriale della rivista Maydan: direzione, redazione e collaboratori."
+>
+  {
+    currentBoard.map((group) => (
+      <section class="committee-section">
+        <h2>{group.title}</h2>
+        <ul>
+          {group.members.map((memberStruct) => {
+            const memberData = teamMembers.find(
+              (m) => m.slug === memberStruct.slug,
+            );
+            if (!memberData) return null; // Should not happen if data is consistent
 
+            // Use overridden role if present in structure, otherwise use role from team.ts (though role isn't explicitly displayed in the list item in the original design, just name and affiliation)
+            // The section title acts as the role grouping.
 
-  {currentBoard.map((group) => (
-    <section class="committee-section">
-      <h2>{group.title}</h2>
-      <ul>
-        {group.members.map((memberStruct) => {
-          const memberData = teamMembers.find(m => m.slug === memberStruct.slug);
-          if (!memberData) return null; // Should not happen if data is consistent
-
-          // Use overridden role if present in structure, otherwise use role from team.ts (though role isn't explicitly displayed in the list item in the original design, just name and affiliation)
-          // The section title acts as the role grouping.
-
-          return (
-            <li>
-              <strong>
-                <a href={`/it/comitato-editoriale/${memberData.slug}`}>{memberData.name}</a>
-              </strong>
-              {memberData.affiliation && ` – `}
-              {memberData.affiliation && <em>{memberData.affiliation}</em>}
-            </li>
-          );
-        })}
-      </ul>
-      <hr />
-    </section>
-  ))}
+            return (
+              <li>
+                <strong>
+                  <a href={`/it/comitato-editoriale/${memberData.slug}`}>
+                    {memberData.name}
+                  </a>
+                </strong>
+                {memberData.affiliation && ` – `}
+                {memberData.affiliation && <em>{memberData.affiliation}</em>}
+              </li>
+            );
+          })}
+        </ul>
+        <hr />
+      </section>
+    ))
+  }
 
   <section class="committee-section">
     <h2>Redazioni precedenti</h2>
     <ul>
-      {pastBoards.map((board) => (
-         <li><strong><a href={`/it/comitato-editoriale/archivio/${board.year}`}>Redazione {board.year}</a></strong></li>
-      ))}
+      {
+        pastBoards.map((board) => (
+          <li>
+            <strong>
+              <a href={`/it/comitato-editoriale/archivio/${board.year}`}>
+                Redazione {board.year}
+              </a>
+            </strong>
+          </li>
+        ))
+      }
     </ul>
   </section>
-  
 </Layout>
