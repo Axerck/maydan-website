@@ -33,6 +33,9 @@ const switchLang = (targetLang: string) => {
 		currentPath.replace(`/${currentLocale}`, "") || "/";
 	return getRelativeLocaleUrl(targetLang, pathWithoutLocale);
 };
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const alternateIt = new URL(switchLang("it"), Astro.site);
+const alternateEn = new URL(switchLang("en"), Astro.site);
 ---
 
 <!doctype html>
@@ -50,6 +53,10 @@ const switchLang = (targetLang: string) => {
 
 		<!-- SEO Basics -->
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		<link rel="alternate" hreflang="it" href={alternateIt} />
+		<link rel="alternate" hreflang="en" href={alternateEn} />
+		<link rel="alternate" hreflang="x-default" href={alternateIt} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={ogType} />

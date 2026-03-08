@@ -7,7 +7,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.maydan.it',
+  site: 'https://maydan.it',
   integrations: [react(), sitemap()],
   i18n: {
     defaultLocale: "it",
