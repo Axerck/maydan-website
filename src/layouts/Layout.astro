@@ -33,9 +33,12 @@ const switchLang = (targetLang: string) => {
 		currentPath.replace(`/${currentLocale}`, "") || "/";
 	return getRelativeLocaleUrl(targetLang, pathWithoutLocale);
 };
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const alternateIt = new URL(switchLang("it"), Astro.site);
-const alternateEn = new URL(switchLang("en"), Astro.site);
+// Make canonical dynamic based on current request origin, but strip 'www.'
+const originUrl = new URL(Astro.url.pathname, Astro.url.origin);
+originUrl.hostname = originUrl.hostname.replace(/^www\./, "");
+const canonicalURL = originUrl;
+const alternateIt = new URL(switchLang("it"), originUrl.origin);
+const alternateEn = new URL(switchLang("en"), originUrl.origin);
 ---
 
 <!doctype html>
@@ -50,6 +53,10 @@ const alternateEn = new URL(switchLang("en"), Astro.site);
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta
+			name="robots"
+			content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+		/>
 
 		<!-- SEO Basics -->
 		<meta name="description" content={description} />
