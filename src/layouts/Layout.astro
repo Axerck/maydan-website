@@ -39,6 +39,45 @@ originUrl.hostname = originUrl.hostname.replace(/^www\./, "");
 const canonicalURL = originUrl;
 const alternateIt = new URL(switchLang("it"), originUrl.origin);
 const alternateEn = new URL(switchLang("en"), originUrl.origin);
+
+// Structured Data JSON-LD
+const isHomePage = Astro.url.pathname === `/it/` || Astro.url.pathname === `/en/`;
+const websiteJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"name": "Maydan",
+	"alternateName": "Rivista Maydan",
+	"url": "https://maydan.it",
+	"description": "Rivista accademica dedicata agli studi sui mondi arabi, semitici e islamici.",
+	"inLanguage": ["it", "en"],
+	"publisher": {
+		"@type": "Organization",
+		"name": "Maydan",
+		"url": "https://maydan.it",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://maydan.it/logo.png"
+		}
+	}
+};
+const periodicaJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Periodical",
+	"name": "Maydan",
+	"alternateName": "Rivista Maydan",
+	"issn": "2785-6976",
+	"url": "https://maydan.it",
+	"publisher": {
+		"@type": "Organization",
+		"name": "Maydan"
+	},
+	"inLanguage": ["it", "en"],
+	"about": [
+		"Arab studies",
+		"Semitic studies",
+		"Islamic studies"
+	]
+};
 ---
 
 <!doctype html>
@@ -78,6 +117,14 @@ const alternateEn = new URL(switchLang("en"), originUrl.origin);
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+		<!-- Structured Data -->
+		{isHomePage && (
+			<script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+		)}
+		{isHomePage && (
+			<script type="application/ld+json" set:html={JSON.stringify(periodicaJsonLd)} />
+		)}
 	</head>
 	<body>
 		<!-- Skip link -->
