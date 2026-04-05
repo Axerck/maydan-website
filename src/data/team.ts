@@ -7,7 +7,9 @@ export const teamMembers = [
         bio: "Antonio Pacifico è dottorando presso l’Institut d’Études Transtextuelles et Transculturelles (IETT) dell’Université Jean-Moulin di Lione III. Ha conseguito la laurea magistrale in Letterature e Culture Comparate presso l’Università di Napoli “L’Orientale”. Il suo progetto di ricerca, condotto sotto la supervisione congiunta della Prof.ssa Elisabeth Vauthier e della Prof.ssa Monica Ruocco, si concentra da una prospettiva sociologica su una generazione specifica di scrittori iracheni, la cosiddetta “generazione delle due guerre”, e soprattutto sui dibattiti intervenuti fra questi ultimi. I suoi interessi di ricerca comprendono la letteratura e il teatro iracheno, la sociologia della cultura, nonché la storia culturale e intellettuale dei paesi arabi.",
         bio_en: "", // Add English bio here
         affiliation_en: "", // Add English affiliation here
-        image: "/team/antonio-pacifico.jpg"
+        image: "/team/antonio-pacifico.jpg",
+        personalLink: "https://www.univ-lyon3.fr/fr/personne/antonio-pacifico",
+        email: "[EMAIL_ADDRESS]"
     },
     {
         name: "Aurora Magliozzi",
@@ -26,7 +28,9 @@ export const teamMembers = [
         role: "Caporedattrice",
         affiliation: "Università degli Studi di Modena e Reggio Emilia",
         bio: "Gaia Sorge è attualmente dottoranda presso l’Università degli Studi di Modena e Reggio Emilia. Ha conseguito la laurea triennale in Lingue e Culture Europee, Euroamericane ed Orientali presso l’Università degli Studi di Catania e la laurea magistrale in Lingue e Culture dell’Asia e dell’Africa presso l’Università degli Studi di Napoli “L’Orientale”. Il suo progetto di ricerca si concentra principalmente sullo studio delle relazioni filogenetiche interne alla famiglia delle lingue semitiche, attraverso un metodo di comparazione parametrica, orientato specialmente all’analisi della sintassi. I suoi interessi di ricerca includono soprattutto la dialettologia araba e la linguistica tipologica.",
-        image: "/team/gaia-sorge.png"
+        image: "/team/gaia-sorge.png",
+        personalLink: "https://www.unimore.it/persone/gaia.sorge",
+        email: "gaiasorge16@gmail.com"
     },
     {
         name: "Federica Bucci",
@@ -126,7 +130,8 @@ export const teamMembers = [
         affiliation: "Università di Torino – Università di Firenze",
         bio: "Chiara Scarfò è dottoranda in Mutamento Sociale e Politico (XL ciclo) presso l’Università di Torino e l’Università di Firenze. Ha conseguito una laurea magistrale in Scienze Internazionali presso l’Università di Torino e una laurea triennale in Scienze Politiche e Relazioni Internazionali presso l’Università di Roma Tre. Nel corso degli studi, ha svolto un tirocinio presso l’Ambasciata italiana a Teheran e ha lavorato come redattrice presso il Centro Studi Geopolitica.info. Il suo progetto di ricerca si concentra sulle tracce della frontiera coloniale che in passato separava il territorio sotto dominio spagnolo dal protettorato francese nel sud del Marocco e sulle politiche di regionalizzazione avanzata che interessano la zona. All’impegno accademico affianca la passione divulgativa attraverso collaborazioni con riviste di politica internazionale, dove approfondisce temi legati alle forme non convenzionali di partecipazione politica e alle politiche di genere nell’area SWANA.",
         bio_en: "Chiara Scarfò is a PhD candidate in Social and Political Change (XL cycle) at the University of Turin and the University of Florence. She holds a Master’s degree in International Studies from the University of Turin and a Bachelor’s degree in Political Science and International Relations from Roma Tre University. During her studies, she completed an internship at the Italian Embassy in Tehran and worked as an editor at the research center Geopolitica.info. Her doctoral research focuses on the traces of the colonial border that once separated the Spanish-controlled territory from the French protectorate in southern Morocco, as well as on the dynamics of advanced regionalization affecting the area. Alongside her academic work, she pursues her passion for divulgation through collaborations with international politics journals, where she explores issues related to non-conventional forms of political participation and gender politics in the SWANA region.",
-        image: "/team/chiara-scarfo.jpg"
+        image: "/team/chiara-scarfo.jpg",
+        email: "[EMAIL_ADDRESS]"
     },
     {
         name: "Sebastiano Siviero",
