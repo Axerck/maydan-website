@@ -66,24 +66,16 @@ const title = "Contacts | Maydan Journal";
 			</div>
 
 			<!-- Newsletter -->
-			<div class="contact-card newsletter full-width">
+			<div class="contact-card newsletter-card">
 				<div class="icon-wrapper">
 					<Newspaper size={32} />
 				</div>
-				<div class="content">
-					<h2>Newsletter</h2>
-					<p>
-						Subscribe to our Newsletter to stay updated on our
-						initiatives.
-					</p>
-					<a
-						href="http://eepurl.com/ho92En"
-						target="_blank"
-						class="cta-button"
-					>
-						Subscribe here
-					</a>
-				</div>
+				<h2>Newsletter</h2>
+				<p>
+					Subscribe to our Newsletter to stay updated on our
+					initiatives.
+				</p>
+				<div class="ml-embedded" data-form="PC44y2"></div>
 			</div>
 		</div>
 	</div>
@@ -193,9 +185,36 @@ const title = "Contacts | Maydan Journal";
 		}
 
 		/* Specific Card Styles */
-		.newsletter {
+		.newsletter-card {
+			grid-column: 1 / -1;
 			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 			border: none;
+			padding: 3rem 2rem;
+		}
+
+		.newsletter-card p {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		:global(.ml-embedded) {
+			width: 100%;
+			max-width: 500px;
+			margin-top: 1rem;
+		}
+
+		/* Reset default MailerLite styling to integrate cleanly */
+		:global(.ml-embedded .ml-form-embedWrapper) {
+			background-color: transparent !important;
+			padding: 0 !important;
+		}
+
+		:global(.ml-embedded .ml-form-embedHeader) {
+			display: none !important; /* Hide redundant logo */
+		}
+
+		:global(.ml-embedded .ml-form-embedBody) {
+			padding: 0 !important;
 		}
 
 		.cta-button {
