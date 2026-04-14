@@ -134,22 +134,22 @@ export const teamMembers = [
         image: "/team/chiara-scarfo.jpg",
         email: "chiara.scarfo@unifi.it"
     },
-/*
-    {
-        name: "Sebastiano Siviero",
-        slug: "sebastiano-siviero",
-        role: "Redazione",
-        affiliation: "Università Ca’ Foscari Venezia",
-        bio: "Sebastiano Siviero, dottorando in Lingue e Civiltà dell’Asia e dell’Africa presso l’Università Ca’ Foscari di Venezia. La mia ricerca è incentrata sullo studio storico-antropologico della magia e dell’astrologia nelle comunità arabo-cristiane dell’Asia occidentale. Attraverso lo studio di un corpus di manoscritti in lingua arabo, cerco di ricostruire le forme culturali di magia e astrologia così come erano diffuse tra gli arabo-cristiani nei secoli XVIII e XIX. Attraverso questo case study, cerco di indagare la magia e le scienze occulte come forma culturale, epistemologia e sistema di credenza. Il sorgere e il decadere di forme di pensiero e pratiche socio-culturali eterodosse sono, senza alcun dubbio, al centro dei miei interessi. Faccio parte del gruppo di ricerca Geniza Lab dell’Università di Princeton, dove ho studiato e catalogato testi arabi, ebraici e giudeo-arabi di magia, astrologia, scienza e calendaristica. Collaboro con il Progetto archeologico di Tell Zeyd (ZAP) dell’Università Ca’ Foscari nel Kurdistan iracheno da tre anni. Con questo progetto mi occupo di studiare le fonti storiche in arabo e di fare interviste di tipo storico-antropologico nelle diverse comunità etnico-religiose del Kurdistan iracheno.",
-        email: "sebastiano.siviero@unive.it",
-        personalLink: "https://www.unive.it/persone/sebastiano.siviero",
-        image: "/team/sebastiano-siviero.png"
-    },
-*/
+    /*
+        {
+            name: "Sebastiano Siviero",
+            slug: "sebastiano-siviero",
+            role: "Redazione",
+            affiliation: "Università Ca’ Foscari Venezia",
+            bio: "Sebastiano Siviero, dottorando in Lingue e Civiltà dell’Asia e dell’Africa presso l’Università Ca’ Foscari di Venezia. La mia ricerca è incentrata sullo studio storico-antropologico della magia e dell’astrologia nelle comunità arabo-cristiane dell’Asia occidentale. Attraverso lo studio di un corpus di manoscritti in lingua arabo, cerco di ricostruire le forme culturali di magia e astrologia così come erano diffuse tra gli arabo-cristiani nei secoli XVIII e XIX. Attraverso questo case study, cerco di indagare la magia e le scienze occulte come forma culturale, epistemologia e sistema di credenza. Il sorgere e il decadere di forme di pensiero e pratiche socio-culturali eterodosse sono, senza alcun dubbio, al centro dei miei interessi. Faccio parte del gruppo di ricerca Geniza Lab dell’Università di Princeton, dove ho studiato e catalogato testi arabi, ebraici e giudeo-arabi di magia, astrologia, scienza e calendaristica. Collaboro con il Progetto archeologico di Tell Zeyd (ZAP) dell’Università Ca’ Foscari nel Kurdistan iracheno da tre anni. Con questo progetto mi occupo di studiare le fonti storiche in arabo e di fare interviste di tipo storico-antropologico nelle diverse comunità etnico-religiose del Kurdistan iracheno.",
+            email: "sebastiano.siviero@unive.it",
+            personalLink: "https://www.unive.it/persone/sebastiano.siviero",
+            image: "/team/sebastiano-siviero.png"
+        },
+    */
     {
         name: "Marco Spagnoletti",
         slug: "marco-spagnoletti",
-        role: "Redazione",
+        role: "Vicedirettore",
         affiliation: "Università di Bologna",
         bio: "Marco Spagnoletti è dottorando presso il Dipartimento di Storia e Civiltà dell’European University Institute. Svolge attività di tutorato per il corso “History and Institutions of the Modern Middle East” presso l’università di Bologna, dove si è laureato in Scienze storiche e Orientalistiche. Ha inoltre conseguito una laurea triennale in Lingue e Culture Orientali all’Università di Roma “La Sapienza”. Il suo attuale progetto di dottorato analizza le solidarietà transnazionali tra i partiti marxisti palestinesi e la sinistra rivoluzionaria italiana negli anni Settanta, ed è basato su lunghi periodi di ricerca sul campo a Beirut e nei territori palestinesi. I suoi principali interessi di ricerca includono la storia globale e decoloniale, la storia contemporanea del Mediterraneo e la storia del cibo.",
         bio_en: "Marco Spagnoletti is a PhD candidate at the department of History and Civilizations at the European University Institute. He serves as a teaching tutor for the course “History and Institutions of the Modern Middle East” at the University of Bologna, where he earned an MA in Historical and Oriental Studies. He also holds a BA in Languages and Oriental Cultures at the University of Rome “La Sapienza.” His current doctoral project explores transnational solidarities between Palestinian Marxist parties and the Italian revolutionary left during the 1970s and is grounded in extended periods of fieldwork in Beirut and the Palestinian territories. His broader research interests include Global and Decolonial History, the Contemporary History of the Mediterranean, the History of food, and the entangled trajectories and “contaminations” between anti-imperialist struggles in the 1970s.",

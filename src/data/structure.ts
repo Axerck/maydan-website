@@ -18,7 +18,7 @@ export const currentBoard: BoardGroup[] = [
     {
         title: "Vicedirettore",
         members: [
-            { slug: "sebastiano-siviero" }
+            { slug: "marco-spagnoletti" }
         ]
     },
     {
@@ -37,7 +37,6 @@ export const currentBoard: BoardGroup[] = [
             { slug: "viola-pacini" },
             { slug: "leonardo-palombini" },
             { slug: "gaia-sorge" },
-            { slug: "marco-spagnoletti" },
             { slug: "carolina-toso" }
         ]
     },
