@@ -134,6 +134,7 @@ export const teamMembers = [
         image: "/team/chiara-scarfo.jpg",
         email: "chiara.scarfo@unifi.it"
     },
+/*
     {
         name: "Sebastiano Siviero",
         slug: "sebastiano-siviero",
@@ -144,14 +145,16 @@ export const teamMembers = [
         personalLink: "https://www.unive.it/persone/sebastiano.siviero",
         image: "/team/sebastiano-siviero.png"
     },
+*/
     {
         name: "Marco Spagnoletti",
         slug: "marco-spagnoletti",
         role: "Redazione",
         affiliation: "Università di Bologna",
-        bio: "Marco Spagnoletti lavora come tutor didattico per il corso di “History and Institutions of the Modern Middle East” presso l’Università di Bologna, dove si è laureato in Scienze Storiche e Orientalistiche. Ha inoltre conseguito la laurea triennale in Lingue e Culture Orientali presso l’Università di Roma “La Sapienza”. Negli ultimi anni ha lavorato a lungo sulla solidarietà transnazionale tra i partiti marxisti palestinesi e la sinistra rivoluzionaria italiana durante gli anni Settanta, collaborando con l’Institut Français du Proche-Orient di Beirut.",
+        bio: "Marco Spagnoletti è dottorando presso il Dipartimento di Storia e Civiltà dell’European University Institute. Svolge attività di tutorato per il corso “History and Institutions of the Modern Middle East” presso l’università di Bologna, dove si è laureato in Scienze storiche e Orientalistiche. Ha inoltre conseguito una laurea triennale in Lingue e Culture Orientali all’Università di Roma “La Sapienza”. Il suo attuale progetto di dottorato analizza le solidarietà transnazionali tra i partiti marxisti palestinesi e la sinistra rivoluzionaria italiana negli anni Settanta, ed è basato su lunghi periodi di ricerca sul campo a Beirut e nei territori palestinesi. I suoi principali interessi di ricerca includono la storia globale e decoloniale, la storia contemporanea del Mediterraneo e la storia del cibo.",
+        bio_en: "Marco Spagnoletti is a PhD candidate at the department of History and Civilizations at the European University Institute. He serves as a teaching tutor for the course “History and Institutions of the Modern Middle East” at the University of Bologna, where he earned an MA in Historical and Oriental Studies. He also holds a BA in Languages and Oriental Cultures at the University of Rome “La Sapienza.” His current doctoral project explores transnational solidarities between Palestinian Marxist parties and the Italian revolutionary left during the 1970s and is grounded in extended periods of fieldwork in Beirut and the Palestinian territories. His broader research interests include Global and Decolonial History, the Contemporary History of the Mediterranean, the History of food, and the entangled trajectories and “contaminations” between anti-imperialist struggles in the 1970s.",
         email: "marco.spagnoletti3@unibo.it",
-        personalLink: "https://www.unibo.it/sitoweb/marco.spagnoletti3",
+        personalLink: "https://www.eui.eu/people?id=marco-spagnoletti",
         image: "/team/marco-spagnoletti.png"
     },
     {
