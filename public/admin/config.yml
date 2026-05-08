@@ -213,31 +213,239 @@ collections:
           - {label: "Button label", name: "label", widget: "string"}
       - {label: "Content", name: "body", widget: "markdown"}
 
+  # ============ HOMEPAGE (italiano) ============
+  - name: "homepage-it"
+    label: "Homepage (IT)"
+    files:
+      - label: "Contenuto homepage italiano"
+        name: "homepage-it"
+        file: "src/data/homepage-it.json"
+        fields:
+          - label: "Hero (Call for Papers)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Etichetta scadenza abstract", name: "deadline_abstract_label", widget: "string"}
+              - {label: "Data scadenza abstract", name: "deadline_abstract", widget: "string"}
+              - {label: "Etichetta scadenza elaborati", name: "deadline_paper_label", widget: "string"}
+              - {label: "Data scadenza elaborati", name: "deadline_paper", widget: "string"}
+              - {label: "Link PDF", name: "pdf_link", widget: "file"}
+              - {label: "Etichetta bottone PDF", name: "pdf_button_label", widget: "string"}
+              - {label: "Immagine", name: "image", widget: "image"}
+              - {label: "Alt immagine", name: "image_alt", widget: "string"}
+          - label: "Card Ultimo Numero"
+            name: "latest_issue_card"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Immagine", name: "image", widget: "image"}
+              - {label: "Alt immagine", name: "image_alt", widget: "string"}
+              - {label: "Descrizione", name: "description", widget: "text"}
+              - {label: "Link", name: "link", widget: "string", hint: "Path interno tipo /it/pubblicazioni/vol-4"}
+              - {label: "Etichetta link", name: "link_label", widget: "string"}
+          - label: "Card Comunicato"
+            name: "comunicato_card"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Immagine", name: "image", widget: "image"}
+              - {label: "Alt immagine", name: "image_alt", widget: "string"}
+              - {label: "Descrizione", name: "description", widget: "text"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Etichetta link", name: "link_label", widget: "string"}
+          - label: "Card Attività"
+            name: "activities_card"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - label: "Voci in elenco"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Etichetta", name: "label", widget: "string"}
+                  - {label: "Link (opzionale)", name: "link", widget: "string", required: false}
+              - {label: "Link principale", name: "main_link", widget: "string"}
+              - {label: "Etichetta link principale", name: "main_link_label", widget: "string"}
+          - label: "Collaborazioni"
+            name: "collaborations"
+            widget: "object"
+            fields:
+              - {label: "Titolo sezione", name: "title", widget: "string"}
+              - label: "Loghi"
+                name: "logos"
+                widget: "list"
+                fields:
+                  - {label: "Nome", name: "name", widget: "string"}
+                  - {label: "Immagine", name: "image", widget: "image"}
+                  - {label: "URL", name: "url", widget: "string"}
+
+  # ============ HOMEPAGE (inglese) ============
+  - name: "homepage-en"
+    label: "Homepage (EN)"
+    files:
+      - label: "Homepage English content"
+        name: "homepage-en"
+        file: "src/data/homepage-en.json"
+        fields:
+          - label: "Hero (Call for Papers)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Abstract deadline label", name: "deadline_abstract_label", widget: "string"}
+              - {label: "Abstract deadline date", name: "deadline_abstract", widget: "string"}
+              - {label: "Paper deadline label", name: "deadline_paper_label", widget: "string"}
+              - {label: "Paper deadline date", name: "deadline_paper", widget: "string"}
+              - {label: "PDF link", name: "pdf_link", widget: "file"}
+              - {label: "PDF button label", name: "pdf_button_label", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image alt", name: "image_alt", widget: "string"}
+          - label: "Latest Issue Card"
+            name: "latest_issue_card"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image alt", name: "image_alt", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Link", name: "link", widget: "string", hint: "Internal path like /en/pubblicazioni/vol-4"}
+              - {label: "Link label", name: "link_label", widget: "string"}
+          - label: "Comunicato Card"
+            name: "comunicato_card"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image alt", name: "image_alt", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Link label", name: "link_label", widget: "string"}
+          - label: "Activities Card"
+            name: "activities_card"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "List items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Link (optional)", name: "link", widget: "string", required: false}
+              - {label: "Main link", name: "main_link", widget: "string"}
+              - {label: "Main link label", name: "main_link_label", widget: "string"}
+          - label: "Collaborations"
+            name: "collaborations"
+            widget: "object"
+            fields:
+              - {label: "Section title", name: "title", widget: "string"}
+              - label: "Logos"
+                name: "logos"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "URL", name: "url", widget: "string"}
+
   # ============ CALL E LINEE GUIDA (italiano) ============
-  - name: "call-it"
+  - name: "call-e-linee-guida-it"
     label: "Call e linee guida (IT)"
-    label_singular: "Call"
-    folder: "src/pages/it/call-e-linee-guida"
-    extension: "md"
-    format: frontmatter
-    create: true
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/Layout.astro"}
-      - {label: "Titolo", name: "title", widget: "string"}
-      - {label: "Contenuto", name: "body", widget: "markdown"}
+    files:
+      - label: "Contenuto pagina call e linee guida"
+        name: "call-it"
+        file: "src/data/call-e-linee-guida-it.json"
+        fields:
+          - label: "Call attiva"
+            name: "active_call"
+            widget: "object"
+            hint: "La call attualmente in corso. Compare nell'hero della homepage E nella sezione 'Ultime Call for Papers' di questa pagina."
+            fields:
+              - {label: "Titolo sezione", name: "section_title", widget: "string", default: "Ultime Call for Papers"}
+              - {label: "Titolo call", name: "title", widget: "string"}
+              - {label: "Immagine", name: "image", widget: "image"}
+              - {label: "Alt immagine", name: "image_alt", widget: "string"}
+              - {label: "Link al PDF", name: "pdf_link", widget: "file"}
+              - label: "Scadenze"
+                name: "deadlines"
+                widget: "list"
+                hint: "Una scadenza per riga. Es. 'Scadenza per abstract: 17/12/2025'"
+                field: {label: "Scadenza", name: "deadline", widget: "string"}
+          - label: "Linee guida per gli autori"
+            name: "linee_guida"
+            widget: "object"
+            fields:
+              - {label: "Titolo sezione", name: "section_title", widget: "string", default: "Linee Guida per gli Autori"}
+              - label: "Documenti"
+                name: "documents"
+                widget: "list"
+                fields:
+                  - {label: "Etichetta", name: "label", widget: "string"}
+                  - {label: "PDF", name: "pdf", widget: "file"}
+          - label: "Call passate"
+            name: "past_calls"
+            widget: "object"
+            hint: "Quando esce una nuova call, sposta qui la vecchia: clicca '+' nella lista, copia titolo/immagine/PDF della call attiva precedente, poi aggiorna la call attiva sopra."
+            fields:
+              - {label: "Titolo sezione", name: "section_title", widget: "string", default: "Call for Papers Passate"}
+              - label: "Card delle call passate"
+                name: "items"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - {label: "Titolo", name: "title", widget: "string"}
+                  - {label: "Immagine", name: "image", widget: "image"}
+                  - {label: "Alt immagine", name: "image_alt", widget: "string"}
+                  - {label: "Link al PDF", name: "pdf_link", widget: "file"}
 
   # ============ CALL E LINEE GUIDA (inglese) ============
-  - name: "call-en"
+  - name: "call-e-linee-guida-en"
     label: "Calls & Guidelines (EN)"
-    label_singular: "Call"
-    folder: "src/pages/en/call-e-linee-guida"
-    extension: "md"
-    format: frontmatter
-    create: true
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/Layout.astro"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "body", widget: "markdown"}
+    files:
+      - label: "Calls & guidelines page content"
+        name: "call-en"
+        file: "src/data/call-e-linee-guida-en.json"
+        fields:
+          - label: "Active call"
+            name: "active_call"
+            widget: "object"
+            hint: "The currently active call. Appears in the homepage hero AND in the 'Latest Call for Papers' section of this page."
+            fields:
+              - {label: "Section title", name: "section_title", widget: "string", default: "Latest Call for Papers"}
+              - {label: "Call title", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image alt", name: "image_alt", widget: "string"}
+              - {label: "PDF link", name: "pdf_link", widget: "file"}
+              - label: "Deadlines"
+                name: "deadlines"
+                widget: "list"
+                hint: "One deadline per line. E.g. 'Abstract deadline: 17/12/2025'"
+                field: {label: "Deadline", name: "deadline", widget: "string"}
+          - label: "Author guidelines"
+            name: "linee_guida"
+            widget: "object"
+            fields:
+              - {label: "Section title", name: "section_title", widget: "string", default: "Author Guidelines"}
+              - label: "Documents"
+                name: "documents"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "PDF", name: "pdf", widget: "file"}
+          - label: "Past calls"
+            name: "past_calls"
+            widget: "object"
+            hint: "When a new call is published, move the old one here: click '+' in the list, copy title/image/PDF of the previous active call, then update the active call section above."
+            fields:
+              - {label: "Section title", name: "section_title", widget: "string", default: "Past Call for Papers"}
+              - label: "Past call cards"
+                name: "items"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Image alt", name: "image_alt", widget: "string"}
+                  - {label: "PDF link", name: "pdf_link", widget: "file"}
 
   # ============ TEAM (un solo file JSON) ============
   - name: "team"

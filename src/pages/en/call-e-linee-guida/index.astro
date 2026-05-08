@@ -1,5 +1,9 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import callData from "../../../data/call-e-linee-guida-en.json";
+import type { CallELineeGuidaData } from "../../../data/types";
+
+const data = callData as CallELineeGuidaData;
 ---
 
 <Layout
@@ -9,24 +13,26 @@ import Layout from "../../../layouts/Layout.astro";
 	<!-- <h1>Call & Linee Guida</h1> -->
 
 	<section class="home-card">
-		<h2>Latest Call for Papers</h2>
+		<h2>{data.active_call.section_title}</h2>
 		<article class="call-item">
 			<div class="call-image">
-				<img src="/img/Call-for-papers_3-scaled.jpg" alt="Call Vol 6" />
+				<img src={data.active_call.image} alt={data.active_call.image_alt} />
 			</div>
 			<div class="call-content">
 				<header>
 					<h3>
-						<a
-							href="/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf"
-							>Call for Papers Vol. 6 (2026/27)</a
-						>
+						<a href={data.active_call.pdf_link}>{data.active_call.title}</a>
 					</h3>
 				</header>
 				<p class="scadenze">
-					✦ Deadline for abstracts and review proposals: 17/12/2025<br
-					/>
-					✦ Deadline for full papers: 13/04/2026
+					{
+						data.active_call.deadlines.map((d, i) => (
+							<Fragment>
+								✦ {d}
+								{i < data.active_call.deadlines.length - 1 && <br />}
+							</Fragment>
+						))
+					}
 				</p>
 				<!-- <p>Descrizione call</p> -->
 			</div>
@@ -36,36 +42,18 @@ import Layout from "../../../layouts/Layout.astro";
 	<br />
 
 	<section class="home-card">
-		<h2>Author Guidelines</h2>
+		<h2>{data.linee_guida.section_title}</h2>
 
 		<ul class="documents-list">
-			<li>
-				<a href="/pdf/calls/Linee-guida-2.pdf" target="_blank"
-					>Guidelines for Authors (PDF)</a
-				>
-			</li>
-			<li>
-				<a href="/pdf/calls/Codice-etico.pdf" target="_blank"
-					>Code of Ethics (PDF)</a
-				>
-			</li>
-			<li>
-				<a
-					href="/pdf/calls/processo-di-revisione-def.pdf"
-					target="_blank">Review Process (PDF)</a
-				>
-			</li>
-			<li>
-				<a
-					href="/pdf/calls/Peer-review-evaluation-report-.pdf"
-					target="_blank">Reviewer Report (PDF)</a
-				>
-			</li>
-			<li>
-				<a href="/pdf/calls/template-abstract-1.pdf" target="_blank"
-					>Abstract Template (PDF)</a
-				>
-			</li>
+			{
+				data.linee_guida.documents.map((doc) => (
+					<li>
+						<a href={doc.pdf} target="_blank">
+							{doc.label}
+						</a>
+					</li>
+				))
+			}
 		</ul>
 	</section>
 
@@ -101,92 +89,23 @@ import Layout from "../../../layouts/Layout.astro";
 	<br />
 
 	<section class="past-calls">
-		<h2>Past Call for Papers</h2>
+		<h2>{data.past_calls.section_title}</h2>
 
 		<div class="call-list">
-			<!-- Item 1 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img
-						src="/img/Call-for-Paper-5-scaled.jpg"
-						alt="Call Giornate Studio 2"
-					/>
-				</div>
-				<div class="call-content">
-					<h3>
-						<a
-							href="/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-seconda-edizione.pdf"
-							>CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E
-							SESAMO – SECONDA EDIZIONE</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 2 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img
-						src="/img/CallForPapers_maydan_e_sesamo_prima_edizione.jpg"
-						alt="Call Giornate Studio"
-					/>
-				</div>
-				<div class="call-content">
-					<h3>
-						<a
-							href="/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-2.pdf"
-							>CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E
-							SESAMO</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 3 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img
-						src="/img/call_for_papers_giornate_di_studio_prima_edizione.jpg"
-						alt="Giornate di Studio 1"
-					/>
-				</div>
-				<div class="call-content">
-					<h3>
-						<a
-							href="/pdf/calls/Le-giornate-di-studio-di-Maydan-Call-for-papers_prima_edizione.pdf"
-							>CALL FOR PAPERS – GIORNATE DI STUDIO (01 ed.)</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 4: Vol 2 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img src="/img/copertina-call-2-1.jpg" alt="Call Vol 2" />
-				</div>
-				<div class="call-content">
-					<h3>
-						<a href="/pdf/calls/call-for-papers-vol-2.pdf"
-							>CALL FOR PAPERS VOL.2</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 5: Vol 1 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img src="/img/call01_maydan.jpg" alt="Call Vol 1" />
-				</div>
-				<div class="call-content">
-					<h3>
-						<a href="/pdf/calls/call-for-papers-01-maydan.-pdf.pdf"
-							>CALL FOR PAPERS VOL.1</a
-						>
-					</h3>
-				</div>
-			</article>
+			{
+				data.past_calls.items.map((item) => (
+					<article class="call-item">
+						<div class="call-image">
+							<img src={item.image} alt={item.image_alt} />
+						</div>
+						<div class="call-content">
+							<h3>
+								<a href={item.pdf_link}>{item.title}</a>
+							</h3>
+						</div>
+					</article>
+				))
+			}
 		</div>
 	</section>
 

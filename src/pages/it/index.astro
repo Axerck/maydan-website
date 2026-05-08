@@ -1,5 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import homepageData from "../../data/homepage-it.json";
+import type { HomepageData } from "../../data/types";
+
+const data = homepageData as HomepageData;
 ---
 
 <Layout
@@ -11,22 +15,21 @@ import Layout from "../../layouts/Layout.astro";
     <div class="hero-inner">
       <div class="hero-layout">
         <div class="hero-text">
-          <!-- <h1>Call for Papers</h1> -->
-          <h2>Call for Papers Vol. 6 (2026/27)</h2>
+          <h2>{data.hero.title}</h2>
           <p>
-            <strong>Scadenza abstract:</strong> 17/12/2025<br />
-            <strong>Scadenza elaborati:</strong> 13/04/2026
+            <strong>{data.hero.deadline_abstract_label}</strong> {data.hero.deadline_abstract}<br />
+            <strong>{data.hero.deadline_paper_label}</strong> {data.hero.deadline_paper}
           </p>
           <a
-            href="/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf"
+            href={data.hero.pdf_link}
             class="btn-primary"
-            target="_blank">Scarica la Call (PDF)</a
+            target="_blank">{data.hero.pdf_button_label}</a
           >
         </div>
         <div class="hero-image">
           <img
-            src="/img/Call-for-papers_3-scaled.jpg"
-            alt="Call for Papers Vol. 6"
+            src={data.hero.image}
+            alt={data.hero.image_alt}
           />
         </div>
       </div>
@@ -37,73 +40,64 @@ import Layout from "../../layouts/Layout.astro";
   <section class="home-grid">
     <!-- Ultimo numero -->
     <article class="home-card" id="numeri">
-      <h2>Maydan vol. 4, 2025</h2>
+      <h2>{data.latest_issue_card.title}</h2>
       <div class="card-images">
         <img
-          src="/img/copertina4_compressed_page-0001-1.jpg"
-          alt="Copertina Vol 4"
+          src={data.latest_issue_card.image}
+          alt={data.latest_issue_card.image_alt}
         />
       </div>
-      <p>
-        Numero dedicato alle nuove prospettive sugli studi dei mondi arabi,
-        semitici e islamici.
-      </p>
-      <a href="/it/pubblicazioni/vol-4" class="card-link"
-        >Vai al numero &rarr;</a
+      <p>{data.latest_issue_card.description}</p>
+      <a href={data.latest_issue_card.link} class="card-link"
+        >{data.latest_issue_card.link_label} &rarr;</a
       >
     </article>
 
     <!-- Comunicato -->
     <article class="home-card">
       <div class="card-images">
-        <img src="/img/melone_comunicato.jpg" alt="Comunicato Maydan" />
+        <img src={data.comunicato_card.image} alt={data.comunicato_card.image_alt} />
       </div>
-      <h2>Comunicato del Comitato editoriale</h2>
-      <p>
-        Comunicato sulla decolonizzazione dei saperi e la violenza coloniale.
-      </p>
-      <a href="/it/comunicato" class="card-link">Leggi il comunicato &rarr;</a>
+      <h2>{data.comunicato_card.title}</h2>
+      <p>{data.comunicato_card.description}</p>
+      <a href={data.comunicato_card.link} class="card-link">{data.comunicato_card.link_label} &rarr;</a>
     </article>
 
     <!-- Altre attività -->
     <section class="home-card" id="attivita">
-      <h2>Attività</h2>
+      <h2>{data.activities_card.title}</h2>
       <ul class="activity-list">
-        <li><a href="/it/attivita/questionario-precariato-2025">Questionario sul precariato tra dottorande/i</a></li>
-        <li>Giornate di studio Maydan e SeSaMO</li>
-        <li>Seminari e formazioni online</li>
-        <li>Call for Papers annuali</li>
+        {data.activities_card.items.map((item) => (
+          <li>
+            {item.link ? (
+              <a href={item.link}>{item.label}</a>
+            ) : (
+              item.label
+            )}
+          </li>
+        ))}
       </ul>
-      <a href="/attivita" class="card-link">Scopri tutte le attività &rarr;</a>
+      <a href={data.activities_card.main_link} class="card-link">{data.activities_card.main_link_label} &rarr;</a>
     </section>
   </section>
 
   <!-- Collaborazioni -->
   <section class="collaborazioni">
-    <h2>Maydan collabora con:</h2>
+    <h2>{data.collaborations.title}</h2>
     <div class="collab-logos">
-      <a
-        href="https://halqa.hypotheses.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/img/logo-halqa-transparent-4.png"
-          alt="Logo Halqa"
-          style="max-width: 120px; height: auto;"
-        />
-      </a>
-      <a
-        href="https://www.sesamoitalia.it/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/img/logo-sesamo-societa1.png"
-          alt="Logo SeSaMO"
-          style="max-width: 120px; height: auto;"
-        />
-      </a>
+      {data.collaborations.logos.map((logo) => (
+        <a
+          href={logo.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={logo.image}
+            alt={`Logo ${logo.name}`}
+            style="max-width: 120px; height: auto;"
+          />
+        </a>
+      ))}
     </div>
   </section>
 </Layout>
