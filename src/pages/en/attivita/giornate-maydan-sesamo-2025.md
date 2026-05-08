@@ -4,6 +4,11 @@ title: "Maydan and SeSaMO Study Days – Second Edition"
 date: "2025-02-12"
 description: "Third in-person edition of the Maydan–SeSaMO study days dedicated to Arab, Semitic, and Islamic worlds."
 cover: "/img/attivita/giornate-maydan-sesamo-2025.jpg"
+pdf_attachments:
+  - titolo: "Call for Papers"
+    url: "/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-seconda-edizione.pdf"
+  - titolo: "Programme"
+    url: "/pdf/attivita/Programma-Le-giornate-di-Maydan-e-SeSaMO_2025.pdf"
 ---
 
 The Maydan and SeSaMO study days are the third major in-person event organized by the journal and aimed at undergraduates, graduates, and PhD students.
