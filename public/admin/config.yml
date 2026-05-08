@@ -7,40 +7,39 @@ backend:
 # Sviluppo locale: aprire /admin/index.html in un browser Chromium e cliccare
 # "Work with Local Repository". Sveltia usa la File System Access API per
 # scrivere direttamente sui file locali — niente proxy server.
-# (L'opzione `local_backend` di Decap viene ignorata da Sveltia.)
+#
+# Nota: editorial_workflow rimosso perché Sveltia non lo supporta.
+# Il flusso draft→PR→merge sarà implementato in fase 2 con un branch
+# dedicato + GitHub Actions.
 
 media_folder: "public/img"
 public_folder: "/img"
 
-publish_mode: editorial_workflow
-
-i18n:
-  structure: multiple_folders
-  locales: [it, en]
-  default_locale: it
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
 
 collections:
-  - name: "volumi"
-    label: "Volumi"
+  # ============ VOLUMI (italiano) ============
+  - name: "volumi-it"
+    label: "Volumi (IT)"
     label_singular: "Volume"
-    folder: "src/pages"
-    path: "{{locale}}/pubblicazioni/{{slug}}"
+    folder: "src/pages/it/pubblicazioni"
     extension: "md"
     format: frontmatter
     create: true
-    i18n: true
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/VolumeLayout.astro"}
-      - {label: "Titolo", name: "title", widget: "string", i18n: true}
+      - {label: "Titolo", name: "title", widget: "string"}
       - {label: "Anno", name: "year", widget: "string"}
       - {label: "Copertina", name: "cover", widget: "image"}
-      - {label: "Descrizione", name: "description", widget: "text", i18n: true}
+      - {label: "Descrizione", name: "description", widget: "text"}
       - {label: "PDF volume completo", name: "pdf_full_link", widget: "file", required: false}
       - label: "Prefazione"
         name: "prefazione"
         widget: "list"
         required: false
-        i18n: true
         fields:
           - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
           - {label: "Autore", name: "autore", widget: "string"}
@@ -49,7 +48,6 @@ collections:
         name: "editoriale"
         widget: "list"
         required: false
-        i18n: true
         fields:
           - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
           - {label: "Autore", name: "autore", widget: "string"}
@@ -58,16 +56,14 @@ collections:
         name: "articoli"
         widget: "list"
         required: false
-        i18n: true
         fields:
-          - {label: "Titolo", name: "titolo", widget: "string"}
+          - {label: "Titolo", name: "titolo", widget: "string", hint: "Per parole in italic, usa *parole*"}
           - {label: "Autore", name: "autore", widget: "string"}
           - {label: "PDF", name: "pdf", widget: "file"}
       - label: "Working Papers"
         name: "working_paper"
         widget: "list"
         required: false
-        i18n: true
         fields:
           - {label: "Titolo", name: "titolo", widget: "string"}
           - {label: "Autore", name: "autore", widget: "string"}
@@ -76,41 +72,86 @@ collections:
         name: "recensioni"
         widget: "list"
         required: false
-        i18n: true
         fields:
           - {label: "Titolo", name: "titolo", widget: "string"}
           - {label: "Autore", name: "autore", widget: "string"}
           - {label: "PDF", name: "pdf", widget: "file"}
 
-  - name: "attivita"
-    label: "Attività"
-    label_singular: "Attività"
-    folder: "src/pages"
-    path: "{{locale}}/attivita/{{slug}}"
+  # ============ VOLUMI (inglese) ============
+  - name: "volumi-en"
+    label: "Volumes (EN)"
+    label_singular: "Volume"
+    folder: "src/pages/en/pubblicazioni"
     extension: "md"
     format: frontmatter
     create: true
-    i18n: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/VolumeLayout.astro"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Full Volume PDF", name: "pdf_full_link", widget: "file", required: false}
+      - label: "Preface"
+        name: "prefazione"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title (optional)", name: "titolo", widget: "string", required: false}
+          - {label: "Author", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Editorial"
+        name: "editoriale"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title (optional)", name: "titolo", widget: "string", required: false}
+          - {label: "Author", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Articles"
+        name: "articoli"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title", name: "titolo", widget: "string", hint: "For italic words, use *words*"}
+          - {label: "Author", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Working Papers"
+        name: "working_paper"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title", name: "titolo", widget: "string"}
+          - {label: "Author", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Reviews"
+        name: "recensioni"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title", name: "titolo", widget: "string"}
+          - {label: "Author", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+
+  # ============ ATTIVITÀ (italiano) ============
+  - name: "attivita-it"
+    label: "Attività (IT)"
+    label_singular: "Attività"
+    folder: "src/pages/it/attivita"
+    extension: "md"
+    format: frontmatter
+    create: true
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/ActivityLayout.astro"}
-      - {label: "Titolo", name: "title", widget: "string", i18n: true}
+      - {label: "Titolo", name: "title", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
-      - {label: "Descrizione", name: "description", widget: "text", i18n: true}
+      - {label: "Descrizione", name: "description", widget: "text"}
       - {label: "Copertina", name: "cover", widget: "image", required: false}
-      - {label: "Nascondi copertina", name: "hide_cover", widget: "boolean", required: false, default: false}
-      - label: "Link CTA (opzionale)"
-        name: "cta_link"
-        widget: "object"
-        required: false
-        i18n: true
-        fields:
-          - {label: "URL", name: "url", widget: "string"}
-          - {label: "Etichetta pulsante", name: "label", widget: "string"}
+      - {label: "Nascondi copertina nella pagina", name: "hide_cover", widget: "boolean", required: false, default: false}
       - label: "PDF allegati"
         name: "pdf_attachments"
         widget: "list"
         required: false
-        i18n: true
         fields:
           - {label: "Titolo", name: "titolo", widget: "string"}
           - {label: "URL", name: "url", widget: "file"}
@@ -119,27 +160,86 @@ collections:
         name: "image_gallery"
         widget: "list"
         required: false
-        i18n: true
         fields:
-          - {label: "Titolo", name: "titolo", widget: "string", required: false}
-          - {label: "Immagine", name: "url", widget: "image"}
-          - {label: "Testo alternativo", name: "alt", widget: "string", required: false}
-      - {label: "Contenuto", name: "body", widget: "markdown", i18n: true}
+          - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
+          - {label: "URL", name: "url", widget: "image"}
+          - {label: "Alt text", name: "alt", widget: "string", required: false}
+      - label: "CTA Link (opzionale)"
+        name: "cta_link"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "Etichetta bottone", name: "label", widget: "string"}
+      - {label: "Contenuto", name: "body", widget: "markdown"}
 
-  - name: "call"
-    label: "Call e linee guida"
-    label_singular: "Call"
-    folder: "src/pages"
-    path: "{{locale}}/call-e-linee-guida/{{slug}}"
+  # ============ ATTIVITÀ (inglese) ============
+  - name: "attivita-en"
+    label: "Activities (EN)"
+    label_singular: "Activity"
+    folder: "src/pages/en/attivita"
     extension: "md"
     format: frontmatter
     create: true
-    i18n: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/ActivityLayout.astro"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Cover", name: "cover", widget: "image", required: false}
+      - {label: "Hide cover on page", name: "hide_cover", widget: "boolean", required: false, default: false}
+      - label: "PDF attachments"
+        name: "pdf_attachments"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title", name: "titolo", widget: "string"}
+          - {label: "URL", name: "url", widget: "file"}
+          - {label: "Description", name: "descrizione", widget: "string", required: false}
+      - label: "Image gallery"
+        name: "image_gallery"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title (optional)", name: "titolo", widget: "string", required: false}
+          - {label: "URL", name: "url", widget: "image"}
+          - {label: "Alt text", name: "alt", widget: "string", required: false}
+      - label: "CTA Link (optional)"
+        name: "cta_link"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "Button label", name: "label", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  # ============ CALL E LINEE GUIDA (italiano) ============
+  - name: "call-it"
+    label: "Call e linee guida (IT)"
+    label_singular: "Call"
+    folder: "src/pages/it/call-e-linee-guida"
+    extension: "md"
+    format: frontmatter
+    create: true
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/Layout.astro"}
-      - {label: "Titolo", name: "title", widget: "string", i18n: true}
-      - {label: "Contenuto", name: "body", widget: "markdown", i18n: true}
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Contenuto", name: "body", widget: "markdown"}
 
+  # ============ CALL E LINEE GUIDA (inglese) ============
+  - name: "call-en"
+    label: "Calls & Guidelines (EN)"
+    label_singular: "Call"
+    folder: "src/pages/en/call-e-linee-guida"
+    extension: "md"
+    format: frontmatter
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/Layout.astro"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  # ============ TEAM (un solo file JSON) ============
   - name: "team"
     label: "Team"
     files:
@@ -150,11 +250,12 @@ collections:
           - label: "Membri"
             name: "members"
             widget: "list"
+            summary: "{{name}} — {{role}} ({{affiliation}})"
             fields:
               - {label: "Nome", name: "name", widget: "string"}
               - {label: "Slug (URL)", name: "slug", widget: "string", hint: "Niente spazi, solo trattini"}
-              - {label: "Ruolo", name: "role", widget: "string"}
-              - {label: "Affiliazione", name: "affiliation", widget: "string"}
+              - {label: "Ruolo principale / Titolo", name: "role", widget: "string", hint: "Ruolo identitario in Maydan (es. fondatore, direttore emerito). Per il ruolo operativo attuale o storico, vedi la collection 'Struttura redazione'."}
+              - {label: "Affiliazione", name: "affiliation", widget: "string", required: false}
               - {label: "Affiliazione (EN)", name: "affiliation_en", widget: "string", required: false}
               - {label: "Bio (IT)", name: "bio", widget: "text", required: false}
               - {label: "Bio (EN)", name: "bio_en", widget: "text", required: false}
@@ -162,6 +263,7 @@ collections:
               - {label: "Link personale", name: "personalLink", widget: "string", required: false}
               - {label: "Email", name: "email", widget: "string", required: false}
 
+  # ============ STRUTTURA REDAZIONE (un solo file JSON) ============
   - name: "struttura"
     label: "Struttura redazione"
     files:
