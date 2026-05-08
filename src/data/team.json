@@ -1,0 +1,258 @@
+{
+  "members": [
+    {
+      "name": "Antonio Pacifico",
+      "slug": "antonio-pacifico",
+      "role": "Direttore responsabile",
+      "affiliation": "Université Jean Moulin Lyon 3",
+      "affiliation_en": "",
+      "bio": "Antonio Pacifico è dottorando presso l’Institut d’Études Transtextuelles et Transculturelles (IETT) dell’Université Jean-Moulin di Lione III. Ha conseguito la laurea magistrale in Letterature e Culture Comparate presso l’Università di Napoli “L’Orientale”. Il suo progetto di ricerca, condotto sotto la supervisione congiunta della Prof.ssa Elisabeth Vauthier e della Prof.ssa Monica Ruocco, si concentra da una prospettiva sociologica su una generazione specifica di scrittori iracheni, la cosiddetta “generazione delle due guerre”, e soprattutto sui dibattiti intervenuti fra questi ultimi. I suoi interessi di ricerca comprendono la letteratura e il teatro iracheno, la sociologia della cultura, nonché la storia culturale e intellettuale dei paesi arabi.",
+      "bio_en": "",
+      "image": "/team/antonio-pacifico.jpg",
+      "personalLink": "https://www.univ-lyon3.fr/fr/personne/antonio-pacifico",
+      "email": "[EMAIL_ADDRESS]"
+    },
+    {
+      "name": "Aurora Magliozzi",
+      "slug": "aurora-magliozzi",
+      "role": "Vicedirettrice",
+      "affiliation": "Universität Bern",
+      "bio": "Aurora Magliozzi è Junior Postdoctoral Fellow presso il Walter Benjamin Kolleg (Università di Berna, Faculty of Humanities). La sua ricerca si concentra sui dibattiti letterari (mufāḫarāt o munāẓarāt) del periodo Abbaside. Ricopre inoltre il ruolo di Cultrice della Materia in Letteratura Araba presso l’Università di Napoli “L’Orientale” e di vicedirettrice di Maydan. Rivista sui mondi arabi, semitici e islamici. Ha conseguito il dottorato presso l’Università di Napoli “L’Orientale” nel 2025, con una tesi dal titolo “The Dispute over Boys and Girls as Objects of Male Desire in adab Literature (9th–14th Century)”. Nel 2019 ha lavorato come assistente ricercatrice presso l’Escuela de Estudios Árabes (EEA-CSIC) di Granada e nel 2023 come ricercatrice associata presso il Fachbereich Mittlerer Osten und muslimische Gesellschaften (MOMuG) dell’Università di Berna. Ha studiato arabo a Rabat e Amman, ricevendo formazione sia in arabo moderno standard che nei dialetti. I suoi interessi di ricerca includono la letteratura araba premoderna in prosa, gender e eroticismo nei contesti islamici premoderni, la disputa letteraria.",
+      "bio_en": "Aurora Magliozzi is a Junior Postdoctoral Fellow at the Walter Benjamin Kolleg (University of Bern, Faculty of Humanities). Her research focuses on Arabic literary disputes (mufāḫarāt or munāẓarāt) of the Abbasid period. She also serves as Subject Expert in Arabic Literature at the University of Naples “L’Orientale” and as vice-director of the journal Maydan. Rivista sui mondi arabi, semitici e islamici. She completed her Ph.D. in Asian, African, and Mediterranean Studies at the University of Naples “L’Orientale” in 2025, with a dissertation entitled “The Dispute over Boys and Girls as Objects of Male Desire in adab Literature (9th–14th Century).” In 2019 she worked as an assistant researcher at the Escuela de Estudios Árabes (EEA-CSIC) in Granada and in 2023 as an associate researcher at the Fachbereich Mittlerer Osten und muslimische Gesellschaften (MOMuG), University of Bern. She studied Arabic in Rabat and Amman, gaining training in both Modern Standard Arabic and dialects. Her research interests include premodern Arabic prose literature, history of Arabic literature, gender and eroticism in premodern Islamicate contexts, literary dispute.",
+      "email": "auroramagliozzi@gmail.com",
+      "personalLink": "https://unior.academia.edu/AuroraMagliozzi",
+      "image": "/team/aurora-magliozzi.png"
+    },
+    {
+      "name": "Gaia Sorge",
+      "slug": "gaia-sorge",
+      "role": "Caporedattrice",
+      "affiliation": "Università degli Studi di Modena e Reggio Emilia",
+      "bio": "Gaia Sorge è attualmente dottoranda presso l’Università degli Studi di Modena e Reggio Emilia. Ha conseguito la laurea triennale in Lingue e Culture Europee, Euroamericane ed Orientali presso l’Università degli Studi di Catania e la laurea magistrale in Lingue e Culture dell’Asia e dell’Africa presso l’Università degli Studi di Napoli “L’Orientale”. Il suo progetto di ricerca si concentra principalmente sullo studio delle relazioni filogenetiche interne alla famiglia delle lingue semitiche, attraverso un metodo di comparazione parametrica, orientato specialmente all’analisi della sintassi. I suoi interessi di ricerca includono soprattutto la dialettologia araba e la linguistica tipologica.",
+      "image": "/team/gaia-sorge.png",
+      "personalLink": "https://www.unimore.it/persone/gaia.sorge",
+      "email": "gaiasorge16@gmail.com"
+    },
+    {
+      "name": "Federica Bucci",
+      "slug": "federica-bucci",
+      "role": "Redazione",
+      "affiliation": "Università degli Studi di Napoli “L’Orientale”",
+      "bio": "Federica Bucci è dottoranda di ricerca del XXXVIII ciclo in Studi Internazionali presso l’Università degli studi di Napoli “L’Orientale” con un progetto riguardante le conversioni femminili all’Islam in Italia. I suoi interessi di ricerca sono l’Islam contemporaneo, l’Islam italiano e gli studi di genere in contesto islamico. Ha conseguito la laurea triennale in Lingue e Civiltà Orientali all’Università degli studi di Roma “La Sapienza” e la laurea magistrale in Relazioni e Istituzioni dell’Asia e dell’Africa presso l’Università degli studi di Napoli “L’Orientale”.",
+      "image": "/team/federica-bucci.png",
+      "personalLink": "https://www.unior.it/sites/default/files/2023-06/BUCCI%20Federica_1.pdf",
+      "email": "f.bucci@unior.it"
+    },
+    {
+      "name": "Lorenzo Ghione",
+      "slug": "lorenzo-ghione",
+      "role": "Redazione",
+      "affiliation": "Università di Bologna",
+      "bio": "Lorenzo Ghione, attualmente dottorando presso l’Università di Bologna in Political and Social Sciences, è laureato in Scienze Internazionali e Diplomatiche (SID) presso l’Università di Bologna. Durante il suo percorso di triennale e magistrale ha trascorso un anno di Erasmus+ a Lione (Institut d’Études Politiques, 2015/2016) ed a Parigi (Sciences Po, 2018/2019). Nel tempo si è progressivamente specializzato sulle questioni migratorie e sulla loro gestione da parte dei governi africani, con particolare interesse per i movimenti trans-Sahariani e nel Mediterraneo. Il suo progetto di ricerca, sotto la supervisione del Prof. Corrado Tornimbeni, analizza il concetto ed approfondisce la pratica della “diplomazia delle migrazioni”. Il caso di studio è la Tunisia post-rivoluzionaria e le sue relazioni con Bruxelles, nel tentativo di comprendere come la cooperazione sui flussi migratori interagisce con la politica estera di Cartagine.",
+      "email": "lorenzo.ghione2@unibo.it",
+      "personalLink": "https://www.unibo.it/sitoweb/lorenzo.ghione2",
+      "image": "/team/lorenzo-ghione.jpg"
+    },
+    {
+      "name": "Giulia Gozzini",
+      "slug": "giulia-gozzini",
+      "role": "Redazione",
+      "affiliation": "Università di Lund",
+      "bio": "Giulia Gozzini è dottoranda in Studi Islamici presso l’Università di Lund. Ha conseguito la laurea magistrale in Middle East and North Africa Politics all’Università degli Studi di Torino e la laurea triennale in Relazioni Internazionali all’Università degli Studi di Firenze. Ha inoltre lavorato come Junior Research Fellow nel programma Mediterraneo, Medioriente e Africa presso l’Istituto Affari Internazionali (IAI). La sua ricerca indaga il concetto di populismo islamico e si concentra sullo studio dei movimenti islamisti sunniti in Libano, con particolare attenzione all’evoluzione ideologica e politica del Salafismo contemporaneo nel contesto della città di Tripoli",
+      "bio_en": "Giulia Gozzini is a PhD candidate in Islamic Studies at Lund University. She holds a Master's degree in Middle East and North Africa Politics from the University of Turin and a Bachelor's degree in International Relations from the University of Florence. She has also worked as a Junior Research Fellow in the Mediterranean, Middle East, and Africa program at the Istituto Affari Internazionali (IAI).Her research investigates the concept of Islamic populism and focuses on the study of Sunni Islamist movements in Lebanon, with a specific emphasis on the ideological and political evolution of contemporary Salafism, particularly in the context of the city of Tripoli.",
+      "email": "giulia.gozzini@ctr.lu.se",
+      "personalLink": "https://portal.research.lu.se/en/persons/giulia-gozzini-2",
+      "image": "/team/giulia-gozzini.png"
+    },
+    {
+      "name": "Enrico Maria La Forgia",
+      "slug": "enrico-maria-la-forgia",
+      "role": "Redazione",
+      "affiliation": "Università di Padova",
+      "bio": "Enrico Maria la Forgia è dottorando in Social Sciences all’Università degli Studi di Padova, dove si occupa di migrazioni, religione e Società Civile. Dopo la triennale in Sociologia ottenuta a Roma, città dove non è nato ma dove è cresciuto, ha conseguito una laurea magistrale – sempre in Sociologia – alla Univerzita Karlova v Praze (Charles University of Prague) con una tesi sulla dimensione identitaria dei giovani francesi con background migratorio a Marsiglia. Curioso di indole e abbastanza avventato di natura, affianca al lavoro accademico vari tentativi di divulgazione, a partire dal suo impegno nel mondo dell’informazione. Al momento si trova in Francia, a metà tra Parigi e Lille, città dove ha svolto visiting accademici e parte della sua attuale ricerca, concentrata sulle relazioni tra Stato francese e Società Civile islamica nei momenti di tensione.",
+      "bio_en": "Enrico Maria la Forgia is a PhD candidate in Social Sciences at the University of Padua, where he researches migration, religion, and civil society. After earning a bachelor’s degree in Sociology in Rome—a city where he was not born but where he grew up—he completed a master’s degree, also in Sociology, at Charles University in Prague (Univerzita Karlova v Praze), with a thesis on the identity formation of French youth with migrant backgrounds in Marseille. Curious by temperament and somewhat adventurous by nature, he combines his academic work with various public engagement initiatives, beginning with his involvement in the field of journalism and information. He is currently based in France, between Paris and Lille—cities where he has undertaken academic visiting periods and conducted part of his current research, which focuses on the relationship between the French state and Islamic civil society during periods of tension.",
+      "email": "enricomaria.laforgia@phd.unipd.it",
+      "personalLink": "https://socialsciences.fisppa.unipd.it/team-member/enrico-maria-la-forgia/",
+      "image": "/team/enrico-maria-la-forgia.png"
+    },
+    {
+      "name": "Sara Manna",
+      "slug": "sara-manna",
+      "role": "Redazione",
+      "affiliation": "Università degli Studi di Milano-Bicocca",
+      "bio": "Sara Manna è dottoranda in Urban Studies presso l’Università degli Studi di Milano-Bicocca. Ha conseguito la laurea magistrale in Scienze Internazionali presso l’Università di Torino, con specializzazione in MENA Politics, e la laurea triennale in Mediazione Linguistica presso l’Università degli Studi di Milano. Durante il suo percorso accademico e professionale, si è specializzata nel contesto marocchino, conducendo un periodo di ricerca sul campo per la redazione della tesi magistrale e collaborando con diverse ONG locali e internazionali. Tali esperienze le hanno permesso di sviluppare una conoscenza approfondita e multidimensionale della realtà socio-politica del Marocco. I suoi interessi di ricerca si concentrano sulle trasformazioni urbane nei contesti postcoloniali, con un focus sulle pratiche di partecipazione politica, i processi di risignificazione dello spazio e il ruolo dell’industria culturale – in particolare dei festival musicali – nella produzione e rappresentazione dei luoghi. Le sue aree di interesse geografico includono il Nord Africa e il Sud-Ovest asiatico.",
+      "bio_en": "Sara Manna is a PhD candidate in Urban Studies at the University of Milano-Bicocca. She obtained a Master’s degree in International Sciences at the University of Torino, with a specialization in MENA Politics, and a Bachelor’s degree in Linguistic Mediation at the University of Milano. During her academic and professional career, she specialised in the Moroccan context, conducting fieldwork for her Master’s dissertation and working with various local and international NGOs. These experiences allowed her to develop an in-depth and multi-faceted understanding of Morocco’s socio-political landscape. Her research interests focus on urban transformations in postcolonial contexts, with particular attention to political participation practices, processes of spatial re-signification, and the role of the cultural industry – especially music festivals – in the production and representation of place. Her main geographical areas of interest include North Africa and Southwest Asia.",
+      "email": "s.manna5@campus.unimib.it",
+      "image": "/team/sara-manna.jpg"
+    },
+    {
+      "name": "Laura Morreale",
+      "slug": "laura-morreale",
+      "role": "Redazione",
+      "affiliation": "Università degli Studi di Perugia",
+      "bio": "Laura Morreale è dottoranda presso il dipartimento di Scienze Politiche dell’Università di Perugia. Ha ottenuto la laurea magistrale in Lingue, storia e culture del Mediterraneo e dei Paesi islamici all’Università di Napoli “L’Orientale”, e un master di II livello in Tutela internazionale dei diritti umani all’Università di Roma “La Sapienza”. I suoi interessi di ricerca includono i sistemi autoritari nel mondo arabo, i movimenti politici e religiosi nell’area, e le relazioni Nord-Sud globale da una prospettiva postcoloniale, in particolare riguardo agli aiuti allo sviluppo e il controllo delle migrazioni. Attualmente lavora a una ricerca sul ruolo delle organizzazioni multilaterali nella Tunisia post-indipendenza.",
+      "email": "morreale.laura.ml@gmail.com",
+      "personalLink": "https://scipol.unipg.it/files/generale/documenti/phdstudents/cv_laura_morreale.pdf",
+      "image": "/team/laura-morreale.png"
+    },
+    {
+      "name": "Viola Pacini",
+      "slug": "viola-pacini",
+      "role": "Redazione",
+      "affiliation": "Università di Bologna",
+      "bio": "Viola Pacini è dottoranda presso il dipartimento di Storia, Culture e Civiltà dell’Università di Bologna. Precedentemente, dopo essersi laureata all’Università per Stranieri di Siena, ha ottenuto una laurea magistrale in Scienze Storiche e Orientalistiche presso l’Università di Bologna con una tesi sul vincolo per debito nell’industria perlifera del Golfo. Nel frattempo ha trascorso alcuni periodi all’estero, presso l’Università di Nizwa (corso di lingua araba), l’Institut National des Langues et Civilisations Orientales di Parigi (Erasmus) e l’Institute of Arab & Islamic Studies dell’Università di Exeter (PhD visiting). La sua ricerca si concentra sui casi di cattura e tratta di schiavi all’interno della Penisola Arabica all’inizio del XX secolo.",
+      "bio_en": "Viola Pacini is a PhD candidate in the Global Histories, Cultures, and Politics department at the University of Bologna. After graduating from the University for Foreigners of Siena, she obtained a master’s degree in History and Oriental Studies at the University of Bologna, with a thesis on the debt bondage in the Gulf pearling industry. She also spent some periods abroad, at the University of Nizwa (Arabic language course), the Institut National des Langues et Civilisations Orientales of Paris (Erasmus) and the Institute of Arab & Islamic Studies dell’Università di Exeter (PhD visiting). Her current research focuses on the slave trade in the Arabian Peninsula during the first half of the 20th century.",
+      "email": "viola.pacini2@unibo.it",
+      "personalLink": "https://www.unibo.it/sitoweb/viola.pacini2/en",
+      "image": "/team/viola-pacini.png"
+    },
+    {
+      "name": "Leonardo Palombini",
+      "slug": "leonardo-palombini",
+      "role": "Redazione",
+      "affiliation": "Università degli Studi di Napoli “L’Orientale”",
+      "bio": "Leonardo Palombini è dottorando presso l’Università degli Studi di Napoli “L’Orientale”, dove si occupa di letteratura tunisina contemporanea. Si è laureato con 110 e lode in Lettere all’Università Ca’ Foscari di Venezia, con una tesi dedicata alla poetica di ʿAbd al-Wahhāb al-Bayyātī, e ha conseguito la laurea magistrale, sempre con 110 e lode, all’Università “L’Orientale” di Napoli, con una tesi sul romanzo tunisino contemporaneo. I suoi interessi di ricerca riguardano la letteratura araba, in particolare il romanzo arabo moderno e contemporaneo, e la sociologia della letteratura. Ha perfezionato lo studio dell’arabo e del persiano attraverso soggiorni di ricerca in Iran, Libano, Turchia, Tunisia e Marocco.",
+      "email": "l.palombini@unior.it",
+      "image": "/team/leonardo-palombini.png"
+    },
+    {
+      "name": "Luigi Sausa",
+      "slug": "luigi-sausa",
+      "role": "Redazione",
+      "affiliation": "Università degli Studi di Napoli “L’Orientale”",
+      "bio": "Luigi Sausa è antropologo linguistico e ricercatore presso l’Università degli Studi di Napoli “L’Orientale”, dove ha conseguito il dottorato in Asian, African and Mediterranean Studies nel luglio 2025 con una tesi sulle pratiche linguistiche, le ideologie e la mobilità nelle comunità della diaspora araba in Indonesia. I suoi interessi di ricerca spaziano dall’antropologia linguistica alla documentazione delle lingue, con particolare attenzione al Sud-est asiatico e al mondo arabo-islamico. Attualmente è responsabile del progetto ELDP (Endangered Languages Documentation Programme) per la documentazione delle lingue della comunità Punan Batu nel Kalimantan Settentrionale, Borneo. I suoi lavori più recenti riguardano le reti intellettuali sciite tra Indonesia e Iraq, la critica antropologica agli strumenti di trascrizione automatica basati su AI e la sociolinguistica delle comunità filippine in Italia. Ha svolto periodi di ricerca e studio in Indonesia (Sulawesi, Sumatra, Kalimantan), Palestina (An-Najah National University, Nablus) ed Egitto (Dar Comboni, Il Cairo), e ha partecipato al progetto Erasmus presso l’INALCO di Parigi. Affianca alla ricerca un’attività di traduttore e interprete dall’indonesiano: tra i suoi lavori figurano la traduzione del romanzo La notte dei mille inferni per Add Editore e il servizio di interpretariato per Kompas TV in occasione della visita papale in Indonesia.",
+      "bio_en": "Luigi Sausa is a linguistic anthropologist and researcher at the University of Naples “L’Orientale”, where he completed his PhD in Asian, African and Mediterranean Studies in July 2025 with a dissertation on language practices, ideologies and mobility in Arab diaspora communities in Indonesia. His research interests range from linguistic anthropology to language documentation, with a particular focus on Southeast Asia and the Arab-Islamic world. He currently leads the ELDP (Endangered Languages Documentation Programme) project documenting the languages of the Punan Batu community in North Kalimantan, Borneo. His most recent work addresses Shiʿi intellectual networks between Indonesia and Iraq, the anthropological critique of AI-based automatic transcription tools, and the sociolinguistics of Filipino communities in Italy. He has carried out research and study periods in Indonesia (Sulawesi, Sumatra, Kalimantan), Palestine (An-Najah National University, Nablus) and Egypt (Dar Comboni Institute, Cairo), and took part in the Erasmus programme at INALCO in Paris. Alongside his academic work, he is active as a translator and interpreter from Indonesian: his projects include the Italian translation of the novel La notte dei mille inferni for Add Editore and interpreting work for Kompas TV during the papal visit to Indonesia.",
+      "email": "luigi.sausa@gmail.com / l.sausa@unior.it",
+      "image": "/team/luigi-sausa.png"
+    },
+    {
+      "name": "Chiara Scarfò",
+      "slug": "chiara-scarfo",
+      "role": "Redazione",
+      "affiliation": "Università di Torino – Università di Firenze",
+      "bio": "Chiara Scarfò è dottoranda in Mutamento Sociale e Politico (XL ciclo) presso l’Università di Torino e l’Università di Firenze. Ha conseguito una laurea magistrale in Scienze Internazionali presso l’Università di Torino e una laurea triennale in Scienze Politiche e Relazioni Internazionali presso l’Università di Roma Tre. Nel corso degli studi, ha svolto un tirocinio presso l’Ambasciata italiana a Teheran e ha lavorato come redattrice presso il Centro Studi Geopolitica.info. Il suo progetto di ricerca si concentra sulle tracce della frontiera coloniale che in passato separava il territorio sotto dominio spagnolo dal protettorato francese nel sud del Marocco e sulle politiche di regionalizzazione avanzata che interessano la zona. All’impegno accademico affianca la passione divulgativa attraverso collaborazioni con riviste di politica internazionale, dove approfondisce temi legati alle forme non convenzionali di partecipazione politica e alle politiche di genere nell’area SWANA.",
+      "bio_en": "Chiara Scarfò is a PhD candidate in Social and Political Change (XL cycle) at the University of Turin and the University of Florence. She holds a Master’s degree in International Studies from the University of Turin and a Bachelor’s degree in Political Science and International Relations from Roma Tre University. During her studies, she completed an internship at the Italian Embassy in Tehran and worked as an editor at the research center Geopolitica.info. Her doctoral research focuses on the traces of the colonial border that once separated the Spanish-controlled territory from the French protectorate in southern Morocco, as well as on the dynamics of advanced regionalization affecting the area. Alongside her academic work, she pursues her passion for divulgation through collaborations with international politics journals, where she explores issues related to non-conventional forms of political participation and gender politics in the SWANA region.",
+      "image": "/team/chiara-scarfo.jpg",
+      "email": "chiara.scarfo@unifi.it"
+    },
+    {
+      "name": "Marco Spagnoletti",
+      "slug": "marco-spagnoletti",
+      "role": "Vicedirettore",
+      "affiliation": "Università di Bologna",
+      "bio": "Marco Spagnoletti è dottorando presso il Dipartimento di Storia e Civiltà dell’European University Institute. Svolge attività di tutorato per il corso “History and Institutions of the Modern Middle East” presso l’università di Bologna, dove si è laureato in Scienze storiche e Orientalistiche. Ha inoltre conseguito una laurea triennale in Lingue e Culture Orientali all’Università di Roma “La Sapienza”. Il suo attuale progetto di dottorato analizza le solidarietà transnazionali tra i partiti marxisti palestinesi e la sinistra rivoluzionaria italiana negli anni Settanta, ed è basato su lunghi periodi di ricerca sul campo a Beirut e nei territori palestinesi. I suoi principali interessi di ricerca includono la storia globale e decoloniale, la storia contemporanea del Mediterraneo e la storia del cibo.",
+      "bio_en": "Marco Spagnoletti is a PhD candidate at the department of History and Civilizations at the European University Institute. He serves as a teaching tutor for the course “History and Institutions of the Modern Middle East” at the University of Bologna, where he earned an MA in Historical and Oriental Studies. He also holds a BA in Languages and Oriental Cultures at the University of Rome “La Sapienza.” His current doctoral project explores transnational solidarities between Palestinian Marxist parties and the Italian revolutionary left during the 1970s and is grounded in extended periods of fieldwork in Beirut and the Palestinian territories. His broader research interests include Global and Decolonial History, the Contemporary History of the Mediterranean, the History of food, and the entangled trajectories and “contaminations” between anti-imperialist struggles in the 1970s.",
+      "email": "marco.spagnoletti3@unibo.it",
+      "personalLink": "https://www.eui.eu/people?id=marco-spagnoletti",
+      "image": "/team/marco-spagnoletti.png"
+    },
+    {
+      "name": "Carolina Toso",
+      "slug": "carolina-toso",
+      "role": "Redazione",
+      "affiliation": "Università Ca’ Foscari Venezia – Universiteit van Amsterdam",
+      "bio": "Carolina Toso è dottoranda in co-tutela tra l’Università Ca’ Foscari di Venezia e l’Universiteit van Amsterdam. Ha conseguito un BA in spagnolo e arabo all’Università di Oxford, per il quale ha trascorso un anno presso l’IFPO di Amman e redatto una tesi in letteratura comparata sulla poesia in carcere in Siria e Uruguay. Ha poi ottenuto una laurea magistrale in sociologia e ricerca sociale all’Università di Trento con un anno a Parigi, dove ha frequentato l’EHESS/ENS-PSL e svolto ricerca etnografica sulla diaspora palestinese. Dopo alcuni anni di lavoro in ambito no profit, si dedica ora ad un progetto dottorale sulla letteratura palestinese, con particolare attenzione ai romanzi scritti da autori e autrici che hanno fatto ritorno in Palestina dopo gli Accordi di Oslo del 1993. La sua ricerca interdisciplinare, condotta sotto la supervisione di Simone Sibilio e Ihab Saloul, si colloca all’intersezione tra letteratura, memoria culturale e trauma.",
+      "bio_en": "Carolina Toso is a doctoral candidate in a joint PhD between Ca’ Foscari University of Venice and the University of Amsterdam. She read for a BA in Spanish and Arabic at the University of Oxford, for which she spent a year at IFPO Amman and submitted a thesis in comparative literature on prison poetry in Syria and Uruguay. She went on to earn an MA in Sociology and Social Research from the University of Trento including one year at EHESS/ENS-PSL in Paris, where she also conducted an ethnography on the Palestinian diaspora. After some years in the non-profit sector, she is now pursuing a PhD on Palestinian literature, focusing on novels by authors who returned to Palestine after the Oslo Accords of 1993. Her interdisciplinary research, conducted under the supervision of Simone Sibilio and Ihab Saloul, lies at the intersection between literature, cultural memory, and trauma.",
+      "email": "tosocarolina@gmail.com",
+      "personalLink": "https://www.unive.it/data/persone/28964258",
+      "image": "/team/carolina-toso.jpg"
+    },
+    {
+      "name": "Pietro Menghini",
+      "slug": "pietro-menghini",
+      "role": "Tesoriere",
+      "affiliation": "Scuola Superiore Meridionale, Università di Napoli “Federico II”",
+      "bio": "Pietro Menghini è laureato in Scienze delle Lingue, Storia e Culture del Mediterraneo e dei Paesi Islamici presso l’Università degli Studi di Napoli “L’Orientale”. Durante il suo percorso di studio ha trascorso vari periodi all’estero, a Parigi presso l’Institut National des Langues et Civilisations Orientales (INALCO), l’Università Kharazmi di Tehran e ad Amman presso Ahlan Jordan. Attualmente è dottorando nel corso in Global History and Governance presso la Scuola Superiore Meridionale dell’Univeristà degli Studi di Napoli “Federico II”, con un progetto sulla storia del movimento sadrista. I suoi interessi di ricerca vertono sul pensiero islamico e sulla storia contemporanea del mondo arabo.",
+      "email": "pietro.menghini@unina.it",
+      "personalLink": "https://unina.academia.edu/PietroMenghini",
+      "image": "/team/pietro-menghini.png"
+    },
+    {
+      "name": "Viola Absinta",
+      "slug": "viola-absinta",
+      "role": "Tirocinanti",
+      "affiliation": "Università degli Studi di Milano",
+      "bio": "Viola Absinta è studentessa del corso di laurea magistrale in Global Politics and Society presso l’Università degli Studi di Milano e frequenta il Master di primo livello Media, Linguaggio e Comunicazione in uno scenario globale, curriculum Mondo Arabo, promosso dalla Bicocca Academy dell’Università degli Studi di Milano-Bicocca. Ha conseguito la laurea triennale in Comunicazione Interculturale presso l’Università degli Studi di Milano-Bicocca, dove ha approfondito lo studio della lingua araba e delle dinamiche socioculturali dei paesi arabi. La sua tesi, supervisionata dalla prof.ssa Caterina Roggero, è intitolata Tunisia 2011: la partecipazione femminile alla “rivoluzione della dignità”. Il caso della blogger e attivista Lina Ben Mhenni. Ha inoltre partecipato a un corso intensivo di conversazione in arabo per parlanti non nativi, organizzato congiuntamente dall’Università di Milano-Bicocca e dalla Al al-Bayt University (Giordania). I suoi interessi personali ruotano attorno alla regione SWANA, con particolare attenzione alle tematiche di genere, al ruolo dei media e dei social media, nonché alle dinamiche politiche e alla politica contemporanea.",
+      "bio_en": "Viola Absinta is a Master’s student in Global Politics and Society at the University of Milan. She is concurrently pursuing a Professional Master’s Degree in Media, Language, and Communication in a Global Scenario (Arab World curriculum) at the Bicocca Academy, University of Milano-Bicocca. She holds a Bachelor’s degree in Intercultural Communication from the University of Milano-Bicocca, where she specialized in Arabic language studies and the socio-cultural dynamics of Arab countries. Her undergraduate thesis, supervised by Prof. Caterina Roggero, is titled Tunisia 2011: Women’s Participation in the “Revolution of Dignity.” The Case of the Blogger and Activist Lina Ben Mhenni. Complementing her academic training, she completed an intensive Arabic conversation course for non-native speakers jointly organized by the University of Milano-Bicocca and Al al-Bayt University (Jordan). Her research interests focus on the SWANA region, with particular attention to gender issues, the role of social media in political transitions, and contemporary political dynamics.",
+      "email": "absinta.viola@gmail.com",
+      "personalLink": "https://unimb.academia.edu/ViolaAbsinta",
+      "image": "/team/viola-absinta.png"
+    },
+    {
+      "name": "Annamaria Bianco",
+      "slug": "annamaria-bianco",
+      "role": "Collaboratori",
+      "affiliation": "Université Toulouse 2 – Jean Jaurès / Aix-Marseille Université, IREMAM",
+      "bio": "Annamaria Bianco ha conseguito una laurea in “Lingue, letterature e culture comparate” presso l’Università degli Studi di Napoli L’Orientale e un master in “Scienze delle lingue, storia e della cultura del Mediterraneo e dei Paesi islamici”. Ha inoltre completato un anno accademico presso l’INALCO (Parigi) ed è stata tirocinante per la rivista Banipal- Magazine of Arabic Modern Literature in Translation (Londra). Successivamente, si è specializzata in Traduzione editoriale dall’arabo presso la SSML di Vicenza e ha iniziato a lavorare part-time come sottotitolatrice, traduttrice e interprete. Nel 2022 ha conseguito un dottorato di ricerca in Letteratura araba contemporanea presso l’Università di Aix-Marseille (Francia), in co-tutela con l’Università di Napoli “L’Orientale”, con una tesi dal titolo: « Adab al-malǧa’ : représenter le refuge dans le roman arabe du XXIe siècle ». Attualmente è assistente alla ricerca e alla didattica presso l’Università di Tolosa 2 – Jean Jaurès e ricercatrice associata presso l’IREMAM. I suoi interessi di ricerca si concentrano su  rapporti tra creatività e diaspora, la circolazione e la traduzione della letteratura araba, le produzioni letterarie di esuli e rifugiati arabi, nonché sulla rappresentazione del campo umanitario e della retorica sui diritti umani nella narrativa. È stata tesoriera dell’associazione francese “Halqa: Association des doctorants en sciences sociales sur les mondes musulmans modernes et contemporains” (https://halqa.hypotheses.org/) e caporedattore della rivista studentesca italiana Maydan (https://rivistamaydan.com/) nell’anno della sua fondazione. È membro di SeSaMo e di EURAMAL.",
+      "email": "annamariabianco91@gmail.com",
+      "personalLink": "https://iremam.cnrs.fr/spip.php?article5355",
+      "image": "/team/annamaria-bianco.png"
+    },
+    {
+      "name": "Alessia D’Accardio Berlinguer",
+      "slug": "alessia-daccardio-berlinguer",
+      "role": "Collaboratori",
+      "affiliation": "Aix-Marseille Université — IREMAM / INALCO — LACNAD",
+      "bio": "Alessia D’Accardio Berlinguer è attualmente Attachée Temporaire d’Enseignement et de Recherche (ATER) in lingua e dialettologia araba presso l’Università di Aix-Marseille, affiliata all’IREMAM e al LACNAD (INALCO). Ha conseguito la laurea triennale in Mediazione Linguistica presso l’Università degli studi di Palermo e la laurea magistrale in Lingue, Storia e Culture del Mediterraneo e dei Paesi Islamici presso l’Università degli Studi di Napoli L’Orientale. Ha inoltre completato un semestre accademico presso l’Universidad de Granada all’interno del progetto ERASMUS. Ha conseguito un dottorato di ricerca nel 2024 presso l’Università di Napoli L’Orientale, in co-tutela con l’INALCO di Parigi, con una tesi dal titolo “The Arabic Spoken in Kairouan (Tunisia) : towards a Reassessment of the Arabization of Northern Africa”. Diplomata in Lingua araba presso l’Institut Bourguiba des Langues Vivantes (IBLV) di Tunisi, è membro del gruppo di ricerca dell’Atlante Linguistico Mediterraneo per la Tunisia, di Società Italiana di Studi sul Medio Oriente (SeSaMO) e dell’Association internationale de dialectologie arabe (AIDA). I suoi principali interessi di ricerca riguardano la dialettologia, sociolinguistica, lessicografia e linguistica storica in contesto arabofono, con particolare attenzione alle varietà maghrebine.",
+      "email": "alessia.daccardioberlinguer@inalco.fr",
+      "personalLink": "https://unior.academia.edu/ADAccardio",
+      "image": "/team/alessia-daccardio-berlinguer.png"
+    },
+    {
+      "name": "Pietro Stefanini",
+      "slug": "pietro-stefanini",
+      "role": "Collaboratori",
+      "affiliation": "The University of Edinburgh",
+      "bio": "Pietro Stefanini è dottorando in politica e relazioni internazionali presso l’Università di Edimburgo, il suo progetto di tesi si incentra sullo studio del colonialismo d’insediamento e l’umanitarismo in Palestina/Israele. Le sue ricerche sulla Palestina si sono focalizzate sul processo di ricostruzione postbellica a Gaza, la questione dei rifugiati e dell’UNRWA, e pratiche di resistenza anticoloniale.",
+      "email": "P.A.Stefanini@sms.ed.ac.uk",
+      "personalLink": "https://www.sps.ed.ac.uk/staff/pietro-stefanini",
+      "image": "/team/pietro-stefanini.png"
+    },
+    {
+      "name": "Noemi Linardi",
+      "slug": "noemi-linardi",
+      "role": "Archivio",
+      "affiliation": "Université Sorbonne Nouvelle"
+    },
+    {
+      "name": "Daniele Paolini",
+      "slug": "daniele-paolini",
+      "role": "Archivio",
+      "affiliation": "Università degli Studi di Perugia"
+    },
+    {
+      "name": "Federica Stagni",
+      "slug": "federica-stagni",
+      "role": "Archivio",
+      "affiliation": "Scuola Normale Superiore"
+    },
+    {
+      "name": "Tamara Taher",
+      "slug": "tamara-taher",
+      "role": "Archivio",
+      "affiliation": "Università degli Studi di Torino"
+    },
+    {
+      "name": "Federico Pozzoli",
+      "slug": "federico-pozzoli",
+      "role": "Archivio",
+      "affiliation": "Università degli Studi di Milano"
+    },
+    {
+      "name": "Giulia Guidotti",
+      "slug": "giulia-guidotti",
+      "role": "Archivio",
+      "affiliation": "Università degli Studi di Napoli “L’Orientale”"
+    },
+    {
+      "name": "Manuel Capomaccio",
+      "slug": "manuel-capomaccio",
+      "role": "Archivio",
+      "affiliation": "Università degli Studi di Napoli “L’Orientale”"
+    },
+    { "name": "Redazione 2024", "slug": "archivio-2024", "role": "Archivio", "affiliation": "" },
+    { "name": "Redazione 2023", "slug": "archivio-2023", "role": "Archivio", "affiliation": "" },
+    { "name": "Redazione 2022", "slug": "archivio-2022", "role": "Archivio", "affiliation": "" },
+    { "name": "Redazione 2021", "slug": "archivio-2021", "role": "Archivio", "affiliation": "" }
+  ]
+}

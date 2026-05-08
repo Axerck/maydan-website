@@ -1,8 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { teamMembers } from "../../../data/team";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const teamMembers = (await import("../../../data/team.json")).default.members;
   return teamMembers.map((member) => ({
     params: { slug: member.slug },
     props: { member },
