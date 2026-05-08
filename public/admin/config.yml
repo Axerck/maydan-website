@@ -1,0 +1,198 @@
+backend:
+  name: github
+  repo: Axerck/maydan-website
+  branch: cms-integration
+  base_url: https://api.github.com
+
+# Sviluppo locale: aprire /admin/index.html in un browser Chromium e cliccare
+# "Work with Local Repository". Sveltia usa la File System Access API per
+# scrivere direttamente sui file locali — niente proxy server.
+# (L'opzione `local_backend` di Decap viene ignorata da Sveltia.)
+
+media_folder: "public/img"
+public_folder: "/img"
+
+publish_mode: editorial_workflow
+
+i18n:
+  structure: multiple_folders
+  locales: [it, en]
+  default_locale: it
+
+collections:
+  - name: "volumi"
+    label: "Volumi"
+    label_singular: "Volume"
+    folder: "src/pages"
+    path: "{{locale}}/pubblicazioni/{{slug}}"
+    extension: "md"
+    format: frontmatter
+    create: true
+    i18n: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/VolumeLayout.astro"}
+      - {label: "Titolo", name: "title", widget: "string", i18n: true}
+      - {label: "Anno", name: "year", widget: "string"}
+      - {label: "Copertina", name: "cover", widget: "image"}
+      - {label: "Descrizione", name: "description", widget: "text", i18n: true}
+      - {label: "PDF volume completo", name: "pdf_full_link", widget: "file", required: false}
+      - label: "Prefazione"
+        name: "prefazione"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
+          - {label: "Autore", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Editoriale"
+        name: "editoriale"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
+          - {label: "Autore", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Articoli"
+        name: "articoli"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - {label: "Titolo", name: "titolo", widget: "string"}
+          - {label: "Autore", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Working Papers"
+        name: "working_paper"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - {label: "Titolo", name: "titolo", widget: "string"}
+          - {label: "Autore", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+      - label: "Recensioni"
+        name: "recensioni"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - {label: "Titolo", name: "titolo", widget: "string"}
+          - {label: "Autore", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file"}
+
+  - name: "attivita"
+    label: "Attività"
+    label_singular: "Attività"
+    folder: "src/pages"
+    path: "{{locale}}/attivita/{{slug}}"
+    extension: "md"
+    format: frontmatter
+    create: true
+    i18n: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/ActivityLayout.astro"}
+      - {label: "Titolo", name: "title", widget: "string", i18n: true}
+      - {label: "Data", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Descrizione", name: "description", widget: "text", i18n: true}
+      - {label: "Copertina", name: "cover", widget: "image", required: false}
+      - {label: "Nascondi copertina", name: "hide_cover", widget: "boolean", required: false, default: false}
+      - label: "Link CTA (opzionale)"
+        name: "cta_link"
+        widget: "object"
+        required: false
+        i18n: true
+        fields:
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "Etichetta pulsante", name: "label", widget: "string"}
+      - label: "PDF allegati"
+        name: "pdf_attachments"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - {label: "Titolo", name: "titolo", widget: "string"}
+          - {label: "URL", name: "url", widget: "file"}
+          - {label: "Descrizione", name: "descrizione", widget: "string", required: false}
+      - label: "Galleria immagini"
+        name: "image_gallery"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - {label: "Titolo", name: "titolo", widget: "string", required: false}
+          - {label: "Immagine", name: "url", widget: "image"}
+          - {label: "Testo alternativo", name: "alt", widget: "string", required: false}
+      - {label: "Contenuto", name: "body", widget: "markdown", i18n: true}
+
+  - name: "call"
+    label: "Call e linee guida"
+    label_singular: "Call"
+    folder: "src/pages"
+    path: "{{locale}}/call-e-linee-guida/{{slug}}"
+    extension: "md"
+    format: frontmatter
+    create: true
+    i18n: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/Layout.astro"}
+      - {label: "Titolo", name: "title", widget: "string", i18n: true}
+      - {label: "Contenuto", name: "body", widget: "markdown", i18n: true}
+
+  - name: "team"
+    label: "Team"
+    files:
+      - label: "Membri del team"
+        name: "team"
+        file: "src/data/team.json"
+        fields:
+          - label: "Membri"
+            name: "members"
+            widget: "list"
+            fields:
+              - {label: "Nome", name: "name", widget: "string"}
+              - {label: "Slug (URL)", name: "slug", widget: "string", hint: "Niente spazi, solo trattini"}
+              - {label: "Ruolo", name: "role", widget: "string"}
+              - {label: "Affiliazione", name: "affiliation", widget: "string"}
+              - {label: "Affiliazione (EN)", name: "affiliation_en", widget: "string", required: false}
+              - {label: "Bio (IT)", name: "bio", widget: "text", required: false}
+              - {label: "Bio (EN)", name: "bio_en", widget: "text", required: false}
+              - {label: "Foto", name: "image", widget: "image", required: false}
+              - {label: "Link personale", name: "personalLink", widget: "string", required: false}
+              - {label: "Email", name: "email", widget: "string", required: false}
+
+  - name: "struttura"
+    label: "Struttura redazione"
+    files:
+      - label: "Comitato corrente e passati"
+        name: "boards"
+        file: "src/data/structure.json"
+        fields:
+          - label: "Comitato corrente"
+            name: "currentBoard"
+            widget: "list"
+            fields:
+              - {label: "Titolo gruppo", name: "title", widget: "string"}
+              - label: "Membri"
+                name: "members"
+                widget: "list"
+                fields:
+                  - {label: "Slug membro", name: "slug", widget: "string"}
+                  - {label: "Ruolo specifico", name: "role", widget: "string", required: false}
+          - label: "Comitati passati"
+            name: "pastBoards"
+            widget: "list"
+            fields:
+              - {label: "Anno", name: "year", widget: "string"}
+              - label: "Gruppi"
+                name: "groups"
+                widget: "list"
+                fields:
+                  - {label: "Titolo gruppo", name: "title", widget: "string"}
+                  - label: "Membri"
+                    name: "members"
+                    widget: "list"
+                    fields:
+                      - {label: "Slug membro", name: "slug", widget: "string"}
+                      - {label: "Ruolo specifico", name: "role", widget: "string", required: false}
