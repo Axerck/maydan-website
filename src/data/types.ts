@@ -47,11 +47,22 @@ export interface HomepageActivityItem {
   link?: string;
 }
 
+export interface HomepageAltroItem {
+  label: string;
+  link?: string;
+}
+
+export interface HomepageAltroSection {
+  title: string;
+  items?: HomepageAltroItem[];
+}
+
 export interface HomepageActivitiesCard {
   title: string;
   items: HomepageActivityItem[];
   main_link: string;
   main_link_label: string;
+  altro_section?: HomepageAltroSection;
 }
 
 export interface HomepageLogo {

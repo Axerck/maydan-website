@@ -77,8 +77,44 @@ const data = homepageData as HomepageData;
       </ul>
       <a href={data.activities_card.main_link} class="card-link">{data.activities_card.main_link_label} &rarr;</a
       >
+
+      {data.activities_card.altro_section &&
+        data.activities_card.altro_section.items &&
+        data.activities_card.altro_section.items.length > 0 && (
+          <div class="altro-section">
+            <h3>{data.activities_card.altro_section.title}</h3>
+            <ul class="activity-list">
+              {data.activities_card.altro_section.items.map((item) => (
+                <li>
+                  {item.link ? (
+                    <a href={item.link}>{item.label}</a>
+                  ) : (
+                    item.label
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
     </section>
   </section>
+
+  <style>
+    .altro-section {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    .altro-section h3 {
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.8rem;
+      color: #333;
+      text-transform: none;
+      font-weight: bold;
+    }
+  </style>
 
   <!-- Collaborations -->
   <section class="collaborazioni">

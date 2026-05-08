@@ -35,7 +35,11 @@
       { "label": "Call for Papers annuali", "link": "" }
     ],
     "main_link": "/attivita",
-    "main_link_label": "Scopri tutte le attività"
+    "main_link_label": "Scopri tutte le attività",
+    "altro_section": {
+      "title": "Altro",
+      "items": []
+    }
   },
   "collaborations": {
     "title": "Maydan collabora con:",

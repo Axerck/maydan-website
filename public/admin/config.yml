@@ -274,7 +274,15 @@ collections:
               - {label: "Immagine", name: "image", widget: "image"}
               - {label: "Alt immagine", name: "image_alt", widget: "string"}
               - {label: "Descrizione", name: "description", widget: "text"}
-              - {label: "Link", name: "link", widget: "string", hint: "Path interno tipo /it/pubblicazioni/vol-4"}
+              - label: "Link al volume"
+                name: "link"
+                widget: "relation"
+                collection: "volumi-it"
+                search_fields: ["title"]
+                value_field: "/it/pubblicazioni/{{slug}}"
+                display_fields: ["title", "year"]
+                required: false
+                hint: "Scegli il volume da linkare dalla collection 'Volumi (IT)'. L'URL si genera automaticamente."
               - {label: "Etichetta link", name: "link_label", widget: "string"}
           - label: "Card Comunicato"
             name: "comunicato_card"
@@ -296,9 +304,39 @@ collections:
                 widget: "list"
                 fields:
                   - {label: "Etichetta", name: "label", widget: "string"}
-                  - {label: "Link (opzionale)", name: "link", widget: "string", required: false}
+                  - label: "Link all'attività"
+                    name: "link"
+                    widget: "relation"
+                    collection: "attivita-it"
+                    search_fields: ["title"]
+                    value_field: "/it/attivita/{{slug}}"
+                    display_fields: ["title", "date"]
+                    required: false
+                    hint: "Scegli un'attività dalla collection 'Attività (IT)'. Lascia vuoto se vuoi solo testo non cliccabile."
               - {label: "Link principale", name: "main_link", widget: "string"}
               - {label: "Etichetta link principale", name: "main_link_label", widget: "string"}
+              - label: "Sezione 'Altro' (opzionale)"
+                name: "altro_section"
+                widget: "object"
+                required: false
+                collapsed: true
+                hint: "Sotto la lista delle attività, una sezione opzionale per promuovere pagine custom create in 'Pagine'."
+                fields:
+                  - {label: "Titolo sezione", name: "title", widget: "string", default: "Altro"}
+                  - label: "Voci"
+                    name: "items"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - {label: "Etichetta", name: "label", widget: "string"}
+                      - label: "Link alla pagina"
+                        name: "link"
+                        widget: "relation"
+                        collection: "pagine-it"
+                        search_fields: ["title"]
+                        value_field: "/it/pagine/{{slug}}"
+                        display_fields: ["title"]
+                        required: false
           - label: "Collaborazioni"
             name: "collaborations"
             widget: "object"
@@ -341,7 +379,15 @@ collections:
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Image alt", name: "image_alt", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - {label: "Link", name: "link", widget: "string", hint: "Internal path like /en/pubblicazioni/vol-4"}
+              - label: "Link to volume"
+                name: "link"
+                widget: "relation"
+                collection: "volumi-en"
+                search_fields: ["title"]
+                value_field: "/en/pubblicazioni/{{slug}}"
+                display_fields: ["title", "year"]
+                required: false
+                hint: "Pick the volume to link from 'Volumes (EN)' collection. URL auto-generated."
               - {label: "Link label", name: "link_label", widget: "string"}
           - label: "Comunicato Card"
             name: "comunicato_card"
@@ -363,9 +409,39 @@ collections:
                 widget: "list"
                 fields:
                   - {label: "Label", name: "label", widget: "string"}
-                  - {label: "Link (optional)", name: "link", widget: "string", required: false}
+                  - label: "Activity link"
+                    name: "link"
+                    widget: "relation"
+                    collection: "attivita-en"
+                    search_fields: ["title"]
+                    value_field: "/en/attivita/{{slug}}"
+                    display_fields: ["title", "date"]
+                    required: false
+                    hint: "Pick an activity from 'Activities (EN)'. Leave empty for plain text without link."
               - {label: "Main link", name: "main_link", widget: "string"}
               - {label: "Main link label", name: "main_link_label", widget: "string"}
+              - label: "'Altro' section (optional)"
+                name: "altro_section"
+                widget: "object"
+                required: false
+                collapsed: true
+                hint: "Below the activities list, an optional section to feature custom pages from the 'Pages' collection."
+                fields:
+                  - {label: "Section title", name: "title", widget: "string", default: "Other"}
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - {label: "Label", name: "label", widget: "string"}
+                      - label: "Page link"
+                        name: "link"
+                        widget: "relation"
+                        collection: "pagine-en"
+                        search_fields: ["title"]
+                        value_field: "/en/pagine/{{slug}}"
+                        display_fields: ["title"]
+                        required: false
           - label: "Collaborations"
             name: "collaborations"
             widget: "object"
