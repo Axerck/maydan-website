@@ -213,6 +213,38 @@ collections:
           - {label: "Button label", name: "label", widget: "string"}
       - {label: "Content", name: "body", widget: "markdown"}
 
+  # ============ PAGINE (italiano) ============
+  - name: "pagine-it"
+    label: "Pagine (IT)"
+    label_singular: "Pagina"
+    folder: "src/pages/it/pagine"
+    extension: "md"
+    format: frontmatter
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/PageLayout.astro"}
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Descrizione", name: "description", widget: "text", required: false, hint: "Usata per SEO e meta tag (1-2 frasi)"}
+      - {label: "Copertina", name: "cover", widget: "image", required: false}
+      - {label: "Nascondi copertina nella pagina", name: "hide_cover", widget: "boolean", required: false, default: false}
+      - {label: "Contenuto", name: "body", widget: "markdown"}
+
+  # ============ PAGES (inglese) ============
+  - name: "pagine-en"
+    label: "Pages (EN)"
+    label_singular: "Page"
+    folder: "src/pages/en/pagine"
+    extension: "md"
+    format: frontmatter
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/PageLayout.astro"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false, hint: "Used for SEO and meta tags (1-2 sentences)"}
+      - {label: "Cover", name: "cover", widget: "image", required: false}
+      - {label: "Hide cover on page", name: "hide_cover", widget: "boolean", required: false, default: false}
+      - {label: "Content", name: "body", widget: "markdown"}
+
   # ============ HOMEPAGE (italiano) ============
   - name: "homepage-it"
     label: "Homepage (IT)"
