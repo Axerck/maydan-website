@@ -54,12 +54,7 @@
     "main_link_label": "Scopri tutte le attività",
     "altro_section": {
       "title": "Altro",
-      "items": [
-        {
-          "label": "Prova sezione altro CMS",
-          "link": "/it/pagine/questa-e-una-entri-di-prova-cms"
-        }
-      ]
+      "items": []
     }
   },
   "collaborations": {
