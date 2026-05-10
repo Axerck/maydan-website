@@ -29,10 +29,26 @@
   "activities_card": {
     "title": "Attività",
     "items": [
-      { "label": "Questionario sul precariato tra dottorande/i", "link": "/it/attivita/questionario-precariato-2025" },
-      { "label": "Giornate di studio Maydan e SeSaMO", "link": "" },
-      { "label": "Seminari e formazioni online", "link": "" },
-      { "label": "Call for Papers annuali", "link": "" }
+      {
+        "label": "Questionario sul precariato tra dottorande/i",
+        "link": "/it/attivita/questionario-precariato-2025"
+      },
+      {
+        "label": "Giornate di studio Maydan e SeSaMO",
+        "link": ""
+      },
+      {
+        "label": "Seminari e formazioni online",
+        "link": ""
+      },
+      {
+        "label": "Call for Papers annuali",
+        "link": ""
+      },
+      {
+        "label": "Nuova aggiundo da CMS",
+        "link": "/it/attivita/decolonizing-research-2022"
+      }
     ],
     "main_link": "/attivita",
     "main_link_label": "Scopri tutte le attività",
@@ -44,8 +60,16 @@
   "collaborations": {
     "title": "Maydan collabora con:",
     "logos": [
-      { "name": "Halqa", "image": "/img/logo-halqa-transparent-4.png", "url": "https://halqa.hypotheses.org/" },
-      { "name": "SeSaMO", "image": "/img/logo-sesamo-societa1.png", "url": "https://www.sesamoitalia.it/" }
+      {
+        "name": "Halqa",
+        "image": "/img/logo-halqa-transparent-4.png",
+        "url": "https://halqa.hypotheses.org/"
+      },
+      {
+        "name": "SeSaMO",
+        "image": "/img/logo-sesamo-societa1.png",
+        "url": "https://www.sesamoitalia.it/"
+      }
     ]
   }
 }
