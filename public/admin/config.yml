@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Axerck/maydan-website
   branch: cms-integration
-  base_url: https://api.github.com
+  base_url: https://maydan-cms-auth.maydan-gestionale.workers.dev
 
 # Sviluppo locale: aprire /admin/index.html in un browser Chromium e cliccare
 # "Work with Local Repository". Sveltia usa la File System Access API per
