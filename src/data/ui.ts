@@ -8,7 +8,8 @@ export const ui = {
             scientific_board: "COMITATO SCIENTIFICO",
             activities: "ATTIVITA’",
             contacts: "CONTATTI"
-        }
+        },
+        support: "Sostienici"
     },
     en: {
         nav: {
@@ -19,6 +20,7 @@ export const ui = {
             scientific_board: "SCIENTIFIC BOARD",
             activities: "ACTIVITIES",
             contacts: "CONTACTS"
-        }
+        },
+        support: "Support us"
     },
 } as const;

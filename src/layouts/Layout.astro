@@ -2,7 +2,7 @@
 import "../styles/custom.css";
 import { ui } from "../data/ui";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Heart } from "lucide-react";
 
 interface Props {
 	title?: string;
@@ -155,6 +155,16 @@ const periodicaJsonLd = {
 						>🇬🇧 EN</a
 					>
 				</div>
+				<a
+					href="https://paypal.me/RivistaMaydan"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="header-support"
+					aria-label={`${t.support} con una donazione`}
+				>
+					<Heart size={16} aria-hidden="true" />
+					<span>{t.support}</span>
+				</a>
 			</div>
 
 			<div class="header-main">
@@ -245,23 +255,35 @@ const periodicaJsonLd = {
 					<p>ISSN 2785-6976</p>
 					<p>&copy; <span id="year">{year}</span> Maydan</p>
 				</div>
-				<div class="social-links">
+				<div class="footer-right">
 					<a
-						href="https://www.instagram.com/rivistamaydan/"
+						href="https://paypal.me/RivistaMaydan"
 						target="_blank"
-						aria-label="Instagram"
-						class="social-icon"
+						rel="noopener noreferrer"
+						class="footer-paypal"
+						aria-label="Sostienici con una donazione"
 					>
-						<Instagram size={24} />
+						<span>Sostienici</span>
+						<Heart size={18} aria-hidden="true" />
 					</a>
-					<a
-						href="https://www.facebook.com/RivistaMaydan"
-						target="_blank"
-						aria-label="Facebook"
-						class="social-icon"
-					>
-						<Facebook size={24} />
-					</a>
+					<div class="social-links">
+						<a
+							href="https://www.instagram.com/rivistamaydan/"
+							target="_blank"
+							aria-label="Instagram"
+							class="social-icon"
+						>
+							<Instagram size={24} />
+						</a>
+						<a
+							href="https://www.facebook.com/RivistaMaydan"
+							target="_blank"
+							aria-label="Facebook"
+							class="social-icon"
+						>
+							<Facebook size={24} />
+						</a>
+					</div>
 				</div>
 			</div>
 		</footer>
