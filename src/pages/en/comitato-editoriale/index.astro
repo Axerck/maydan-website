@@ -1,7 +1,10 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { currentBoard, pastBoards } from "../../../data/structure";
-import { teamMembers } from "../../../data/team";
+import structureData from "../../../data/structure.json";
+import teamData from "../../../data/team.json";
+
+const { currentBoard, pastBoards } = structureData;
+const teamMembers = teamData.members;
 
 // Mapping Italian titles to English
 const roleTranslations: Record<string, string> = {

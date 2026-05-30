@@ -1,0 +1,58 @@
+{
+  "active_call": {
+    "section_title": "Latest Call for Papers",
+    "title": "Call for Papers Vol. 6 (2026/27)",
+    "image": "/img/Call-for-papers_3-scaled.jpg",
+    "image_alt": "Call Vol 6",
+    "pdf_link": "/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf",
+    "deadlines": [
+      "Deadline for abstracts and review proposals: 17/12/2025",
+      "Deadline for full papers: 13/04/2026"
+    ]
+  },
+  "linee_guida": {
+    "section_title": "Author Guidelines",
+    "documents": [
+      { "label": "Guidelines for Authors (PDF)", "pdf": "/pdf/calls/Linee-guida-2.pdf" },
+      { "label": "Code of Ethics (PDF)", "pdf": "/pdf/calls/Codice-etico.pdf" },
+      { "label": "Review Process (PDF)", "pdf": "/pdf/calls/processo-di-revisione-def.pdf" },
+      { "label": "Reviewer Report (PDF)", "pdf": "/pdf/calls/Peer-review-evaluation-report-.pdf" },
+      { "label": "Abstract Template (PDF)", "pdf": "/pdf/calls/template-abstract-1.pdf" }
+    ]
+  },
+  "past_calls": {
+    "section_title": "Past Call for Papers",
+    "items": [
+      {
+        "title": "CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E SESAMO – SECONDA EDIZIONE",
+        "image": "/img/Call-for-Paper-5-scaled.jpg",
+        "image_alt": "Call Giornate Studio 2",
+        "pdf_link": "/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-seconda-edizione.pdf"
+      },
+      {
+        "title": "CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E SESAMO",
+        "image": "/img/CallForPapers_maydan_e_sesamo_prima_edizione.jpg",
+        "image_alt": "Call Giornate Studio",
+        "pdf_link": "/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-2.pdf"
+      },
+      {
+        "title": "CALL FOR PAPERS – GIORNATE DI STUDIO (01 ed.)",
+        "image": "/img/call_for_papers_giornate_di_studio_prima_edizione.jpg",
+        "image_alt": "Giornate di Studio 1",
+        "pdf_link": "/pdf/calls/Le-giornate-di-studio-di-Maydan-Call-for-papers_prima_edizione.pdf"
+      },
+      {
+        "title": "CALL FOR PAPERS VOL.2",
+        "image": "/img/copertina-call-2-1.jpg",
+        "image_alt": "Call Vol 2",
+        "pdf_link": "/pdf/calls/call-for-papers-vol-2.pdf"
+      },
+      {
+        "title": "CALL FOR PAPERS VOL.1",
+        "image": "/img/call01_maydan.jpg",
+        "image_alt": "Call Vol 1",
+        "pdf_link": "/pdf/calls/call-for-papers-01-maydan.-pdf.pdf"
+      }
+    ]
+  }
+}

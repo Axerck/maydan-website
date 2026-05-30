@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Call for Papers Vol. 6 (2026/27)",
+    "deadline_abstract_label": "Abstract deadline:",
+    "deadline_abstract": "17/12/2025",
+    "deadline_paper_label": "Paper deadline:",
+    "deadline_paper": "13/04/2026",
+    "pdf_link": "/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf",
+    "pdf_button_label": "Download the Call (PDF)",
+    "image": "/img/Call-for-papers_3-scaled.jpg",
+    "image_alt": "Call for Papers Vol. 6"
+  },
+  "latest_issue_card": {
+    "title": "Maydan vol. 4, 2025",
+    "image": "/img/copertina4_compressed_page-0001-1.jpg",
+    "image_alt": "Vol 4 Cover",
+    "description": "Issue dedicated to new perspectives on Arab, Semitic, and Islamic studies.",
+    "link": "/en/pubblicazioni/vol-4",
+    "link_label": "Go to Issue"
+  },
+  "comunicato_card": {
+    "title": "Editorial Board Statement",
+    "image": "/img/melone_comunicato.jpg",
+    "image_alt": "Maydan Statement",
+    "description": "Statement on the decolonization of knowledge and colonial violence.",
+    "link": "/it/comunicato",
+    "link_label": "Read the statement"
+  },
+  "activities_card": {
+    "title": "Activities",
+    "items": [
+      { "label": "Questionnaire on Precarity Among PhD Candidates", "link": "/en/attivita/questionario-precariato-2025" },
+      { "label": "Maydan and SeSaMO Study Days", "link": "" },
+      { "label": "Online Seminars and Training", "link": "" },
+      { "label": "Annual Call for Papers", "link": "" }
+    ],
+    "main_link": "/en/attivita",
+    "main_link_label": "Discover all activities",
+    "altro_section": {
+      "title": "Other",
+      "items": []
+    }
+  },
+  "collaborations": {
+    "title": "Maydan collaborates with:",
+    "logos": [
+      { "name": "Halqa", "image": "/img/logo-halqa-transparent-4.png", "url": "https://halqa.hypotheses.org/" },
+      { "name": "SeSaMO", "image": "/img/logo-sesamo-societa1.png", "url": "https://www.sesamoitalia.it/" }
+    ]
+  }
+}

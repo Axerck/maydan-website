@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Call for Papers Vol. 6 (2026/27)",
+    "deadline_abstract_label": "Scadenza abstract:",
+    "deadline_abstract": "17/12/2025",
+    "deadline_paper_label": "Scadenza elaborati:",
+    "deadline_paper": "13/04/2026",
+    "pdf_link": "/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf",
+    "pdf_button_label": "Scarica la Call (PDF)",
+    "image": "/img/Call-for-papers_3-scaled.jpg",
+    "image_alt": "Call for Papers Vol. 6"
+  },
+  "latest_issue_card": {
+    "title": "Maydan vol. 4, 2025",
+    "image": "/img/copertina4_compressed_page-0001-1.jpg",
+    "image_alt": "Copertina Vol 4",
+    "description": "Numero dedicato alle nuove prospettive sugli studi dei mondi arabi, semitici e islamici.",
+    "link": "/it/pubblicazioni/vol-4",
+    "link_label": "Vai al numero"
+  },
+  "comunicato_card": {
+    "title": "Comunicato del Comitato editoriale",
+    "image": "/img/melone_comunicato.jpg",
+    "image_alt": "Comunicato Maydan",
+    "description": "Comunicato sulla decolonizzazione dei saperi e la violenza coloniale.",
+    "link": "/it/comunicato",
+    "link_label": "Leggi il comunicato"
+  },
+  "activities_card": {
+    "title": "Attività",
+    "items": [
+      {
+        "label": "Questionario sul precariato tra dottorande/i",
+        "link": "/it/attivita/questionario-precariato-2025"
+      },
+      {
+        "label": "Giornate di studio Maydan e SeSaMO",
+        "link": ""
+      },
+      {
+        "label": "Seminari e formazioni online",
+        "link": ""
+      },
+      {
+        "label": "Call for Papers annuali",
+        "link": ""
+      },
+      {
+        "label": "Nuova aggiunto da CMS",
+        "link": "/it/attivita/attivita-di-prova-cms"
+      }
+    ],
+    "main_link": "/attivita",
+    "main_link_label": "Scopri tutte le attività",
+    "altro_section": {
+      "title": "Altro",
+      "items": []
+    }
+  },
+  "collaborations": {
+    "title": "Maydan collabora con:",
+    "logos": [
+      {
+        "name": "Halqa",
+        "image": "/img/logo-halqa-transparent-4.png",
+        "url": "https://halqa.hypotheses.org/"
+      },
+      {
+        "name": "SeSaMO",
+        "image": "/img/logo-sesamo-societa1.png",
+        "url": "https://www.sesamoitalia.it/"
+      }
+    ]
+  }
+}

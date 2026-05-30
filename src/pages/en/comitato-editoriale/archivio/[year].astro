@@ -1,9 +1,11 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
-import { pastBoards } from "../../../../data/structure";
-import { teamMembers } from "../../../../data/team";
+import teamData from "../../../../data/team.json";
+
+const teamMembers = teamData.members;
 
 export async function getStaticPaths() {
+  const { pastBoards } = (await import("../../../../data/structure.json")).default;
   return pastBoards.map((board) => ({
     params: { year: board.year },
     props: { board },

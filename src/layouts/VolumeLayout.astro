@@ -1,6 +1,45 @@
 ---
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
+
+const locale = Astro.currentLocale || "it";
+const isEn = locale === "en";
+
+const labels = isEn
+  ? {
+      downloadFull: "Download Full Volume",
+      pdf: "Download PDF",
+      preface: "Preface",
+      editorial: "Editorial",
+      articles: "Articles",
+      workingPapers: "Working Papers",
+      reviews: "Reviews",
+      defaultEditorialTitle: "Editorial",
+      defaultPrefaceTitle: "Preface",
+    }
+  : {
+      downloadFull: "Download Full Volume",
+      pdf: "Scarica PDF",
+      preface: "Prefazione",
+      editorial: "Editoriale",
+      articles: "Articoli",
+      workingPapers: "Working paper",
+      reviews: "Recensioni",
+      defaultEditorialTitle: "Editoriale",
+      defaultPrefaceTitle: "Prefazione",
+    };
+
+type Entry = { titolo?: string; autore?: string; pdf: string };
+
+function inlineMd(text: string): string {
+  return text.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+}
+
+const prefazione: Entry[] = frontmatter.prefazione || [];
+const editoriale: Entry[] = frontmatter.editoriale || [];
+const articoli: Entry[] = frontmatter.articoli || [];
+const workingPaper: Entry[] = frontmatter.working_paper || [];
+const recensioni: Entry[] = frontmatter.recensioni || [];
 ---
 
 <Layout
@@ -30,7 +69,7 @@ const { frontmatter } = Astro.props;
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download Full Volume
+                {labels.downloadFull}
               </a>
             </div>
           )
@@ -46,6 +85,101 @@ const { frontmatter } = Astro.props;
         </header>
 
         <div class="volume-toc-content">
+          {
+            prefazione.length > 0 && (
+              <section>
+                <h2>{labels.preface}</h2>
+                <ul>
+                  {prefazione.map((item) => (
+                    <li>
+                      <strong set:html={inlineMd(item.titolo || labels.defaultPrefaceTitle)} />
+                      {item.autore && <em>{item.autore}</em>}
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                        {labels.pdf}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+
+          {
+            editoriale.length > 0 && (
+              <section>
+                <h2>{labels.editorial}</h2>
+                <ul>
+                  {editoriale.map((item) => (
+                    <li>
+                      <strong set:html={inlineMd(item.titolo || labels.defaultEditorialTitle)} />
+                      {item.autore && <em>{item.autore}</em>}
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                        {labels.pdf}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+
+          {
+            articoli.length > 0 && (
+              <section>
+                <h2>{labels.articles}</h2>
+                <ol>
+                  {articoli.map((item) => (
+                    <li>
+                      <strong set:html={inlineMd(item.titolo || "")} />
+                      {item.autore && <em>{item.autore}</em>}
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                        {labels.pdf}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )
+          }
+
+          {
+            workingPaper.length > 0 && (
+              <section>
+                <h2>{labels.workingPapers}</h2>
+                <ol>
+                  {workingPaper.map((item) => (
+                    <li>
+                      <strong set:html={inlineMd(item.titolo || "")} />
+                      {item.autore && <em>{item.autore}</em>}
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                        {labels.pdf}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )
+          }
+
+          {
+            recensioni.length > 0 && (
+              <section>
+                <h2>{labels.reviews}</h2>
+                <ol>
+                  {recensioni.map((item) => (
+                    <li>
+                      <strong set:html={inlineMd(item.titolo || "")} />
+                      {item.autore && <em>{item.autore}</em>}
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                        {labels.pdf}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )
+          }
+
           <slot />
         </div>
       </main>
@@ -137,7 +271,63 @@ const { frontmatter } = Astro.props;
     line-height: 1.5;
   }
 
-  /* Markdown Content Styling (TOC) */
+  /* TOC Sections — match the markdown-derived original styles */
+  .volume-toc-content h2 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 0.5rem;
+    color: #000;
+  }
+
+  .volume-toc-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .volume-toc-content li {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .volume-toc-content strong {
+    display: block;
+    color: #222;
+    font-size: 1.05rem;
+  }
+
+  .volume-toc-content em {
+    color: #555;
+    font-style: normal;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .volume-toc-content a {
+    color: #000;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+
+  .volume-toc-content a:hover {
+    text-decoration: none;
+    color: #444;
+  }
+
+  /* Numbered lists for Articles */
+  .volume-toc-content ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+  }
+
+  .volume-toc-content ol li {
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+  }
+
+  /* Markdown body (legacy notes still in slot) */
   .volume-toc-content :global(h2) {
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
     font-size: 1.5rem;
@@ -182,7 +372,6 @@ const { frontmatter } = Astro.props;
     color: #444;
   }
 
-  /* Numbered lists for Articles */
   .volume-toc-content :global(ol) {
     list-style-type: decimal;
     padding-left: 1.5rem;
