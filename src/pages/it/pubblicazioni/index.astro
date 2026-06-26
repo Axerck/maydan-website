@@ -4,9 +4,9 @@ import Layout from '../../../layouts/Layout.astro';
 // Fetch volumi markdown
 const volumes = await Astro.glob('./*.md');
 
-// Sort per anno decrescente (presumendo che il titolo "Maydan Volume X" o frontmatter.year permetta l'ordinamento)
-// Qui usiamo year
-volumes.sort((a, b) => parseInt(b.frontmatter.year) - parseInt(a.frontmatter.year));
+// Sort per numero di volume decrescente (estratto dal titolo "Maydan Volume X")
+const volNum = (v) => parseInt((v.frontmatter.title.match(/(\d+)/) || [])[1] || '0');
+volumes.sort((a, b) => volNum(b) - volNum(a));
 ---
 
 <Layout title="Numeri - Rivista Maydan" description="Esplora tutti i volumi pubblicati della rivista Maydan. Leggi gli articoli e le ricerche sui mondi arabi, semitici e islamici.">
