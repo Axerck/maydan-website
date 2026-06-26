@@ -18,13 +18,13 @@ description: "Fifth issue of Maydan: journal on Arab, Semitic, and Islamic world
 
 1. **Contemporary Artivism in Morocco: Transformations of Creative Dissent in Post-2011 and the New “Organic Artist”** *Chiara Scarfò (University of Florence and University of Turin)*
 
-2. **Da partigiani a _fidāʾiyyīn_: studenti palestinesi in Italia e analogie radicali tra sionismo e fascismo** *Sofia Bacchini (University of Naples “L’Orientale”)*
+2. **Da partigiani a <i>fidāʾiyyīn</i>: studenti palestinesi in Italia e analogie radicali tra sionismo e fascismo** *Sofia Bacchini (University of Naples “L’Orientale”)*
 
-3. **_From Ground Zero_ (2024) and _A Fidai Film_ (2024): Archival Artivism in Palestinian Cinema in Times of Genocide** *Fabiana Piretti (Independent researcher)*
+3. **<i>From Ground Zero</i> (2024) and <i>A Fidai Film</i> (2024): Archival Artivism in Palestinian Cinema in Times of Genocide** *Fabiana Piretti (Independent researcher)*
 
-4. **Return to/through Postmemories: _ʿAraba qadīma bi-satāʾir_ (2011) by Ġassān Zaqṭān** *Carolina Toso (Ca’ Foscari University of Venice and University of Amsterdam)*
+4. **Return to/through Postmemories: <i>ʿAraba qadīma bi-satāʾir</i> (2011) by Ġassān Zaqṭān** *Carolina Toso (Ca’ Foscari University of Venice and University of Amsterdam)*
 
-5. **_Abū Ḥayyān fī Ṭanǧa_: il presente all’esame del passato** *Patrick Di Croce (University of Macerata)*
+5. **<i>Abū Ḥayyān fī Ṭanǧa</i>: il presente all’esame del passato** *Patrick Di Croce (University of Macerata)*
 
 ## Working Papers
 
@@ -38,14 +38,14 @@ description: "Fifth issue of Maydan: journal on Arab, Semitic, and Islamic world
 
 ## Reviews
 
-1. **Chiara Pagano. _La politica berbera nella Libia coloniale_** *Alessia Colonnelli (University of Heidelberg)*
+1. **Chiara Pagano. <i>La politica berbera nella Libia coloniale</i>** *Alessia Colonnelli (University of Heidelberg)*
 
-2. **Elena Andreeva & Kevin McNeer. _Slavery in the Modern Middle East and North Africa. Exploitation and Resistance from the 19th Century – Present Day_** *Viola Pacini (University of Bologna)*
+2. **Elena Andreeva & Kevin McNeer. <i>Slavery in the Modern Middle East and North Africa. Exploitation and Resistance from the 19th Century – Present Day</i>** *Viola Pacini (University of Bologna)*
 
-3. **Ezgi Başaran. _The New Spirit of Islamism_** *Enrico Maria La Forgia (University of Padua)*
+3. **Ezgi Başaran. <i>The New Spirit of Islamism</i>** *Enrico Maria La Forgia (University of Padua)*
 
-4. **Jalal Al Husseini, Valentina Napolitano & Norig Neveu. _Migrations in Jordan: Reception Policies and Settlement Strategies_** *Annamaria Bianco (Aix-Marseille Université, CNRS / Institut Français du Proche-Orient)*
+4. **Jalal Al Husseini, Valentina Napolitano & Norig Neveu. <i>Migrations in Jordan: Reception Policies and Settlement Strategies</i>** *Annamaria Bianco (Aix-Marseille Université, CNRS / Institut Français du Proche-Orient)*
 
-5. **Stéphane Cermakian & Annamaria Bianco. _Exil et traduction – Regards sur un croisement fécond_** *Camille Lotz (Université Paul-Valéry Montpellier 3)*
+5. **Stéphane Cermakian & Annamaria Bianco. <i>Exil et traduction – Regards sur un croisement fécond</i>** *Camille Lotz (Université Paul-Valéry Montpellier 3)*
 
-6. **Asmaa Essakouti. _Realms of Strangers. Readers, Language, and Trickery in Maqāmāt al-Ḥarīrī_** *Maria Eleonora Del Core (University of Naples “L’Orientale”)*
+6. **Asmaa Essakouti. <i>Realms of Strangers. Readers, Language, and Trickery in Maqāmāt al-Ḥarīrī</i>** *Maria Eleonora Del Core (University of Naples “L’Orientale”)*
