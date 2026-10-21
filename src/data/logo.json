@@ -1,0 +1,12 @@
+{
+  "rest": {
+    "big": "#000000",
+    "lone": "#ff0000",
+    "small": "#008000",
+    "text": "#000000"
+  },
+  "loading": {
+    "enabled": true,
+    "palette": ["#000000", "#ffffff", "#ff0000", "#008000"]
+  }
+}

@@ -12,6 +12,9 @@ backend:
 # Il flusso draft→PR→merge sarà implementato in fase 2 con un branch
 # dedicato + GitHub Actions.
 
+# Logo animato della schermata d'accesso (generato da src/pages/admin/logo.svg.ts con i colori della sezione «Logo»)
+logo_url: /admin/logo.svg
+
 media_folder: "public/img"
 public_folder: "/img"
 
@@ -33,9 +36,10 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/VolumeLayout.astro"}
       - {label: "Titolo", name: "title", widget: "string"}
       - {label: "Anno", name: "year", widget: "string"}
+      - {label: "Data di uscita", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "Facoltativa. Serve al feed RSS (e quindi alla newsletter) per mettere il volume nell'ordine giusto."}
       - {label: "Copertina", name: "cover", widget: "image"}
       - {label: "Descrizione", name: "description", widget: "text"}
-      - {label: "PDF volume completo", name: "pdf_full_link", widget: "file", required: false}
+      - {label: "PDF volume completo", name: "pdf_full_link", widget: "file", required: false, media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Prefazione"
         name: "prefazione"
         widget: "list"
@@ -43,7 +47,7 @@ collections:
         fields:
           - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
           - {label: "Autore", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Editoriale"
         name: "editoriale"
         widget: "list"
@@ -51,7 +55,7 @@ collections:
         fields:
           - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
           - {label: "Autore", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Articoli"
         name: "articoli"
         widget: "list"
@@ -59,7 +63,7 @@ collections:
         fields:
           - {label: "Titolo", name: "titolo", widget: "string", hint: "Per parole in italic, usa *parole*"}
           - {label: "Autore", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Working Papers"
         name: "working_paper"
         widget: "list"
@@ -67,7 +71,7 @@ collections:
         fields:
           - {label: "Titolo", name: "titolo", widget: "string"}
           - {label: "Autore", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Recensioni"
         name: "recensioni"
         widget: "list"
@@ -75,7 +79,7 @@ collections:
         fields:
           - {label: "Titolo", name: "titolo", widget: "string"}
           - {label: "Autore", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
 
   # ============ VOLUMI (inglese) ============
   - name: "volumi-en"
@@ -89,9 +93,10 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/VolumeLayout.astro"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
+      - {label: "Release date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "Optional. Used by the RSS feed (and so the newsletter) to order the issue correctly."}
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Full Volume PDF", name: "pdf_full_link", widget: "file", required: false}
+      - {label: "Full Volume PDF", name: "pdf_full_link", widget: "file", required: false, media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Preface"
         name: "prefazione"
         widget: "list"
@@ -99,7 +104,7 @@ collections:
         fields:
           - {label: "Title (optional)", name: "titolo", widget: "string", required: false}
           - {label: "Author", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Editorial"
         name: "editoriale"
         widget: "list"
@@ -107,7 +112,7 @@ collections:
         fields:
           - {label: "Title (optional)", name: "titolo", widget: "string", required: false}
           - {label: "Author", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Articles"
         name: "articoli"
         widget: "list"
@@ -115,7 +120,7 @@ collections:
         fields:
           - {label: "Title", name: "titolo", widget: "string", hint: "For italic words, use *words*"}
           - {label: "Author", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Working Papers"
         name: "working_paper"
         widget: "list"
@@ -123,7 +128,7 @@ collections:
         fields:
           - {label: "Title", name: "titolo", widget: "string"}
           - {label: "Author", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Reviews"
         name: "recensioni"
         widget: "list"
@@ -131,7 +136,7 @@ collections:
         fields:
           - {label: "Title", name: "titolo", widget: "string"}
           - {label: "Author", name: "autore", widget: "string"}
-          - {label: "PDF", name: "pdf", widget: "file"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
 
   # ============ ATTIVITÀ (italiano) ============
   - name: "attivita-it"
@@ -146,7 +151,7 @@ collections:
       - {label: "Titolo", name: "title", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "Descrizione", name: "description", widget: "text"}
-      - {label: "Copertina", name: "cover", widget: "image", required: false}
+      - {label: "Copertina", name: "cover", widget: "image", required: false, media_folder: "/public/img/attivita", public_folder: "/img/attivita"}
       - {label: "Nascondi copertina nella pagina", name: "hide_cover", widget: "boolean", required: false, default: false}
       - label: "PDF allegati"
         name: "pdf_attachments"
@@ -154,7 +159,7 @@ collections:
         required: false
         fields:
           - {label: "Titolo", name: "titolo", widget: "string"}
-          - {label: "URL", name: "url", widget: "file"}
+          - {label: "URL", name: "url", widget: "file", media_folder: "/public/pdf/attivita", public_folder: "/pdf/attivita"}
           - {label: "Descrizione", name: "descrizione", widget: "string", required: false}
       - label: "Galleria immagini"
         name: "image_gallery"
@@ -162,7 +167,7 @@ collections:
         required: false
         fields:
           - {label: "Titolo (opzionale)", name: "titolo", widget: "string", required: false}
-          - {label: "URL", name: "url", widget: "image"}
+          - {label: "URL", name: "url", widget: "image", media_folder: "/public/img/attivita", public_folder: "/img/attivita"}
           - {label: "Alt text", name: "alt", widget: "string", required: false}
       - label: "CTA Link (opzionale)"
         name: "cta_link"
@@ -186,7 +191,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Cover", name: "cover", widget: "image", required: false}
+      - {label: "Cover", name: "cover", widget: "image", required: false, media_folder: "/public/img/attivita", public_folder: "/img/attivita"}
       - {label: "Hide cover on page", name: "hide_cover", widget: "boolean", required: false, default: false}
       - label: "PDF attachments"
         name: "pdf_attachments"
@@ -194,7 +199,7 @@ collections:
         required: false
         fields:
           - {label: "Title", name: "titolo", widget: "string"}
-          - {label: "URL", name: "url", widget: "file"}
+          - {label: "URL", name: "url", widget: "file", media_folder: "/public/pdf/attivita", public_folder: "/pdf/attivita"}
           - {label: "Description", name: "descrizione", widget: "string", required: false}
       - label: "Image gallery"
         name: "image_gallery"
@@ -202,7 +207,7 @@ collections:
         required: false
         fields:
           - {label: "Title (optional)", name: "titolo", widget: "string", required: false}
-          - {label: "URL", name: "url", widget: "image"}
+          - {label: "URL", name: "url", widget: "image", media_folder: "/public/img/attivita", public_folder: "/img/attivita"}
           - {label: "Alt text", name: "alt", widget: "string", required: false}
       - label: "CTA Link (optional)"
         name: "cta_link"
@@ -466,13 +471,14 @@ collections:
           - label: "Call attiva"
             name: "active_call"
             widget: "object"
-            hint: "La call attualmente in corso. Compare nell'hero della homepage E nella sezione 'Ultime Call for Papers' di questa pagina."
+            hint: "La call attualmente in corso, nella sezione 'Ultime Call for Papers' di questa pagina e nel feed RSS. Attenzione: il riquadro in cima alla homepage si cambia a parte, in Homepage (IT) → Hero."
             fields:
               - {label: "Titolo sezione", name: "section_title", widget: "string", default: "Ultime Call for Papers"}
               - {label: "Titolo call", name: "title", widget: "string"}
+              - {label: "Data di pubblicazione", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "Il giorno in cui la call esce. Serve al feed RSS: cambiala a ogni call nuova."}
               - {label: "Immagine", name: "image", widget: "image"}
               - {label: "Alt immagine", name: "image_alt", widget: "string"}
-              - {label: "Link al PDF", name: "pdf_link", widget: "file"}
+              - {label: "Link al PDF", name: "pdf_link", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
               - label: "Scadenze"
                 name: "deadlines"
                 widget: "list"
@@ -488,7 +494,7 @@ collections:
                 widget: "list"
                 fields:
                   - {label: "Etichetta", name: "label", widget: "string"}
-                  - {label: "PDF", name: "pdf", widget: "file"}
+                  - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
           - label: "Call passate"
             name: "past_calls"
             widget: "object"
@@ -503,7 +509,7 @@ collections:
                   - {label: "Titolo", name: "title", widget: "string"}
                   - {label: "Immagine", name: "image", widget: "image"}
                   - {label: "Alt immagine", name: "image_alt", widget: "string"}
-                  - {label: "Link al PDF", name: "pdf_link", widget: "file"}
+                  - {label: "Link al PDF", name: "pdf_link", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
 
   # ============ CALL E LINEE GUIDA (inglese) ============
   - name: "call-e-linee-guida-en"
@@ -516,13 +522,14 @@ collections:
           - label: "Active call"
             name: "active_call"
             widget: "object"
-            hint: "The currently active call. Appears in the homepage hero AND in the 'Latest Call for Papers' section of this page."
+            hint: "The currently active call, shown in the 'Latest Call for Papers' section of this page and in the RSS feed. Note: the box at the top of the homepage is edited separately, in Homepage (EN) → Hero."
             fields:
               - {label: "Section title", name: "section_title", widget: "string", default: "Latest Call for Papers"}
               - {label: "Call title", name: "title", widget: "string"}
+              - {label: "Publication date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "The day the call is published. Used by the RSS feed: update it with every new call."}
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Image alt", name: "image_alt", widget: "string"}
-              - {label: "PDF link", name: "pdf_link", widget: "file"}
+              - {label: "PDF link", name: "pdf_link", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
               - label: "Deadlines"
                 name: "deadlines"
                 widget: "list"
@@ -538,7 +545,7 @@ collections:
                 widget: "list"
                 fields:
                   - {label: "Label", name: "label", widget: "string"}
-                  - {label: "PDF", name: "pdf", widget: "file"}
+                  - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
           - label: "Past calls"
             name: "past_calls"
             widget: "object"
@@ -553,7 +560,7 @@ collections:
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Image", name: "image", widget: "image"}
                   - {label: "Image alt", name: "image_alt", widget: "string"}
-                  - {label: "PDF link", name: "pdf_link", widget: "file"}
+                  - {label: "PDF link", name: "pdf_link", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
 
   # ============ TEAM (un solo file JSON) ============
   - name: "team"
@@ -569,13 +576,13 @@ collections:
             summary: "{{name}} — {{role}} ({{affiliation}})"
             fields:
               - {label: "Nome", name: "name", widget: "string"}
-              - {label: "Slug (URL)", name: "slug", widget: "string", hint: "Niente spazi, solo trattini"}
+              - {label: "Slug (URL)", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Solo lettere minuscole, numeri e trattini (es. mario-rossi)"], hint: "Diventa l'indirizzo della pagina: deve essere unico. Niente spazi, solo trattini."}
               - {label: "Ruolo principale / Titolo", name: "role", widget: "string", hint: "Ruolo identitario in Maydan (es. fondatore, direttore emerito). Per il ruolo operativo attuale o storico, vedi la collection 'Struttura redazione'."}
               - {label: "Affiliazione", name: "affiliation", widget: "string", required: false}
               - {label: "Affiliazione (EN)", name: "affiliation_en", widget: "string", required: false}
               - {label: "Bio (IT)", name: "bio", widget: "text", required: false}
               - {label: "Bio (EN)", name: "bio_en", widget: "text", required: false}
-              - {label: "Foto", name: "image", widget: "image", required: false}
+              - {label: "Foto", name: "image", widget: "image", required: false, media_folder: "/public/team", public_folder: "/team"}
               - {label: "Link personale", name: "personalLink", widget: "string", required: false}
               - {label: "Email", name: "email", widget: "string", required: false}
 
@@ -602,7 +609,7 @@ collections:
             name: "pastBoards"
             widget: "list"
             fields:
-              - {label: "Anno", name: "year", widget: "string"}
+              - {label: "Anno", name: "year", widget: "string", pattern: ['^\d{4}$', "Anno a 4 cifre (es. 2024)"]}
               - label: "Gruppi"
                 name: "groups"
                 widget: "list"
@@ -614,3 +621,34 @@ collections:
                     fields:
                       - {label: "Slug membro", name: "slug", widget: "string"}
                       - {label: "Ruolo specifico", name: "role", widget: "string", required: false}
+
+  # ============ LOGO (un solo file JSON) ============
+  - name: "logo"
+    label: "Logo"
+    files:
+      - label: "Colori del logo"
+        name: "logo"
+        file: "src/data/logo.json"
+        fields:
+          - label: "Colori fissi"
+            name: "rest"
+            widget: "object"
+            hint: "I colori del logo nell'intestazione del sito. Per il logo in bianco e nero metti lo stesso colore (#000000) ai tre gruppi di triangoli."
+            fields:
+              - {label: "Triangoli grandi (la forma principale)", name: "big", widget: "color", default: "#000000"}
+              - {label: "Triangolo solitario (a sinistra)", name: "lone", widget: "color", default: "#ff0000"}
+              - {label: "Triangoli piccoli (in basso)", name: "small", widget: "color", default: "#008000"}
+              - {label: "Scritta «Maydan»", name: "text", widget: "color", default: "#000000"}
+          - label: "Animazione"
+            name: "loading"
+            widget: "object"
+            hint: "Alla prima visita i triangoli si posano uno alla volta con questi colori; mentre si apre una pagina, i colori passano sui triangoli come un'onda."
+            fields:
+              - {label: "Colora il logo durante i caricamenti", name: "enabled", widget: "boolean", default: true}
+              - label: "Colori dell'animazione"
+                name: "palette"
+                widget: "list"
+                hint: "I triangoli li usano a turno. Ne bastano 2–6."
+                min: 1
+                max: 8
+                field: {label: "Colore", name: "color", widget: "color"}

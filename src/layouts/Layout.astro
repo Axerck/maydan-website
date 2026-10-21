@@ -3,6 +3,7 @@ import "../styles/custom.css";
 import { ui } from "../data/ui";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { Instagram, Facebook } from "lucide-react";
+import Logo from "../components/Logo.astro";
 
 interface Props {
 	title?: string;
@@ -103,6 +104,7 @@ const periodicaJsonLd = {
 		<link rel="alternate" hreflang="it" href={alternateIt} />
 		<link rel="alternate" hreflang="en" href={alternateEn} />
 		<link rel="alternate" hreflang="x-default" href={alternateIt} />
+		<link rel="alternate" type="application/rss+xml" title="Maydan" href={`/${currentLocale}/rss.xml`} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={ogType} />
@@ -160,11 +162,7 @@ const periodicaJsonLd = {
 			<div class="header-main">
 				<div class="site-logo">
 					<a href={tPath("/")}>
-						<img
-							src="/logo_palestina/maydan.svg"
-							alt="Maydan Logo"
-							class="logo-img"
-						/>
+						<Logo class="logo-img" />
 					</a>
 				</div>
 

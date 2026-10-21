@@ -1,0 +1,139 @@
+---
+// Il marchio di Maydan in SVG dentro la pagina, a tasselli: 23 triangoli che si possono animare uno per uno
+// (stessa logica del marchio di e-newsletter: ogni tassello ha il suo ritardo, le animazioni sono solo CSS).
+//   is-entering = alla prima pagina della visita i tasselli partono sparsi e volano al loro posto a comporre il logo
+//   is-loading  = mentre si carica una pagina i tasselli cambiano colore in giro
+// Colori fissi e colori del caricamento si cambiano dal CMS (src/data/logo.json).
+import logo from "../data/logo.json";
+import { TASSELLI, ordine, partenza, PASSO } from "../lib/logo";
+
+interface Props {
+	class?: string;
+}
+const { class: className = "" } = Astro.props;
+
+const palette = logo.loading.palette.length ? logo.loading.palette : [logo.rest.big];
+
+const vars = `--logo-big:${logo.rest.big};--logo-lone:${logo.rest.lone};--logo-small:${logo.rest.small};--logo-text:${logo.rest.text}`;
+---
+
+<svg
+	class={`mlogo ${className}`}
+	data-loading={logo.loading.enabled ? "on" : "off"}
+	xmlns="http://www.w3.org/2000/svg"
+	width="600"
+	height="250"
+	viewBox="0 0 600 250"
+	role="img"
+	aria-label="Maydan – rivista sui mondi arabi, semitici e islamici"
+	style={vars}
+>
+	<defs>
+		<polygon id="mlogo-t" points="0,0 50,0 25,25"></polygon>
+	</defs>
+	<g aria-hidden="true">
+		{
+			TASSELLI.map(([transform, gruppo], i) => {
+				const p = partenza(i);
+				return (
+					<g transform={transform}>
+						<g class="v" style={`--dx:${p.dx}px;--dy:${p.dy}px;--r:${p.r}deg;--d:${ordine(i) * PASSO}ms`}>
+							<use
+								href="#mlogo-t"
+								class={`t ${gruppo}`}
+								style={`--d:${ordine(i) * PASSO}ms;--c:${palette[i % palette.length]};--c2:${palette[(i + 2) % palette.length]}`}
+							/>
+						</g>
+					</g>
+				);
+			})
+		}
+	</g>
+	<g class="mlogo-name" transform="translate(225, 100) scale(25, 25)" aria-hidden="true">
+		<text font-size="3" dominant-baseline="hanging" x="0" y="0">Maydan</text>
+		<g font-size="1" transform="translate(0, 4.05)">
+			<text dominant-baseline="hanging" x="0" y="0">rivista sui mondi</text>
+			<text dominant-baseline="hanging" x="0" y="1.15">arabi, semitici e islamici</text>
+		</g>
+	</g>
+</svg>
+
+<script>
+	// Visita nuova: i tasselli si posano. Clic su un link del sito: i tasselli cambiano colore finché arriva la pagina.
+	const svg = document.querySelector<SVGSVGElement>(".mlogo");
+	if (svg && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+		const KEY = "maydan-logo-visto";
+		let visto = false;
+		try {
+			visto = sessionStorage.getItem(KEY) === "1";
+			sessionStorage.setItem(KEY, "1");
+		} catch {}
+		if (!visto) {
+			svg.classList.add("is-entering");
+			setTimeout(() => svg.classList.remove("is-entering"), 23 * 55 + 2200);
+		}
+
+		const loadingOn = svg.dataset.loading === "on";
+		const start = () => {
+			if (!loadingOn) return;
+			svg.classList.remove("is-entering");
+			svg.classList.add("is-loading");
+		};
+		const stop = () => svg.classList.remove("is-loading");
+
+		// La pagina stessa ci mette più di un attimo (immagini, connessione lenta): si colora finché non è pronta
+		if (document.readyState !== "complete") {
+			const t = setTimeout(() => !svg.classList.contains("is-entering") && start(), 400);
+			addEventListener("load", () => { clearTimeout(t); stop(); }, { once: true });
+		}
+
+		document.addEventListener("click", (ev) => {
+			if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+			const a = (ev.target as Element).closest?.("a[href]") as HTMLAnchorElement | null;
+			if (!a || (a.target && a.target !== "_self") || a.hasAttribute("download")) return;
+			const url = new URL(a.href, location.href);
+			if (url.origin !== location.origin || /\.(pdf|jpe?g|png|webp|zip|docx?)$/i.test(url.pathname)) return;
+			if (url.pathname === location.pathname && url.search === location.search) return; // solo un'àncora
+			start();
+		});
+		document.addEventListener("submit", start);
+		// Tornando indietro la pagina può arrivare dalla cache del browser con il logo ancora in giro
+		addEventListener("pageshow", (ev) => ev.persisted && stop());
+	}
+</script>
+
+<style>
+	.mlogo .t {
+		transform-box: fill-box;
+		transform-origin: center;
+		transition: fill 0.4s ease;
+	}
+	.mlogo .big { fill: var(--logo-big); --rest: var(--logo-big); }
+	.mlogo .lone { fill: var(--logo-lone); --rest: var(--logo-lone); }
+	.mlogo .small { fill: var(--logo-small); --rest: var(--logo-small); }
+	.mlogo-name { fill: var(--logo-text); font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif; }
+
+	/* Entrata: ogni tassello parte lontano e girato e vola al suo posto (già nel suo colore: un bianco non si vedrebbe) */
+	.mlogo { overflow: visible; }
+	.mlogo .v { transform-box: fill-box; transform-origin: center; }
+	@keyframes mlogo-vola {
+		0% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(0.6); }
+		15% { opacity: 1; }
+		100% { opacity: 1; transform: none; }
+	}
+	.mlogo.is-entering .v { animation: mlogo-vola 1100ms var(--d) cubic-bezier(0.2, 0.75, 0.25, 1) both; }
+	@keyframes mlogo-nome { from { opacity: 0; } to { opacity: 1; } }
+	.mlogo.is-entering .mlogo-name { animation: mlogo-nome 800ms 900ms both; }
+
+	/* Caricamento: un'onda di colori che passa sui tasselli, all'infinito finché arriva la pagina */
+	@keyframes mlogo-giro {
+		0%, 100% { fill: var(--rest); transform: scale(1); }
+		25% { fill: var(--c); transform: scale(0.82); }
+		55% { fill: var(--c2); transform: scale(1); }
+	}
+	.mlogo.is-loading .t { animation: mlogo-giro 1400ms var(--d) infinite; }
+
+	@media (prefers-reduced-motion: reduce) {
+		.mlogo .v, .mlogo .t, .mlogo-name { animation: none !important; transition: none; }
+	}
+</style>
