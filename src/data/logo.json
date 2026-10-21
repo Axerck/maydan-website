@@ -1,12 +1,17 @@
 {
   "rest": {
-    "big": "#000000",
-    "lone": "#ff0000",
-    "small": "#008000",
+    "big": "#ff40ff",
+    "lone": "#ff40ff",
+    "small": "#ff40ff",
     "text": "#000000"
   },
   "loading": {
     "enabled": true,
-    "palette": ["#000000", "#ffffff", "#ff0000", "#008000"]
+    "palette": [
+      "#ffffff",
+      "#ffffff",
+      "#ffffff",
+      "#ffffff"
+    ]
   }
 }
