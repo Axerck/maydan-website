@@ -31,6 +31,8 @@ export interface HomepageHero {
   pdf_button_label: string;
   image: string;
   image_alt: string;
+  more_link?: string;
+  more_label?: string;
 }
 
 export interface HomepageCard {
@@ -91,6 +93,9 @@ export interface ActiveCall {
   image_alt: string;
   pdf_link: string;
   deadlines: string[];
+  date?: string;
+  more_link?: string;
+  more_label?: string;
 }
 
 export interface GuidelineDocument {

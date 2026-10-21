@@ -13,6 +13,7 @@ const labels = isEn
       editorial: "Editorial",
       articles: "Articles",
       workingPapers: "Working Papers",
+      varia: "Varia",
       reviews: "Reviews",
       defaultEditorialTitle: "Editorial",
       defaultPrefaceTitle: "Preface",
@@ -24,6 +25,7 @@ const labels = isEn
       editorial: "Editoriale",
       articles: "Articoli",
       workingPapers: "Working paper",
+      varia: "Varia",
       reviews: "Recensioni",
       defaultEditorialTitle: "Editoriale",
       defaultPrefaceTitle: "Prefazione",
@@ -32,13 +34,15 @@ const labels = isEn
 type Entry = { titolo?: string; autore?: string; pdf: string };
 
 function inlineMd(text: string): string {
-  return text.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+  // <i> e non <em>: nell'indice gli <em> (gli autori) vanno a capo da soli
+  return text.replace(/\*([^*]+)\*/g, "<i>$1</i>");
 }
 
 const prefazione: Entry[] = frontmatter.prefazione || [];
 const editoriale: Entry[] = frontmatter.editoriale || [];
 const articoli: Entry[] = frontmatter.articoli || [];
 const workingPaper: Entry[] = frontmatter.working_paper || [];
+const varia: Entry[] = frontmatter.varia || [];
 const recensioni: Entry[] = frontmatter.recensioni || [];
 ---
 
@@ -148,6 +152,25 @@ const recensioni: Entry[] = frontmatter.recensioni || [];
                 <h2>{labels.workingPapers}</h2>
                 <ol>
                   {workingPaper.map((item) => (
+                    <li>
+                      <strong set:html={inlineMd(item.titolo || "")} />
+                      {item.autore && <em>{item.autore}</em>}
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                        {labels.pdf}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )
+          }
+
+          {
+            varia.length > 0 && (
+              <section>
+                <h2>{labels.varia}</h2>
+                <ol>
+                  {varia.map((item) => (
                     <li>
                       <strong set:html={inlineMd(item.titolo || "")} />
                       {item.autore && <em>{item.autore}</em>}

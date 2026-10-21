@@ -25,6 +25,11 @@ const data = homepageData as HomepageData;
             class="btn-primary"
             target="_blank">{data.hero.pdf_button_label}</a
           >
+          {data.hero.more_link && (
+            <a href={data.hero.more_link} class="card-link" style="margin-left: 1rem"
+              >{data.hero.more_label || "Leggi tutto"} &rarr;</a
+            >
+          )}
         </div>
         <div class="hero-image">
           <img

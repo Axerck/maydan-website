@@ -8,7 +8,9 @@ export const ui = {
             scientific_board: "COMITATO SCIENTIFICO",
             activities: "ATTIVITA’",
             contacts: "CONTATTI"
-        }
+        },
+        support: "Sostienici",
+        login: "Accedi"
     },
     en: {
         nav: {
@@ -19,6 +21,8 @@ export const ui = {
             scientific_board: "SCIENTIFIC BOARD",
             activities: "ACTIVITIES",
             contacts: "CONTACTS"
-        }
+        },
+        support: "Support us",
+        login: "Log in"
     },
 } as const;

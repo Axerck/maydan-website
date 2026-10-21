@@ -1,21 +1,23 @@
 {
   "hero": {
-    "title": "Call for Papers Vol. 6 (2026/27)",
-    "deadline_abstract_label": "Scadenza abstract:",
-    "deadline_abstract": "17/12/2025",
-    "deadline_paper_label": "Scadenza elaborati:",
-    "deadline_paper": "13/04/2026",
-    "pdf_link": "/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf",
+    "title": "Call for Papers – Le giornate di studio di Maydan e SeSaMO, 3ª edizione",
+    "deadline_abstract_label": "Napoli, 18–19 febbraio 2027",
+    "deadline_abstract": "– Università di Napoli L'Orientale",
+    "deadline_paper_label": "Scadenza per l'invio delle proposte:",
+    "deadline_paper": "23/10/2026",
+    "pdf_link": "/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-terza-edizione.pdf",
     "pdf_button_label": "Scarica la Call (PDF)",
-    "image": "/img/Call-for-papers_3-scaled.jpg",
-    "image_alt": "Call for Papers Vol. 6"
+    "image": "/img/copertina-cfp-giornate-studio-2027.jpg",
+    "image_alt": "Call for Papers – Le giornate di studio di Maydan e SeSaMO, terza edizione",
+    "more_link": "/it/attivita/giornate-maydan-sesamo-2027",
+    "more_label": "Leggi tutto"
   },
   "latest_issue_card": {
-    "title": "Maydan vol. 4, 2025",
-    "image": "/img/copertina4_compressed_page-0001-1.jpg",
-    "image_alt": "Copertina Vol 4",
+    "title": "Maydan vol. 5, 2025",
+    "image": "/img/copertina5_compressed_page-0001-1.jpg",
+    "image_alt": "Copertina Vol 5",
     "description": "Numero dedicato alle nuove prospettive sugli studi dei mondi arabi, semitici e islamici.",
-    "link": "/it/pubblicazioni/vol-4",
+    "link": "/it/pubblicazioni/vol-5",
     "link_label": "Vai al numero"
   },
   "comunicato_card": {

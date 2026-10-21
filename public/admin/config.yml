@@ -72,6 +72,14 @@ collections:
           - {label: "Titolo", name: "titolo", widget: "string"}
           - {label: "Autore", name: "autore", widget: "string"}
           - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
+      - label: "Varia"
+        name: "varia"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Titolo", name: "titolo", widget: "string"}
+          - {label: "Autore", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Recensioni"
         name: "recensioni"
         widget: "list"
@@ -123,6 +131,14 @@ collections:
           - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
       - label: "Working Papers"
         name: "working_paper"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title", name: "titolo", widget: "string"}
+          - {label: "Author", name: "autore", widget: "string"}
+          - {label: "PDF", name: "pdf", widget: "file", media_folder: "/public/pdf/volumi", public_folder: "/pdf/volumi"}
+      - label: "Varia"
+        name: "varia"
         widget: "list"
         required: false
         fields:
@@ -271,6 +287,16 @@ collections:
               - {label: "Etichetta bottone PDF", name: "pdf_button_label", widget: "string"}
               - {label: "Immagine", name: "image", widget: "image"}
               - {label: "Alt immagine", name: "image_alt", widget: "string"}
+              - label: "Link «Leggi tutto» (opzionale)"
+                name: "more_link"
+                widget: "relation"
+                collection: "attivita-it"
+                search_fields: ["title"]
+                value_field: "/it/attivita/{{slug}}"
+                display_fields: ["title", "date"]
+                required: false
+                hint: "Un'attività con tutti i dettagli. Lascia vuoto per non mostrare il link."
+              - {label: "Etichetta «Leggi tutto»", name: "more_label", widget: "string", required: false, default: "Leggi tutto"}
           - label: "Card Ultimo Numero"
             name: "latest_issue_card"
             widget: "object"
@@ -373,9 +399,29 @@ collections:
               - {label: "Paper deadline label", name: "deadline_paper_label", widget: "string"}
               - {label: "Paper deadline date", name: "deadline_paper", widget: "string"}
               - {label: "PDF link", name: "pdf_link", widget: "file"}
+              - label: "“Read more” link (optional)"
+                name: "more_link"
+                widget: "relation"
+                collection: "attivita-en"
+                search_fields: ["title"]
+                value_field: "/en/attivita/{{slug}}"
+                display_fields: ["title", "date"]
+                required: false
+                hint: "An activity with all the details. Leave empty to hide the link."
+              - {label: "“Read more” label", name: "more_label", widget: "string", required: false, default: "Read more"}
               - {label: "PDF button label", name: "pdf_button_label", widget: "string"}
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Image alt", name: "image_alt", widget: "string"}
+              - label: "“Read more” link (optional)"
+                name: "more_link"
+                widget: "relation"
+                collection: "attivita-en"
+                search_fields: ["title"]
+                value_field: "/en/attivita/{{slug}}"
+                display_fields: ["title", "date"]
+                required: false
+                hint: "An activity with all the details. Leave empty to hide the link."
+              - {label: "“Read more” label", name: "more_label", widget: "string", required: false, default: "Read more"}
           - label: "Latest Issue Card"
             name: "latest_issue_card"
             widget: "object"
@@ -479,6 +525,16 @@ collections:
               - {label: "Immagine", name: "image", widget: "image"}
               - {label: "Alt immagine", name: "image_alt", widget: "string"}
               - {label: "Link al PDF", name: "pdf_link", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
+              - label: "Link «Leggi tutto» (opzionale)"
+                name: "more_link"
+                widget: "relation"
+                collection: "attivita-it"
+                search_fields: ["title"]
+                value_field: "/it/attivita/{{slug}}"
+                display_fields: ["title", "date"]
+                required: false
+                hint: "Un'attività con tutti i dettagli. Lascia vuoto per non mostrare il link."
+              - {label: "Etichetta «Leggi tutto»", name: "more_label", widget: "string", required: false, default: "Leggi tutto"}
               - label: "Scadenze"
                 name: "deadlines"
                 widget: "list"

@@ -34,6 +34,11 @@ const data = callData as CallELineeGuidaData;
 						))
 					}
 				</p>
+				{data.active_call.more_link && (
+					<p>
+						<a href={data.active_call.more_link}>{data.active_call.more_label || "Leggi tutto"} &rarr;</a>
+					</p>
+				)}
 				<!-- <p>Descrizione call</p> -->
 			</div>
 		</article>

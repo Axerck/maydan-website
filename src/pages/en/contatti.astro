@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { Mail, FileText, AlertCircle, Users, Newspaper } from "lucide-react";
+import { Mail, FileText, AlertCircle, Users, Newspaper, Heart } from "lucide-react";
 
 const title = "Contacts | Maydan Journal";
 ---
@@ -76,6 +76,29 @@ const title = "Contacts | Maydan Journal";
 					initiatives.
 				</p>
 				<div class="ml-embedded" data-form="PC44y2"></div>
+			</div>
+
+			<!-- Support us -->
+			<div class="contact-card support-card full-width">
+				<div class="icon-wrapper">
+					<Heart size={24} />
+				</div>
+				<div class="content">
+					<h2>Support us</h2>
+					<p>
+						Maydan is an independent academic journal. If you
+						value our work, you can support us with a free
+						donation.
+					</p>
+					<a
+						href="https://paypal.me/RivistaMaydan"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="cta-button support-cta"
+					>
+						Donate with PayPal
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -195,6 +218,36 @@ const title = "Contacts | Maydan Journal";
 		.newsletter-card p {
 			max-width: 600px;
 			margin: 0 auto;
+		}
+
+		.support-card {
+			background: linear-gradient(135deg, #fdf6f6 0%, #f5e9e9 100%);
+			border: none;
+			padding: 1.5rem 2rem;
+			gap: 1rem;
+		}
+
+		.support-card h2 {
+			font-size: 1.25rem;
+			margin-bottom: 0.25rem;
+		}
+
+		.support-card p {
+			font-size: 0.95rem;
+			margin: 0 0 0.75rem;
+		}
+
+		.support-card .icon-wrapper {
+			width: 48px;
+			height: 48px;
+			color: #c0392b;
+			margin-bottom: 0;
+		}
+
+		.support-cta {
+			margin-top: 0;
+			padding: 0.5rem 1.25rem;
+			font-size: 0.9rem;
 		}
 
 		:global(.ml-embedded) {

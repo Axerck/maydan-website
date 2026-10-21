@@ -26,7 +26,7 @@ const attivita = {
 	it: import.meta.glob<Md>("../pages/it/attivita/*.md", { eager: true }),
 	en: import.meta.glob<Md>("../pages/en/attivita/*.md", { eager: true }),
 };
-const calls = { it: callIt, en: callEn } as Record<Lang, { active_call: { title: string; image?: string; pdf_link: string; date?: string; deadlines?: string[] } }>;
+const calls = { it: callIt, en: callEn } as Record<Lang, { active_call: { title: string; image?: string; pdf_link: string; date?: string; deadlines?: string[]; more_link?: string } }>;
 
 const TESTI = {
 	it: {
@@ -84,7 +84,8 @@ export function buildFeed(lang: Lang, context: APIContext) {
 		// Volumi senza data di uscita: il primo gennaio dell'anno, solo per ordinarli
 		...fromMd(volumi[lang], t.volume, (fm) => (fm.year ? `${fm.year}-01-01` : undefined)),
 		...fromMd(attivita[lang], t.attivita, () => undefined),
-		{
+		// La call ha una sua voce solo se non rimanda a un'attività: altrimenti c'è già quella (niente doppioni nella newsletter)
+		...(call.more_link ? [] : [{
 			title: call.title,
 			link: `/${lang}/call-e-linee-guida/`,
 			description: (call.deadlines ?? []).join(" · "),
@@ -93,7 +94,7 @@ export function buildFeed(lang: Lang, context: APIContext) {
 			enclosure: enclosure(call.image, site),
 			// guid legato al PDF: una call nuova è una voce nuova anche se la pagina è la stessa
 			customData: `<guid isPermaLink="false">${new URL(call.pdf_link, site).href}</guid>`,
-		},
+		}]),
 	]
 		.filter((i) => i.title)
 		.sort((a, b) => (b.pubDate?.getTime() ?? 0) - (a.pubDate?.getTime() ?? 0));

@@ -1,28 +1,53 @@
 {
   "active_call": {
     "section_title": "Latest Call for Papers",
-    "title": "Call for Papers Vol. 6 (2026/27)",
-    "image": "/img/Call-for-papers_3-scaled.jpg",
-    "image_alt": "Call Vol 6",
-    "pdf_link": "/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf",
+    "title": "Call for Papers – Maydan and SeSaMO Study Days – third edition (in Italian)",
+    "date": "2026-09-11",
+    "image": "/img/copertina-cfp-giornate-studio-2027.jpg",
+    "image_alt": "Call for Papers – Maydan and SeSaMO Study Days, third edition",
+    "pdf_link": "/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-terza-edizione.pdf",
+    "more_link": "/en/attivita/giornate-maydan-sesamo-2027",
+    "more_label": "Read more",
     "deadlines": [
-      "Deadline for abstracts and review proposals: 17/12/2025",
-      "Deadline for full papers: 13/04/2026"
+      "Naples, 18–19 February 2027 – University of Naples L'Orientale",
+      "Deadline for proposals: 23/10/2026",
+      "Notification of acceptance: 07/12/2026"
     ]
   },
   "linee_guida": {
     "section_title": "Author Guidelines",
     "documents": [
-      { "label": "Guidelines for Authors (PDF)", "pdf": "/pdf/calls/Linee-guida-2.pdf" },
-      { "label": "Code of Ethics (PDF)", "pdf": "/pdf/calls/Codice-etico.pdf" },
-      { "label": "Review Process (PDF)", "pdf": "/pdf/calls/processo-di-revisione-def.pdf" },
-      { "label": "Reviewer Report (PDF)", "pdf": "/pdf/calls/Peer-review-evaluation-report-.pdf" },
-      { "label": "Abstract Template (PDF)", "pdf": "/pdf/calls/template-abstract-1.pdf" }
+      {
+        "label": "Guidelines for Authors (PDF)",
+        "pdf": "/pdf/calls/Linee-guida-2.pdf"
+      },
+      {
+        "label": "Code of Ethics (PDF)",
+        "pdf": "/pdf/calls/Codice-etico.pdf"
+      },
+      {
+        "label": "Review Process (PDF)",
+        "pdf": "/pdf/calls/processo-di-revisione-def.pdf"
+      },
+      {
+        "label": "Reviewer Report (PDF)",
+        "pdf": "/pdf/calls/Peer-review-evaluation-report-.pdf"
+      },
+      {
+        "label": "Abstract Template (PDF)",
+        "pdf": "/pdf/calls/template-abstract-1.pdf"
+      }
     ]
   },
   "past_calls": {
     "section_title": "Past Call for Papers",
     "items": [
+      {
+        "title": "CALL FOR PAPERS VOL.6 (2026/27)",
+        "image": "/img/Call-for-papers_3-scaled.jpg",
+        "image_alt": "Call Vol 6",
+        "pdf_link": "/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf"
+      },
       {
         "title": "CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E SESAMO – SECONDA EDIZIONE",
         "image": "/img/Call-for-Paper-5-scaled.jpg",
