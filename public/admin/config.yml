@@ -399,16 +399,6 @@ collections:
               - {label: "Paper deadline label", name: "deadline_paper_label", widget: "string"}
               - {label: "Paper deadline date", name: "deadline_paper", widget: "string"}
               - {label: "PDF link", name: "pdf_link", widget: "file"}
-              - label: "“Read more” link (optional)"
-                name: "more_link"
-                widget: "relation"
-                collection: "attivita-en"
-                search_fields: ["title"]
-                value_field: "/en/attivita/{{slug}}"
-                display_fields: ["title", "date"]
-                required: false
-                hint: "An activity with all the details. Leave empty to hide the link."
-              - {label: "“Read more” label", name: "more_label", widget: "string", required: false, default: "Read more"}
               - {label: "PDF button label", name: "pdf_button_label", widget: "string"}
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Image alt", name: "image_alt", widget: "string"}
@@ -586,6 +576,16 @@ collections:
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Image alt", name: "image_alt", widget: "string"}
               - {label: "PDF link", name: "pdf_link", widget: "file", media_folder: "/public/pdf/calls", public_folder: "/pdf/calls"}
+              - label: "“Read more” link (optional)"
+                name: "more_link"
+                widget: "relation"
+                collection: "attivita-en"
+                search_fields: ["title"]
+                value_field: "/en/attivita/{{slug}}"
+                display_fields: ["title", "date"]
+                required: false
+                hint: "An activity with all the details. Leave empty to hide the link."
+              - {label: "“Read more” label", name: "more_label", widget: "string", required: false, default: "Read more"}
               - label: "Deadlines"
                 name: "deadlines"
                 widget: "list"
