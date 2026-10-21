@@ -1,96 +1,99 @@
 {
-  "currentBoard": [
+  "boards": [
     {
-      "title": "Direttrice responsabile",
-      "title_en": "Editor-in-Chief",
-      "members": [
+      "year": "2026",
+      "groups": [
         {
-          "slug": "giulia-gozzini"
+          "title": "Direttrice responsabile",
+          "title_en": "Editor-in-Chief",
+          "members": [
+            {
+              "slug": "giulia-gozzini"
+            }
+          ]
+        },
+        {
+          "title": "Vicedirettore",
+          "title_en": "Deputy Editor",
+          "members": [
+            {
+              "slug": "marco-spagnoletti"
+            }
+          ]
+        },
+        {
+          "title": "Caporedattrice",
+          "title_en": "Managing Editor",
+          "members": [
+            {
+              "slug": "chiara-scarfo"
+            }
+          ]
+        },
+        {
+          "title": "Redazione",
+          "title_en": "Editorial Board",
+          "members": [
+            {
+              "slug": "federica-bucci"
+            },
+            {
+              "slug": "lorenzo-ghione"
+            },
+            {
+              "slug": "enrico-maria-la-forgia"
+            },
+            {
+              "slug": "sara-manna"
+            },
+            {
+              "slug": "viola-pacini"
+            },
+            {
+              "slug": "leonardo-palombini"
+            },
+            {
+              "slug": "gaia-sorge"
+            },
+            {
+              "slug": "carolina-toso"
+            }
+          ]
+        },
+        {
+          "title": "Tesoriere",
+          "title_en": "Treasurer",
+          "members": []
+        },
+        {
+          "title": "Tirocinanti",
+          "title_en": "Interns",
+          "members": [
+            {
+              "slug": "viola-absinta"
+            }
+          ]
+        },
+        {
+          "title": "Collaboratori",
+          "title_en": "Collaborators",
+          "members": [
+            {
+              "slug": "alessia-daccardio-berlinguer"
+            },
+            {
+              "slug": "aurora-magliozzi"
+            },
+            {
+              "slug": "antonio-pacifico"
+            },
+            {
+              "slug": "luigi-sausa"
+            }
+          ]
         }
       ]
     },
-    {
-      "title": "Vicedirettore",
-      "title_en": "Deputy Editor",
-      "members": [
-        {
-          "slug": "marco-spagnoletti"
-        }
-      ]
-    },
-    {
-      "title": "Caporedattrice",
-      "title_en": "Managing Editor",
-      "members": [
-        {
-          "slug": "chiara-scarfo"
-        }
-      ]
-    },
-    {
-      "title": "Redazione",
-      "title_en": "Editorial Board",
-      "members": [
-        {
-          "slug": "federica-bucci"
-        },
-        {
-          "slug": "lorenzo-ghione"
-        },
-        {
-          "slug": "enrico-maria-la-forgia"
-        },
-        {
-          "slug": "sara-manna"
-        },
-        {
-          "slug": "viola-pacini"
-        },
-        {
-          "slug": "leonardo-palombini"
-        },
-        {
-          "slug": "gaia-sorge"
-        },
-        {
-          "slug": "carolina-toso"
-        }
-      ]
-    },
-    {
-      "title": "Tesoriere",
-      "title_en": "Treasurer",
-      "members": []
-    },
-    {
-      "title": "Tirocinanti",
-      "title_en": "Interns",
-      "members": [
-        {
-          "slug": "viola-absinta"
-        }
-      ]
-    },
-    {
-      "title": "Collaboratori",
-      "title_en": "Collaborators",
-      "members": [
-        {
-          "slug": "alessia-daccardio-berlinguer"
-        },
-        {
-          "slug": "aurora-magliozzi"
-        },
-        {
-          "slug": "antonio-pacifico"
-        },
-        {
-          "slug": "luigi-sausa"
-        }
-      ]
-    }
-  ],
-  "pastBoards": [
     {
       "year": "2025",
       "groups": [

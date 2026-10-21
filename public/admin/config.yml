@@ -16,7 +16,8 @@ publish_mode:
   direct_publish: true
 
 # Logo animato della schermata d'accesso (generato da src/pages/admin/logo.svg.ts con i colori della sezione «Logo»)
-logo_url: /admin/logo.svg
+logo:
+  src: /admin/logo.svg
 
 media_folder: "public/img"
 public_folder: "/img"
@@ -617,41 +618,25 @@ collections:
   - name: "struttura"
     label: "Struttura redazione"
     files:
-      - label: "Comitato corrente e passati"
+      - label: "Comitati della redazione"
         name: "boards"
         file: "src/data/structure.json"
         fields:
-          - label: "Comitato corrente"
-            name: "currentBoard"
+          - label: "Comitati"
+            name: "boards"
             widget: "list"
+            summary: "Comitato {{year}}"
+            collapsed: true
+            hint: "Il comitato con l'anno più recente è quello corrente; gli altri finiscono in «Redazioni precedenti», ognuno con la sua pagina. Per un comitato nuovo: apri il menu ⋮ del comitato corrente, scegli «Duplica», poi nella copia cambia l'anno e i membri. Il vecchio diventa passato da solo."
             fields:
-              - {label: "Titolo gruppo", name: "title", widget: "string"}
-              - {label: "Titolo gruppo (EN)", name: "title_en", widget: "string", required: false, hint: "Il titolo sul sito inglese, es. «Editorial Board». Se vuoto resta quello italiano."}
-              - label: "Membri"
-                name: "members"
-                widget: "list"
-                summary: "{{slug}}"
-                fields:
-                  - label: "Membro"
-                    name: "slug"
-                    widget: "relation"
-                    collection: "team"
-                    file: "team"
-                    value_field: "{{members.*.slug}}"
-                    search_fields: ["{{members.*.name}}"]
-                    display_fields: ["{{members.*.name}}"]
-                    hint: "Scegli dalla lista del Team. Se la persona non c'è, aggiungila prima in Team."
-          - label: "Comitati passati"
-            name: "pastBoards"
-            widget: "list"
-            fields:
-              - {label: "Anno", name: "year", widget: "string", pattern: ['^\d{4}$', "Anno a 4 cifre (es. 2024)"]}
+              - {label: "Anno", name: "year", widget: "string", pattern: ['^\d{4}$', "Anno a 4 cifre (es. 2027)"], hint: "Ogni comitato deve avere un anno diverso."}
               - label: "Gruppi"
                 name: "groups"
                 widget: "list"
+                summary: "{{title}}"
                 fields:
                   - {label: "Titolo gruppo", name: "title", widget: "string"}
-                  - {label: "Titolo gruppo (EN)", name: "title_en", widget: "string", required: false}
+                  - {label: "Titolo gruppo (EN)", name: "title_en", widget: "string", required: false, hint: "Il titolo sul sito inglese, es. «Editorial Board». Se vuoto resta quello italiano."}
                   - label: "Membri"
                     name: "members"
                     widget: "list"

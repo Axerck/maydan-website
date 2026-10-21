@@ -16,7 +16,7 @@ export interface BoardGroup {
   members: { slug: string; role?: string }[];
 }
 
-export interface PastBoard {
+export interface Board {
   year: string;
   groups: BoardGroup[];
 }

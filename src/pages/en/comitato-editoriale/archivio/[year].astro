@@ -5,8 +5,8 @@ import teamData from "../../../../data/team.json";
 const teamMembers = teamData.members;
 
 export async function getStaticPaths() {
-  const { pastBoards } = (await import("../../../../data/structure.json")).default;
-  return pastBoards.map((board) => ({
+  const { passati } = await import("../../../../lib/comitati");
+  return passati.map((board) => ({
     params: { year: board.year },
     props: { board },
   }));

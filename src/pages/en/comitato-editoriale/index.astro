@@ -1,9 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import structureData from "../../../data/structure.json";
+import { corrente, passati } from "../../../lib/comitati";
 import teamData from "../../../data/team.json";
 
-const { currentBoard, pastBoards } = structureData;
 const teamMembers = teamData.members;
 
 // Mapping Italian titles to English
@@ -28,7 +27,7 @@ const translateTitle = (title: string) => roleTranslations[title] || title;
   description="The members of the editorial board of the Maydan journal: editors, editorial staff, and collaborators."
 >
   {
-    currentBoard
+    corrente.groups
       .filter((group) => group.members.some((m) => teamMembers.some((t) => t.slug === m.slug)))
       .map((group) => (
       <section class="committee-section">
@@ -62,7 +61,7 @@ const translateTitle = (title: string) => roleTranslations[title] || title;
     <h2>Past Editorial Boards</h2>
     <ul>
       {
-        pastBoards.map((board) => (
+        passati.map((board) => (
           <li>
             <strong>
               <a href={`/en/comitato-editoriale/archivio/${board.year}`}>

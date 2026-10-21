@@ -1,9 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import structureData from "../../../data/structure.json";
+import { corrente, passati } from "../../../lib/comitati";
 import teamData from "../../../data/team.json";
 
-const { currentBoard, pastBoards } = structureData;
 const teamMembers = teamData.members;
 ---
 
@@ -12,7 +11,7 @@ const teamMembers = teamData.members;
   description="I membri del comitato editoriale della rivista Maydan: direzione, redazione e collaboratori."
 >
   {
-    currentBoard
+    corrente.groups
       .filter((group) => group.members.some((m) => teamMembers.some((t) => t.slug === m.slug)))
       .map((group) => (
       <section class="committee-section">
@@ -49,7 +48,7 @@ const teamMembers = teamData.members;
     <h2>Redazioni precedenti</h2>
     <ul>
       {
-        pastBoards.map((board) => (
+        passati.map((board) => (
           <li>
             <strong>
               <a href={`/it/comitato-editoriale/archivio/${board.year}`}>
