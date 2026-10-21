@@ -26,14 +26,25 @@ const t = currentLocale in ui ? ui[currentLocale as keyof typeof ui] : ui.it;
 // Helper to get localized path
 const tPath = (path: string) => getRelativeLocaleUrl(currentLocale, path);
 
+// Le pagine che esistono davvero (anche quelle con [slug]): per non mandare il cambio lingua su una pagina che non c'è
+const ROUTES = Object.keys(import.meta.glob("../pages/**/*.{astro,md}")).map((f) => {
+	const route = f.replace(/^\.\.\/pages/, "").replace(/\.(astro|md)$/, "").replace(/\/index$/, "") || "/";
+	return new RegExp("^" + route.replace(/\[[^\]]+\]/g, "[^/]+") + "/?$");
+});
+const exists = (path: string) => ROUTES.some((r) => r.test(path));
+
 // Helper to switch language
-const switchLang = (targetLang: string) => {
+const switchPath = (targetLang: string) => {
 	const currentPath = Astro.url.pathname;
 	// Remove the current locale prefix (e.g. /it/ or /en/)
 	const pathWithoutLocale =
 		currentPath.replace(`/${currentLocale}`, "") || "/";
 	return getRelativeLocaleUrl(targetLang, pathWithoutLocale);
 };
+const hasTranslation = (targetLang: string) => exists(switchPath(targetLang));
+// Senza traduzione si va alla homepage dell'altra lingua
+const switchLang = (targetLang: string) =>
+	hasTranslation(targetLang) ? switchPath(targetLang) : getRelativeLocaleUrl(targetLang, "/");
 // Make canonical dynamic based on current request origin, but strip 'www.'
 const originUrl = new URL(Astro.url.pathname, Astro.url.origin);
 originUrl.hostname = originUrl.hostname.replace(/^www\./, "");
@@ -101,9 +112,9 @@ const periodicaJsonLd = {
 		<!-- SEO Basics -->
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
-		<link rel="alternate" hreflang="it" href={alternateIt} />
-		<link rel="alternate" hreflang="en" href={alternateEn} />
-		<link rel="alternate" hreflang="x-default" href={alternateIt} />
+		{hasTranslation("it") && <link rel="alternate" hreflang="it" href={alternateIt} />}
+		{hasTranslation("en") && <link rel="alternate" hreflang="en" href={alternateEn} />}
+		{hasTranslation("it") && <link rel="alternate" hreflang="x-default" href={alternateIt} />}
 		<link rel="alternate" type="application/rss+xml" title="Maydan" href={`/${currentLocale}/rss.xml`} />
 
 		<!-- Open Graph / Facebook -->

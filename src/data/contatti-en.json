@@ -1,0 +1,29 @@
+{
+  "seo_title": "Contacts | Maydan Journal",
+  "seo_description": "Contact the Maydan editorial team for proposals, contributions, collaborations, or reports.",
+  "submissions": {
+    "title": "Proposals and Contributions",
+    "text": "For the submission of proposals and contributions:",
+    "email": "submission.rivista@maydan.it"
+  },
+  "complaints": {
+    "title": "Complaints",
+    "text": "For any complaints:",
+    "email": "direzione.rivista@maydan.it"
+  },
+  "collaborate": {
+    "title": "Collaborate with us",
+    "text": "Do you have suggestions for Maydan? Do you want to join the editorial board? Do you want to propose activities?",
+    "contact_line": "Write to info@maydan.it, to direzione.rivista@maydan.it or to submission.rivista@maydan.it!"
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "text": "Subscribe to our Newsletter to stay updated on our initiatives."
+  },
+  "support": {
+    "title": "Support us",
+    "text": "Maydan is an independent academic journal. If you value our work, you can support us with a free donation.",
+    "button_label": "Donate with PayPal",
+    "url": "https://paypal.me/RivistaMaydan"
+  }
+}

@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import { inlineMd } from "../../../lib/inline-md";
 import callData from "../../../data/call-e-linee-guida-en.json";
 import type { CallELineeGuidaData } from "../../../data/types";
 
@@ -28,7 +29,7 @@ const data = callData as CallELineeGuidaData;
 					{
 						data.active_call.deadlines.map((d, i) => (
 							<Fragment>
-								✦ {d}
+								✦ <Fragment set:html={inlineMd(d)} />
 								{i < data.active_call.deadlines.length - 1 && <br />}
 							</Fragment>
 						))

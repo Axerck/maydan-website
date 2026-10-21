@@ -7,16 +7,33 @@ backend:
 # Sviluppo locale: aprire /admin/index.html in un browser Chromium e cliccare
 # "Work with Local Repository". Sveltia usa la File System Access API per
 # scrivere direttamente sui file locali — niente proxy server.
-#
-# Nota: editorial_workflow rimosso perché Sveltia non lo supporta.
-# Il flusso draft→PR→merge sarà implementato in fase 2 con un branch
-# dedicato + GitHub Actions.
+
+# Bozze: «Salva» tiene il lavoro come bozza (su GitHub, non ancora sul sito) e si può
+# riprendere quando si vuole; «Salva e pubblica» lo mette online. Nessuna revisione.
+publish_mode:
+  type: editorial_workflow
+  stages: [draft]
+  direct_publish: true
 
 # Logo animato della schermata d'accesso (generato da src/pages/admin/logo.svg.ts con i colori della sezione «Logo»)
 logo_url: /admin/logo.svg
 
 media_folder: "public/img"
 public_folder: "/img"
+
+# File caricati: le foto diventano WebP al massimo di 2000 px (pesano molto meno),
+# i nomi senza spazi né accenti, e niente oltre i 24 MB (Cloudflare non pubblica file oltre i 25 MB).
+media_libraries:
+  default:
+    config:
+      max_file_size: 24000000
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 2000
+          height: 2000
 
 slug:
   encoding: "ascii"
@@ -274,29 +291,6 @@ collections:
         name: "homepage-it"
         file: "src/data/homepage-it.json"
         fields:
-          - label: "Hero (Call for Papers)"
-            name: "hero"
-            widget: "object"
-            fields:
-              - {label: "Titolo", name: "title", widget: "string"}
-              - {label: "Etichetta scadenza abstract", name: "deadline_abstract_label", widget: "string"}
-              - {label: "Data scadenza abstract", name: "deadline_abstract", widget: "string"}
-              - {label: "Etichetta scadenza elaborati", name: "deadline_paper_label", widget: "string"}
-              - {label: "Data scadenza elaborati", name: "deadline_paper", widget: "string"}
-              - {label: "Link PDF", name: "pdf_link", widget: "file"}
-              - {label: "Etichetta bottone PDF", name: "pdf_button_label", widget: "string"}
-              - {label: "Immagine", name: "image", widget: "image"}
-              - {label: "Alt immagine", name: "image_alt", widget: "string"}
-              - label: "Link «Leggi tutto» (opzionale)"
-                name: "more_link"
-                widget: "relation"
-                collection: "attivita-it"
-                search_fields: ["title"]
-                value_field: "/it/attivita/{{slug}}"
-                display_fields: ["title", "date"]
-                required: false
-                hint: "Un'attività con tutti i dettagli. Lascia vuoto per non mostrare il link."
-              - {label: "Etichetta «Leggi tutto»", name: "more_label", widget: "string", required: false, default: "Leggi tutto"}
           - label: "Card Ultimo Numero"
             name: "latest_issue_card"
             widget: "object"
@@ -389,29 +383,6 @@ collections:
         name: "homepage-en"
         file: "src/data/homepage-en.json"
         fields:
-          - label: "Hero (Call for Papers)"
-            name: "hero"
-            widget: "object"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Abstract deadline label", name: "deadline_abstract_label", widget: "string"}
-              - {label: "Abstract deadline date", name: "deadline_abstract", widget: "string"}
-              - {label: "Paper deadline label", name: "deadline_paper_label", widget: "string"}
-              - {label: "Paper deadline date", name: "deadline_paper", widget: "string"}
-              - {label: "PDF link", name: "pdf_link", widget: "file"}
-              - {label: "PDF button label", name: "pdf_button_label", widget: "string"}
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Image alt", name: "image_alt", widget: "string"}
-              - label: "“Read more” link (optional)"
-                name: "more_link"
-                widget: "relation"
-                collection: "attivita-en"
-                search_fields: ["title"]
-                value_field: "/en/attivita/{{slug}}"
-                display_fields: ["title", "date"]
-                required: false
-                hint: "An activity with all the details. Leave empty to hide the link."
-              - {label: "“Read more” label", name: "more_label", widget: "string", required: false, default: "Read more"}
           - label: "Latest Issue Card"
             name: "latest_issue_card"
             widget: "object"
@@ -507,7 +478,7 @@ collections:
           - label: "Call attiva"
             name: "active_call"
             widget: "object"
-            hint: "La call attualmente in corso, nella sezione 'Ultime Call for Papers' di questa pagina e nel feed RSS. Attenzione: il riquadro in cima alla homepage si cambia a parte, in Homepage (IT) → Hero."
+            hint: "La call attualmente in corso, nella sezione 'Ultime Call for Papers' di questa pagina e nel feed RSS. È anche il riquadro in cima alla homepage: si aggiorna da qui."
             fields:
               - {label: "Titolo sezione", name: "section_title", widget: "string", default: "Ultime Call for Papers"}
               - {label: "Titolo call", name: "title", widget: "string"}
@@ -528,7 +499,7 @@ collections:
               - label: "Scadenze"
                 name: "deadlines"
                 widget: "list"
-                hint: "Una scadenza per riga. Es. 'Scadenza per abstract: 17/12/2025'"
+                hint: "Una riga per voce. Per il grassetto usa **testo**, es. '**Scadenza per abstract:** 17/12/2025'. Le stesse righe compaiono nel riquadro in cima alla homepage."
                 field: {label: "Scadenza", name: "deadline", widget: "string"}
           - label: "Linee guida per gli autori"
             name: "linee_guida"
@@ -568,7 +539,7 @@ collections:
           - label: "Active call"
             name: "active_call"
             widget: "object"
-            hint: "The currently active call, shown in the 'Latest Call for Papers' section of this page and in the RSS feed. Note: the box at the top of the homepage is edited separately, in Homepage (EN) → Hero."
+            hint: "The currently active call, shown in the 'Latest Call for Papers' section of this page and in the RSS feed. It is also the box at the top of the homepage: edit it here."
             fields:
               - {label: "Section title", name: "section_title", widget: "string", default: "Latest Call for Papers"}
               - {label: "Call title", name: "title", widget: "string"}
@@ -589,7 +560,7 @@ collections:
               - label: "Deadlines"
                 name: "deadlines"
                 widget: "list"
-                hint: "One deadline per line. E.g. 'Abstract deadline: 17/12/2025'"
+                hint: "One line per item. For bold use **text**, e.g. '**Abstract deadline:** 17/12/2025'. The same lines appear in the box at the top of the homepage."
                 field: {label: "Deadline", name: "deadline", widget: "string"}
           - label: "Author guidelines"
             name: "linee_guida"
@@ -655,12 +626,21 @@ collections:
             widget: "list"
             fields:
               - {label: "Titolo gruppo", name: "title", widget: "string"}
+              - {label: "Titolo gruppo (EN)", name: "title_en", widget: "string", required: false, hint: "Il titolo sul sito inglese, es. «Editorial Board». Se vuoto resta quello italiano."}
               - label: "Membri"
                 name: "members"
                 widget: "list"
+                summary: "{{slug}}"
                 fields:
-                  - {label: "Slug membro", name: "slug", widget: "string"}
-                  - {label: "Ruolo specifico", name: "role", widget: "string", required: false}
+                  - label: "Membro"
+                    name: "slug"
+                    widget: "relation"
+                    collection: "team"
+                    file: "team"
+                    value_field: "{{members.*.slug}}"
+                    search_fields: ["{{members.*.name}}"]
+                    display_fields: ["{{members.*.name}}"]
+                    hint: "Scegli dalla lista del Team. Se la persona non c'è, aggiungila prima in Team."
           - label: "Comitati passati"
             name: "pastBoards"
             widget: "list"
@@ -671,12 +651,21 @@ collections:
                 widget: "list"
                 fields:
                   - {label: "Titolo gruppo", name: "title", widget: "string"}
+                  - {label: "Titolo gruppo (EN)", name: "title_en", widget: "string", required: false}
                   - label: "Membri"
                     name: "members"
                     widget: "list"
+                    summary: "{{slug}}"
                     fields:
-                      - {label: "Slug membro", name: "slug", widget: "string"}
-                      - {label: "Ruolo specifico", name: "role", widget: "string", required: false}
+                      - label: "Membro"
+                        name: "slug"
+                        widget: "relation"
+                        collection: "team"
+                        file: "team"
+                        value_field: "{{members.*.slug}}"
+                        search_fields: ["{{members.*.name}}"]
+                        display_fields: ["{{members.*.name}}"]
+                        hint: "Scegli dalla lista del Team. Se la persona non c'è, aggiungila prima in Team."
 
   # ============ LOGO (un solo file JSON) ============
   - name: "logo"
@@ -708,3 +697,106 @@ collections:
                 min: 1
                 max: 8
                 field: {label: "Colore", name: "color", widget: "color"}
+
+  # ============ PAGINE DEL SITO (testi delle pagine fisse) ============
+  - name: "pagine-sito"
+    label: "Pagine del sito"
+    description: "I testi delle pagine fisse: Chi siamo, Contatti, Comunicato."
+    files:
+      - label: "Chi siamo (IT)"
+        name: "chi-siamo-it"
+        file: "src/data/pagine/chi-siamo-it.md"
+        fields:
+          - {label: "Titolo della scheda del browser", name: "title", widget: "string", hint: "Compare nella scheda del browser e su Google."}
+          - {label: "Descrizione per Google", name: "description", widget: "text"}
+          - {label: "Testo", name: "body", widget: "markdown"}
+      - label: "About us (EN)"
+        name: "chi-siamo-en"
+        file: "src/data/pagine/chi-siamo-en.md"
+        fields:
+          - {label: "Browser tab title", name: "title", widget: "string", hint: "Shown in the browser tab and on Google."}
+          - {label: "Description for Google", name: "description", widget: "text"}
+          - {label: "Text", name: "body", widget: "markdown"}
+      - label: "Contatti (IT)"
+        name: "contatti-it"
+        file: "src/data/contatti-it.json"
+        fields: &contatti
+          - {label: "Titolo della scheda del browser", name: "seo_title", widget: "string"}
+          - {label: "Descrizione per Google", name: "seo_description", widget: "text"}
+          - label: "Riquadro proposte e contributi"
+            name: "submissions"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Testo", name: "text", widget: "string"}
+              - {label: "Email", name: "email", widget: "string", pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', "Scrivi un indirizzo email valido"]}
+          - label: "Riquadro reclami"
+            name: "complaints"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Testo", name: "text", widget: "string"}
+              - {label: "Email", name: "email", widget: "string", pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', "Scrivi un indirizzo email valido"]}
+          - label: "Riquadro collabora"
+            name: "collaborate"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Testo", name: "text", widget: "text"}
+              - {label: "Riga con gli indirizzi", name: "contact_line", widget: "string", hint: "Gli indirizzi email scritti qui diventano link da soli."}
+          - label: "Riquadro newsletter"
+            name: "newsletter"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Testo", name: "text", widget: "text"}
+          - label: "Riquadro sostienici"
+            name: "support"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "title", widget: "string"}
+              - {label: "Testo", name: "text", widget: "text"}
+              - {label: "Testo del pulsante", name: "button_label", widget: "string"}
+              - {label: "Link per le donazioni", name: "url", widget: "string"}
+      - label: "Contacts (EN)"
+        name: "contatti-en"
+        file: "src/data/contatti-en.json"
+        fields: *contatti
+      - label: "Comunicato"
+        name: "comunicato"
+        file: "src/data/pagine/comunicato.json"
+        fields:
+          - {label: "Titolo della scheda del browser", name: "seo_title", widget: "string"}
+          - {label: "Descrizione per Google", name: "seo_description", widget: "text"}
+          - {label: "Titolo", name: "title", widget: "string"}
+          - {label: "Immagine", name: "image", widget: "image"}
+          - {label: "Testo alternativo dell'immagine", name: "image_alt", widget: "string"}
+          - label: "Sezioni (una per lingua)"
+            name: "sections"
+            widget: "list"
+            summary: "{{lang_title}}"
+            fields:
+              - {label: "Titolo della sezione", name: "lang_title", widget: "string"}
+              - {label: "Da destra a sinistra (arabo)", name: "rtl", widget: "boolean", default: false}
+              - {label: "Titolo con immagine (facoltativo)", name: "heading", widget: "string", required: false, hint: "Se c'è, la sezione si apre con l'immagine e questo titolo."}
+              - {label: "Testo", name: "body", widget: "markdown"}
+              - {label: "PDF da scaricare (facoltativo)", name: "pdf", widget: "file", required: false, media_folder: "/public/pdf/comunicati", public_folder: "/pdf/comunicati"}
+              - {label: "Testo del pulsante di download", name: "pdf_label", widget: "string", required: false}
+
+  # ============ COMITATO SCIENTIFICO (un solo file JSON) ============
+  - name: "comitato-scientifico"
+    label: "Comitato scientifico"
+    files:
+      - label: "Membri del comitato scientifico"
+        name: "comitato-scientifico"
+        file: "src/data/comitato-scientifico.json"
+        fields:
+          - label: "Membri"
+            name: "members"
+            widget: "list"
+            summary: "{{name}} — {{affiliation}}"
+            fields:
+              - {label: "Nome", name: "name", widget: "string"}
+              - {label: "Link alla pagina personale", name: "url", widget: "string", required: false}
+              - {label: "Affiliazione", name: "affiliation", widget: "string", required: false}
+              - {label: "Affiliazione (EN)", name: "affiliation_en", widget: "string", required: false}

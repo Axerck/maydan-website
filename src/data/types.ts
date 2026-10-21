@@ -21,20 +21,6 @@ export interface PastBoard {
   groups: BoardGroup[];
 }
 
-export interface HomepageHero {
-  title: string;
-  deadline_abstract_label: string;
-  deadline_abstract: string;
-  deadline_paper_label: string;
-  deadline_paper: string;
-  pdf_link: string;
-  pdf_button_label: string;
-  image: string;
-  image_alt: string;
-  more_link?: string;
-  more_label?: string;
-}
-
 export interface HomepageCard {
   title: string;
   image: string;
@@ -79,7 +65,6 @@ export interface HomepageCollaborations {
 }
 
 export interface HomepageData {
-  hero: HomepageHero;
   latest_issue_card: HomepageCard;
   comunicato_card: HomepageCard;
   activities_card: HomepageActivitiesCard;

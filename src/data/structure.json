@@ -2,54 +2,91 @@
   "currentBoard": [
     {
       "title": "Direttrice responsabile",
+      "title_en": "Editor-in-Chief",
       "members": [
-        { "slug": "giulia-gozzini" }
+        {
+          "slug": "giulia-gozzini"
+        }
       ]
     },
     {
       "title": "Vicedirettore",
+      "title_en": "Deputy Editor",
       "members": [
-        { "slug": "marco-spagnoletti" }
+        {
+          "slug": "marco-spagnoletti"
+        }
       ]
     },
     {
       "title": "Caporedattrice",
+      "title_en": "Managing Editor",
       "members": [
-        { "slug": "chiara-scarfo" }
+        {
+          "slug": "chiara-scarfo"
+        }
       ]
     },
     {
       "title": "Redazione",
+      "title_en": "Editorial Board",
       "members": [
-        { "slug": "federica-bucci" },
-        { "slug": "lorenzo-ghione" },
-        { "slug": "enrico-maria-la-forgia" },
-        { "slug": "sara-manna" },
-        { "slug": "viola-pacini" },
-        { "slug": "leonardo-palombini" },
-        { "slug": "gaia-sorge" },
-        { "slug": "carolina-toso" }
+        {
+          "slug": "federica-bucci"
+        },
+        {
+          "slug": "lorenzo-ghione"
+        },
+        {
+          "slug": "enrico-maria-la-forgia"
+        },
+        {
+          "slug": "sara-manna"
+        },
+        {
+          "slug": "viola-pacini"
+        },
+        {
+          "slug": "leonardo-palombini"
+        },
+        {
+          "slug": "gaia-sorge"
+        },
+        {
+          "slug": "carolina-toso"
+        }
       ]
     },
     {
       "title": "Tesoriere",
-      "members": [
-        { "slug": "-" }
-      ]
+      "title_en": "Treasurer",
+      "members": []
     },
     {
       "title": "Tirocinanti",
+      "title_en": "Interns",
       "members": [
-        { "slug": "viola-absinta" }
+        {
+          "slug": "viola-absinta"
+        }
       ]
     },
     {
       "title": "Collaboratori",
+      "title_en": "Collaborators",
       "members": [
-        { "slug": "alessia-daccardio-berlinguer" },
-        { "slug": "aurora-magliozzi" },
-        { "slug": "antonio-pacifico" },
-        { "slug": "luigi-sausa" }
+        {
+          "slug": "alessia-daccardio-berlinguer"
+        },
+        {
+          "slug": "aurora-magliozzi"
+        },
+        {
+          "slug": "antonio-pacifico"
+        },
+        {
+          "slug": "luigi-sausa"
+        }
       ]
     }
   ],
@@ -59,37 +96,77 @@
       "groups": [
         {
           "title": "Direttore responsabile",
-          "members": [{ "slug": "antonio-pacifico" }]
+          "title_en": "Editor-in-Chief",
+          "members": [
+            {
+              "slug": "antonio-pacifico"
+            }
+          ]
         },
         {
           "title": "Vicedirettrice",
-          "members": [{ "slug": "aurora-magliozzi" }]
+          "title_en": "Deputy Editor",
+          "members": [
+            {
+              "slug": "aurora-magliozzi"
+            }
+          ]
         },
         {
           "title": "Caporedattrice",
-          "members": [{ "slug": "gaia-sorge" }]
+          "title_en": "Managing Editor",
+          "members": [
+            {
+              "slug": "gaia-sorge"
+            }
+          ]
         },
         {
           "title": "Redazione",
+          "title_en": "Editorial Board",
           "members": [
-            { "slug": "federica-bucci" },
-            { "slug": "lorenzo-ghione" },
-            { "slug": "giulia-gozzini" },
-            { "slug": "viola-pacini" },
-            { "slug": "luigi-sausa" },
-            { "slug": "marco-spagnoletti" }
+            {
+              "slug": "federica-bucci"
+            },
+            {
+              "slug": "lorenzo-ghione"
+            },
+            {
+              "slug": "giulia-gozzini"
+            },
+            {
+              "slug": "viola-pacini"
+            },
+            {
+              "slug": "luigi-sausa"
+            },
+            {
+              "slug": "marco-spagnoletti"
+            }
           ]
         },
         {
           "title": "Tesoriere",
-          "members": [{ "slug": "pietro-menghini" }]
+          "title_en": "Treasurer",
+          "members": [
+            {
+              "slug": "pietro-menghini"
+            }
+          ]
         },
         {
           "title": "Collaboratori",
+          "title_en": "Collaborators",
           "members": [
-            { "slug": "alessia-daccardio-berlinguer" },
-            { "slug": "annamaria-bianco" },
-            { "slug": "pietro-stefanini" }
+            {
+              "slug": "alessia-daccardio-berlinguer"
+            },
+            {
+              "slug": "annamaria-bianco"
+            },
+            {
+              "slug": "pietro-stefanini"
+            }
           ]
         }
       ]
@@ -99,39 +176,83 @@
       "groups": [
         {
           "title": "Direttore responsabile",
-          "members": [{ "slug": "antonio-pacifico" }]
+          "title_en": "Editor-in-Chief",
+          "members": [
+            {
+              "slug": "antonio-pacifico"
+            }
+          ]
         },
         {
           "title": "Vicedirettrice",
-          "members": [{ "slug": "aurora-magliozzi" }]
+          "title_en": "Deputy Editor",
+          "members": [
+            {
+              "slug": "aurora-magliozzi"
+            }
+          ]
         },
         {
           "title": "Caporedattrice",
-          "members": [{ "slug": "gaia-sorge" }]
+          "title_en": "Managing Editor",
+          "members": [
+            {
+              "slug": "gaia-sorge"
+            }
+          ]
         },
         {
           "title": "Redazione",
+          "title_en": "Editorial Board",
           "members": [
-            { "slug": "alessia-daccardio-berlinguer" },
-            { "slug": "lorenzo-ghione" },
-            { "slug": "noemi-linardi" },
-            { "slug": "laura-morreale" },
-            { "slug": "viola-pacini" },
-            { "slug": "daniele-paolini" },
-            { "slug": "luigi-sausa" },
-            { "slug": "pietro-stefanini" }
+            {
+              "slug": "alessia-daccardio-berlinguer"
+            },
+            {
+              "slug": "lorenzo-ghione"
+            },
+            {
+              "slug": "noemi-linardi"
+            },
+            {
+              "slug": "laura-morreale"
+            },
+            {
+              "slug": "viola-pacini"
+            },
+            {
+              "slug": "daniele-paolini"
+            },
+            {
+              "slug": "luigi-sausa"
+            },
+            {
+              "slug": "pietro-stefanini"
+            }
           ]
         },
         {
           "title": "Tesoriere",
-          "members": [{ "slug": "pietro-menghini" }]
+          "title_en": "Treasurer",
+          "members": [
+            {
+              "slug": "pietro-menghini"
+            }
+          ]
         },
         {
           "title": "Collaboratrici",
+          "title_en": "Collaborators",
           "members": [
-            { "slug": "annamaria-bianco" },
-            { "slug": "federica-stagni" },
-            { "slug": "tamara-taher" }
+            {
+              "slug": "annamaria-bianco"
+            },
+            {
+              "slug": "federica-stagni"
+            },
+            {
+              "slug": "tamara-taher"
+            }
           ]
         }
       ]
@@ -141,33 +262,68 @@
       "groups": [
         {
           "title": "Direttore responsabile",
-          "members": [{ "slug": "antonio-pacifico" }]
+          "title_en": "Editor-in-Chief",
+          "members": [
+            {
+              "slug": "antonio-pacifico"
+            }
+          ]
         },
         {
           "title": "Vicedirettore",
-          "members": [{ "slug": "daniele-paolini" }]
+          "title_en": "Deputy Editor",
+          "members": [
+            {
+              "slug": "daniele-paolini"
+            }
+          ]
         },
         {
           "title": "Caporedattrice",
-          "members": [{ "slug": "laura-morreale" }]
+          "title_en": "Managing Editor",
+          "members": [
+            {
+              "slug": "laura-morreale"
+            }
+          ]
         },
         {
           "title": "Redazione",
+          "title_en": "Editorial Board",
           "members": [
-            { "slug": "alessia-daccardio-berlinguer" },
-            { "slug": "aurora-magliozzi" },
-            { "slug": "pietro-menghini" },
-            { "slug": "federico-pozzoli" },
-            { "slug": "luigi-sausa" },
-            { "slug": "federica-stagni" },
-            { "slug": "pietro-stefanini" }
+            {
+              "slug": "alessia-daccardio-berlinguer"
+            },
+            {
+              "slug": "aurora-magliozzi"
+            },
+            {
+              "slug": "pietro-menghini"
+            },
+            {
+              "slug": "federico-pozzoli"
+            },
+            {
+              "slug": "luigi-sausa"
+            },
+            {
+              "slug": "federica-stagni"
+            },
+            {
+              "slug": "pietro-stefanini"
+            }
           ]
         },
         {
           "title": "Collaboratrici",
+          "title_en": "Collaborators",
           "members": [
-            { "slug": "annamaria-bianco" },
-            { "slug": "tamara-taher" }
+            {
+              "slug": "annamaria-bianco"
+            },
+            {
+              "slug": "tamara-taher"
+            }
           ]
         }
       ]
@@ -177,26 +333,56 @@
       "groups": [
         {
           "title": "Direttore responsabile",
-          "members": [{ "slug": "antonio-pacifico" }]
+          "title_en": "Editor-in-Chief",
+          "members": [
+            {
+              "slug": "antonio-pacifico"
+            }
+          ]
         },
         {
           "title": "Vicedirettore",
-          "members": [{ "slug": "pietro-menghini" }]
+          "title_en": "Deputy Editor",
+          "members": [
+            {
+              "slug": "pietro-menghini"
+            }
+          ]
         },
         {
           "title": "Caporedattrice",
-          "members": [{ "slug": "alessia-daccardio-berlinguer" }]
+          "title_en": "Managing Editor",
+          "members": [
+            {
+              "slug": "alessia-daccardio-berlinguer"
+            }
+          ]
         },
         {
           "title": "Redazione",
+          "title_en": "Editorial Board",
           "members": [
-            { "slug": "annamaria-bianco" },
-            { "slug": "giulia-guidotti" },
-            { "slug": "federico-pozzoli" },
-            { "slug": "luigi-sausa" },
-            { "slug": "federica-stagni" },
-            { "slug": "pietro-stefanini" },
-            { "slug": "tamara-taher" }
+            {
+              "slug": "annamaria-bianco"
+            },
+            {
+              "slug": "giulia-guidotti"
+            },
+            {
+              "slug": "federico-pozzoli"
+            },
+            {
+              "slug": "luigi-sausa"
+            },
+            {
+              "slug": "federica-stagni"
+            },
+            {
+              "slug": "pietro-stefanini"
+            },
+            {
+              "slug": "tamara-taher"
+            }
           ]
         }
       ]
@@ -206,26 +392,56 @@
       "groups": [
         {
           "title": "Direttore responsabile",
-          "members": [{ "slug": "antonio-pacifico" }]
+          "title_en": "Editor-in-Chief",
+          "members": [
+            {
+              "slug": "antonio-pacifico"
+            }
+          ]
         },
         {
           "title": "Vicedirettrice",
-          "members": [{ "slug": "giulia-guidotti" }]
+          "title_en": "Deputy Editor",
+          "members": [
+            {
+              "slug": "giulia-guidotti"
+            }
+          ]
         },
         {
           "title": "Caporedattrice",
-          "members": [{ "slug": "annamaria-bianco" }]
+          "title_en": "Managing Editor",
+          "members": [
+            {
+              "slug": "annamaria-bianco"
+            }
+          ]
         },
         {
           "title": "Redazione",
+          "title_en": "Editorial Board",
           "members": [
-            { "slug": "manuel-capomaccio" },
-            { "slug": "alessia-daccardio-berlinguer" },
-            { "slug": "pietro-menghini" },
-            { "slug": "federico-pozzoli" },
-            { "slug": "luigi-sausa" },
-            { "slug": "pietro-stefanini" },
-            { "slug": "tamara-taher" }
+            {
+              "slug": "manuel-capomaccio"
+            },
+            {
+              "slug": "alessia-daccardio-berlinguer"
+            },
+            {
+              "slug": "pietro-menghini"
+            },
+            {
+              "slug": "federico-pozzoli"
+            },
+            {
+              "slug": "luigi-sausa"
+            },
+            {
+              "slug": "pietro-stefanini"
+            },
+            {
+              "slug": "tamara-taher"
+            }
           ]
         }
       ]

@@ -1,0 +1,292 @@
+---
+// La pagina Contatti: impaginazione unica, testi e indirizzi dal CMS (src/data/contatti-{it,en}.json)
+import Layout from "../layouts/Layout.astro";
+import { FileText, AlertCircle, Users, Newspaper, Heart } from "lucide-react";
+import { inlineMdEmail } from "../lib/inline-md";
+
+interface Props {
+	data: typeof import("../data/contatti-it.json");
+}
+const { data } = Astro.props;
+---
+
+<Layout title={data.seo_title} description={data.seo_description}>
+	<div class="contacts-container">
+		<header class="contacts-header"></header>
+
+		<div class="contacts-grid">
+			<div class="contact-card primary">
+				<div class="icon-wrapper">
+					<FileText size={32} />
+				</div>
+				<h2>{data.submissions.title}</h2>
+				<p>{data.submissions.text}</p>
+				<a href={`mailto:${data.submissions.email}`} class="email-link">
+					{data.submissions.email}
+				</a>
+			</div>
+
+			<div class="contact-card secondary">
+				<div class="icon-wrapper">
+					<AlertCircle size={32} />
+				</div>
+				<h2>{data.complaints.title}</h2>
+				<p>{data.complaints.text}</p>
+				<a href={`mailto:${data.complaints.email}`} class="email-link">
+					{data.complaints.email}
+				</a>
+			</div>
+
+			<div class="contact-card info full-width">
+				<div class="icon-wrapper">
+					<Users size={32} />
+				</div>
+				<div class="content">
+					<h2>{data.collaborate.title}</h2>
+					<p>{data.collaborate.text}</p>
+					<p class="email-row" set:html={inlineMdEmail(data.collaborate.contact_line)} />
+				</div>
+			</div>
+
+			<div class="contact-card newsletter-card">
+				<div class="icon-wrapper">
+					<Newspaper size={32} />
+				</div>
+				<h2>{data.newsletter.title}</h2>
+				<p>{data.newsletter.text}</p>
+				<div class="ml-embedded" data-form="PC44y2"></div>
+			</div>
+
+			<div class="contact-card support-card full-width">
+				<div class="icon-wrapper">
+					<Heart size={24} />
+				</div>
+				<div class="content">
+					<h2>{data.support.title}</h2>
+					<p>{data.support.text}</p>
+					<a
+						href={data.support.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="cta-button support-cta"
+					>
+						{data.support.button_label}
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.contacts-container {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+
+	.contacts-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	h1 {
+		font-family: var(--font-serif, serif);
+		font-size: 3rem;
+		color: #1a1a1a;
+		margin-bottom: 1rem;
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		color: #666;
+		font-weight: 300;
+	}
+
+	.contacts-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.contact-card {
+		background: #fff;
+		padding: 2.5rem;
+		border-radius: 12px;
+		border: 1px solid #eee;
+		text-align: center;
+		transition:
+			transform 0.2s,
+			box-shadow 0.2s;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.contact-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+		border-color: transparent;
+	}
+
+	.full-width {
+		grid-column: 1 / -1;
+		flex-direction: row;
+		text-align: left;
+		justify-content: flex-start;
+	}
+
+	.icon-wrapper {
+		width: 64px;
+		height: 64px;
+		background: #f8f9fa;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-primary, #0056b3);
+		margin-bottom: 0.5rem;
+	}
+
+	.full-width .icon-wrapper {
+		margin-bottom: 0;
+		margin-right: 1.5rem;
+		flex-shrink: 0;
+	}
+
+	h2 {
+		font-family: var(--font-sans, sans-serif);
+		font-size: 1.5rem;
+		color: #1a1a1a;
+		margin: 0;
+	}
+
+	p {
+		color: #555;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.email-link {
+		color: var(--color-primary, #0056b3);
+		font-weight: 600;
+		font-size: 1.1rem;
+		text-decoration: none;
+		padding-bottom: 2px;
+		border-bottom: 2px solid rgba(0, 86, 179, 0.1);
+		transition: border-color 0.2s;
+	}
+
+	.email-link:hover {
+		border-color: currentColor;
+	}
+
+	/* Specific Card Styles */
+	.newsletter-card {
+		grid-column: 1 / -1;
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		border: none;
+		padding: 3rem 2rem;
+	}
+
+	.newsletter-card p {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.support-card {
+		background: linear-gradient(135deg, #fdf6f6 0%, #f5e9e9 100%);
+		border: none;
+		padding: 1.5rem 2rem;
+		gap: 1rem;
+	}
+
+	.support-card h2 {
+		font-size: 1.25rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.support-card p {
+		font-size: 0.95rem;
+		margin: 0 0 0.75rem;
+	}
+
+	.support-card .icon-wrapper {
+		width: 48px;
+		height: 48px;
+		color: #c0392b;
+		margin-bottom: 0;
+	}
+
+	.support-cta {
+		margin-top: 0;
+		padding: 0.5rem 1.25rem;
+		font-size: 0.9rem;
+	}
+
+	:global(.ml-embedded) {
+		width: 100%;
+		max-width: 500px;
+		margin-top: 1rem;
+	}
+
+	/* Reset default MailerLite styling to integrate cleanly */
+	:global(.ml-embedded .ml-form-embedWrapper) {
+		background-color: transparent !important;
+		padding: 0 !important;
+	}
+
+	:global(.ml-embedded .ml-form-embedHeader) {
+		display: none !important; /* Hide redundant logo */
+	}
+
+	:global(.ml-embedded .ml-form-embedBody) {
+		padding: 0 !important;
+	}
+
+	.cta-button {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.875rem 2rem;
+		background-color: var(--color-primary, #0056b3);
+		color: white;
+		text-decoration: none;
+		border-radius: 50px;
+		font-weight: 600;
+		box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
+		transition: all 0.2s;
+	}
+
+	.cta-button:hover {
+		background-color: #004494;
+		transform: scale(1.02);
+		box-shadow: 0 6px 16px rgba(0, 86, 179, 0.3);
+	}
+
+	.full-width .cta-button {
+		margin-top: 1rem;
+	}
+
+	.email-row a {
+		color: var(--color-primary, #0056b3);
+		font-weight: 500;
+		text-decoration: none;
+	}
+
+	.email-row a:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.full-width {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.full-width .icon-wrapper {
+			margin-right: 0;
+			margin-bottom: 1rem;
+		}
+	}
+</style>

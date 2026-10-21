@@ -1,9 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import homepageData from "../../data/homepage-it.json";
-import type { HomepageData } from "../../data/types";
+import { inlineMd } from "../../lib/inline-md";
+import callData from "../../data/call-e-linee-guida-it.json";
+import type { HomepageData, CallELineeGuidaData } from "../../data/types";
 
 const data = homepageData as HomepageData;
+// Il riquadro in cima mostra la call attiva della pagina «Call»: si aggiorna in un posto solo
+const call = (callData as CallELineeGuidaData).active_call;
 ---
 
 <Layout
@@ -15,26 +19,27 @@ const data = homepageData as HomepageData;
     <div class="hero-inner">
       <div class="hero-layout">
         <div class="hero-text">
-          <h2>{data.hero.title}</h2>
+          <h2>{call.title}</h2>
           <p>
-            <strong>{data.hero.deadline_abstract_label}</strong> {data.hero.deadline_abstract}<br />
-            <strong>{data.hero.deadline_paper_label}</strong> {data.hero.deadline_paper}
+            {call.deadlines.map((d, i) => (
+              <Fragment><Fragment set:html={inlineMd(d)} />{i < call.deadlines.length - 1 && <br />}</Fragment>
+            ))}
           </p>
           <a
-            href={data.hero.pdf_link}
+            href={call.pdf_link}
             class="btn-primary"
-            target="_blank">{data.hero.pdf_button_label}</a
+            target="_blank">Scarica la Call (PDF)</a
           >
-          {data.hero.more_link && (
-            <a href={data.hero.more_link} class="card-link" style="margin-left: 1rem"
-              >{data.hero.more_label || "Leggi tutto"} &rarr;</a
+          {call.more_link && (
+            <a href={call.more_link} class="card-link" style="margin-left: 1rem"
+              >{call.more_label || "Leggi tutto"} &rarr;</a
             >
           )}
         </div>
         <div class="hero-image">
           <img
-            src={data.hero.image}
-            alt={data.hero.image_alt}
+            src={call.image}
+            alt={call.image_alt}
           />
         </div>
       </div>

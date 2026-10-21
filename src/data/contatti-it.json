@@ -1,0 +1,29 @@
+{
+  "seo_title": "Contatti | Rivista Maydan",
+  "seo_description": "Contatta la redazione di Maydan per proposte, contributi, collaborazioni o resoconti.",
+  "submissions": {
+    "title": "Proposte e Contributi",
+    "text": "Per l’invio delle proposte e dei contributi:",
+    "email": "submission.rivista@maydan.it"
+  },
+  "complaints": {
+    "title": "Reclami",
+    "text": "Per eventuali reclami:",
+    "email": "direzione.rivista@maydan.it"
+  },
+  "collaborate": {
+    "title": "Collabora con noi",
+    "text": "Hai suggerimenti per Maydan? Vuoi unirti al comitato editoriale? Vuoi proporci delle attività?",
+    "contact_line": "Scrivi a info@maydan.it, a direzione.rivista@maydan.it oppure a submission.rivista@maydan.it!"
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "text": "Iscriviti alla nostra Newsletter per essere sempre aggiornato sulle nostre iniziative."
+  },
+  "support": {
+    "title": "Sostienici",
+    "text": "Maydan è una rivista accademica indipendente. Se apprezzi il nostro lavoro, puoi sostenerci con una donazione libera.",
+    "button_label": "Dona con PayPal",
+    "url": "https://paypal.me/RivistaMaydan"
+  }
+}

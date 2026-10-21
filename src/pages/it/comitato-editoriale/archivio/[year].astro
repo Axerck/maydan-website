@@ -28,7 +28,9 @@ const { board } = Astro.props;
   <br />
 
   {
-    board.groups.map((group) => (
+    board.groups
+      .filter((group) => group.members.some((m) => teamMembers.some((t) => t.slug === m.slug)))
+      .map((group) => (
       <section class="committee-section">
         <h2>{group.title}</h2>
         <ul>

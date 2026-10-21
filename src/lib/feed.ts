@@ -88,7 +88,7 @@ export function buildFeed(lang: Lang, context: APIContext) {
 		...(call.more_link ? [] : [{
 			title: call.title,
 			link: `/${lang}/call-e-linee-guida/`,
-			description: (call.deadlines ?? []).join(" · "),
+			description: (call.deadlines ?? []).join(" · ").replace(/\*+/g, ""),
 			pubDate: toDate(call.date),
 			categories: [t.call],
 			enclosure: enclosure(call.image, site),

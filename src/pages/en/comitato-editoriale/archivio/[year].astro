@@ -46,9 +46,11 @@ function translateTitle(title: string) {
   <br />
 
   {
-    board.groups.map((group) => (
+    board.groups
+      .filter((group) => group.members.some((m) => teamMembers.some((t) => t.slug === m.slug)))
+      .map((group) => (
       <section class="committee-section">
-        <h2>{translateTitle(group.title)}</h2>
+        <h2>{group.title_en || translateTitle(group.title)}</h2>
         <ul>
           {group.members.map((memberStruct) => {
             const memberData = teamMembers.find(
@@ -63,8 +65,8 @@ function translateTitle(title: string) {
                     {memberData.name}
                   </a>
                 </strong>
-                {memberData.affiliation && ` – `}
-                {memberData.affiliation && <em>{memberData.affiliation}</em>}
+                {(memberData.affiliation_en || memberData.affiliation) && ` – `}
+                {(memberData.affiliation_en || memberData.affiliation) && <em>{memberData.affiliation_en || memberData.affiliation}</em>}
               </li>
             );
           })}

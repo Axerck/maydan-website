@@ -12,7 +12,9 @@ const teamMembers = teamData.members;
   description="I membri del comitato editoriale della rivista Maydan: direzione, redazione e collaboratori."
 >
   {
-    currentBoard.map((group) => (
+    currentBoard
+      .filter((group) => group.members.some((m) => teamMembers.some((t) => t.slug === m.slug)))
+      .map((group) => (
       <section class="committee-section">
         <h2>{group.title}</h2>
         <ul>

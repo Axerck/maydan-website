@@ -10,7 +10,7 @@
       "bio_en": "",
       "image": "/team/antonio-pacifico.jpg",
       "personalLink": "https://www.univ-lyon3.fr/fr/personne/antonio-pacifico",
-      "email": "[EMAIL_ADDRESS]"
+      "email": ""
     },
     {
       "name": "Aurora Magliozzi",
@@ -249,10 +249,6 @@
       "slug": "manuel-capomaccio",
       "role": "Archivio",
       "affiliation": "Università degli Studi di Napoli “L’Orientale”"
-    },
-    { "name": "Redazione 2024", "slug": "archivio-2024", "role": "Archivio", "affiliation": "" },
-    { "name": "Redazione 2023", "slug": "archivio-2023", "role": "Archivio", "affiliation": "" },
-    { "name": "Redazione 2022", "slug": "archivio-2022", "role": "Archivio", "affiliation": "" },
-    { "name": "Redazione 2021", "slug": "archivio-2021", "role": "Archivio", "affiliation": "" }
+    }
   ]
 }
