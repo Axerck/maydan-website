@@ -13,6 +13,8 @@ interface Props {
 	description?: string;
 	image?: string;
 	ogType?: string;
+	/** Pagine da non indicizzare (es. la 404): niente canonical né hreflang */
+	noindex?: boolean;
 }
 
 const {
@@ -20,6 +22,7 @@ const {
 	description = "Sito ufficiale della rivista accademica Maydan, dedicato agli studi sui mondi arabi, semitici e islamici.",
 	image = "/logo.png",
 	ogType = "website",
+	noindex = false,
 } = Astro.props;
 const currentLocale = Astro.currentLocale || "it";
 const year = new Date().getFullYear();
@@ -109,15 +112,15 @@ const periodicaJsonLd = {
 		<title>{title}</title>
 		<meta
 			name="robots"
-			content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+			content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
 		/>
 
 		<!-- SEO Basics -->
 		<meta name="description" content={description} />
-		<link rel="canonical" href={canonicalURL} />
-		{hasTranslation("it") && <link rel="alternate" hreflang="it" href={alternateIt} />}
-		{hasTranslation("en") && <link rel="alternate" hreflang="en" href={alternateEn} />}
-		{hasTranslation("it") && <link rel="alternate" hreflang="x-default" href={alternateIt} />}
+		{!noindex && <link rel="canonical" href={canonicalURL} />}
+		{!noindex && hasTranslation("it") && <link rel="alternate" hreflang="it" href={alternateIt} />}
+		{!noindex && hasTranslation("en") && <link rel="alternate" hreflang="en" href={alternateEn} />}
+		{!noindex && hasTranslation("it") && <link rel="alternate" hreflang="x-default" href={alternateIt} />}
 		<link rel="alternate" type="application/rss+xml" title="Maydan" href={`/${currentLocale}/rss.xml`} />
 
 		<!-- Open Graph / Facebook -->

@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Pagina per gli indirizzi che non esistono: Cloudflare Pages la serve con stato 404
+// (senza, rispondeva 200 con il rinvio a /it/, un «soft 404» per Google).
+---
+
+<Layout
+	title="Pagina non trovata – Rivista Maydan"
+	description="La pagina cercata non esiste o è stata spostata."
+	noindex
+>
+	<article class="not-found">
+		<h1>Pagina non trovata</h1>
+		<p>La pagina che cerchi non esiste o è stata spostata.</p>
+		<p><a href="/it/">← Torna alla home</a></p>
+
+		<h2 lang="en">Page not found</h2>
+		<p lang="en">The page you are looking for does not exist or has been moved.</p>
+		<p lang="en"><a href="/en/">← Back to home</a></p>
+	</article>
+</Layout>
+
+<style>
+	.not-found {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem 1rem 4rem;
+	}
+	.not-found h2 {
+		margin-top: 2.5rem;
+	}
+</style>

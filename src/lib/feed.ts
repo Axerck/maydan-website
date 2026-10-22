@@ -97,7 +97,8 @@ export function buildFeed(lang: Lang, context: APIContext) {
 		}]),
 	]
 		.filter((i) => i.title)
-		.sort((a, b) => (b.pubDate?.getTime() ?? 0) - (a.pubDate?.getTime() ?? 0));
+		// A parità di data (es. due volumi dello stesso anno senza data di uscita) prima il numero più alto
+		.sort((a, b) => (b.pubDate?.getTime() ?? 0) - (a.pubDate?.getTime() ?? 0) || b.link.localeCompare(a.link, undefined, { numeric: true }));
 
 	return rss({
 		title: t.title,
