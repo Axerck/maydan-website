@@ -1,0 +1,26 @@
+# Reindirizzamenti permanenti (Cloudflare Pages): pagine che esistevano sul sito prima del CMS.
+# Servono a non perdere su Google quello che quelle pagine avevano e a non lasciare link rotti.
+
+# Vecchia pagina segnaposto della call Vol. 4 -> pagina delle call
+/it/call-e-linee-guida/vol-4 /it/call-e-linee-guida/ 301
+/it/call-e-linee-guida/vol-4/ /it/call-e-linee-guida/ 301
+/en/call-e-linee-guida/vol-4 /en/call-e-linee-guida/ 301
+/en/call-e-linee-guida/vol-4/ /en/call-e-linee-guida/ 301
+
+# Vecchi profili finti «Redazione 20xx» -> pagina d'archivio di quell'anno
+/it/comitato-editoriale/archivio-2021 /it/comitato-editoriale/archivio/2021/ 301
+/it/comitato-editoriale/archivio-2021/ /it/comitato-editoriale/archivio/2021/ 301
+/it/comitato-editoriale/archivio-2022 /it/comitato-editoriale/archivio/2022/ 301
+/it/comitato-editoriale/archivio-2022/ /it/comitato-editoriale/archivio/2022/ 301
+/it/comitato-editoriale/archivio-2023 /it/comitato-editoriale/archivio/2023/ 301
+/it/comitato-editoriale/archivio-2023/ /it/comitato-editoriale/archivio/2023/ 301
+/it/comitato-editoriale/archivio-2024 /it/comitato-editoriale/archivio/2024/ 301
+/it/comitato-editoriale/archivio-2024/ /it/comitato-editoriale/archivio/2024/ 301
+/en/comitato-editoriale/archivio-2021 /en/comitato-editoriale/archivio/2021/ 301
+/en/comitato-editoriale/archivio-2021/ /en/comitato-editoriale/archivio/2021/ 301
+/en/comitato-editoriale/archivio-2022 /en/comitato-editoriale/archivio/2022/ 301
+/en/comitato-editoriale/archivio-2022/ /en/comitato-editoriale/archivio/2022/ 301
+/en/comitato-editoriale/archivio-2023 /en/comitato-editoriale/archivio/2023/ 301
+/en/comitato-editoriale/archivio-2023/ /en/comitato-editoriale/archivio/2023/ 301
+/en/comitato-editoriale/archivio-2024 /en/comitato-editoriale/archivio/2024/ 301
+/en/comitato-editoriale/archivio-2024/ /en/comitato-editoriale/archivio/2024/ 301
