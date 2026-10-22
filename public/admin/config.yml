@@ -3,6 +3,15 @@ backend:
   repo: Axerck/maydan-website
   branch: cms-integration
   base_url: https://maydan-cms-auth.maydan-gestionale.workers.dev
+  # Alla pubblicazione di una bozza, tutti i suoi salvataggi diventano un solo commit.
+  squash_merges: true
+  # Il nome di chi ha fatto la modifica nel messaggio di ogni salvataggio su GitHub.
+  commit_messages:
+    create: "Crea {{collection}} «{{slug}}» ({{author-name}})"
+    update: "Modifica {{collection}} «{{slug}}» ({{author-name}})"
+    delete: "Elimina {{collection}} «{{slug}}» ({{author-name}})"
+    uploadMedia: "Carica {{path}} ({{author-name}})"
+    deleteMedia: "Elimina {{path}} ({{author-name}})"
 
 # Sviluppo locale: aprire /admin/index.html in un browser Chromium e cliccare
 # "Work with Local Repository". Sveltia usa la File System Access API per
