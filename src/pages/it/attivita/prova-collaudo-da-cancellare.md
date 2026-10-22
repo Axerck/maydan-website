@@ -2,7 +2,7 @@
 layout: ../../../layouts/ActivityLayout.astro
 title: PROVA COLLAUDO - da cancellare
 date: 2026-10-22
-description: "Voce di prova del collaudo del CMS: verra' eliminata."
+description: "Voce di prova del collaudo del CMS: verra' eliminata. Seconda modifica."
 cover: /img/attivita/prova-collaudo-foto.webp
 hide_cover: false
 pdf_attachments:
