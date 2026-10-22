@@ -3,6 +3,12 @@ backend:
   repo: Axerck/maydan-website
   branch: cms-integration
   base_url: https://maydan-cms-auth.maydan-gestionale.workers.dev
+  # Il CMS parla con GitHub passando dal worker: serve all'accesso con link per chi non ha
+  # un account GitHub (il worker scambia la sessione con un token della GitHub App «Maydan
+  # redazione»). Per chi entra con GitHub il worker inoltra e basta.
+  # ATTENZIONE: da unire SOLO dopo aver pubblicato su maydan-gestionale la versione del worker
+  # che ha /gh/ (codice comune con sesamo-auth): prima, il CMS si bloccherebbe per tutti.
+  api_root: https://maydan-cms-auth.maydan-gestionale.workers.dev/gh/api/v3
   # Alla pubblicazione di una bozza, tutti i suoi salvataggi diventano un solo commit.
   squash_merges: true
   # Il nome di chi ha fatto la modifica nel messaggio di ogni salvataggio su GitHub.
