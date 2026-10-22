@@ -1,9 +1,9 @@
 {
   "rest": {
-    "big": "#ff40ff",
-    "lone": "#ff40ff",
-    "small": "#ff40ff",
-    "text": "#d357fe"
+    "big": "#050505",
+    "lone": "#e60526",
+    "small": "#3f9d4e",
+    "text": "#030303"
   },
   "loading": {
     "enabled": true,
