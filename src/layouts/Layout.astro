@@ -5,6 +5,9 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { Instagram, Facebook, Heart, LogIn } from "lucide-react";
 import Logo from "../components/Logo.astro";
 
+// Pagina d'accesso al CMS (servizio maydan-cms-auth sull'account Cloudflare di Maydan)
+const PAGINA_ACCESSO = "https://maydan-cms-auth.maydan-gestionale.workers.dev/accedi";
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -275,8 +278,8 @@ const periodicaJsonLd = {
 						<span>Sostienici</span>
 						<Heart size={18} aria-hidden="true" />
 					</a>
-					<!-- Accesso al CMS per la redazione (Sveltia, /admin/) -->
-					<a href="/admin/" class="footer-login" rel="nofollow">
+					<!-- Accesso della redazione: pagina del servizio d'accesso (pannello, GitHub o email) -->
+					<a href={PAGINA_ACCESSO} class="footer-login" rel="nofollow">
 						<LogIn size={16} aria-hidden="true" />
 						<span>{t.login}</span>
 					</a>
