@@ -1,0 +1,17 @@
+{
+  "rest": {
+    "big": "#050505",
+    "lone": "#e60526",
+    "small": "#3f9d4e",
+    "text": "#030303"
+  },
+  "loading": {
+    "enabled": true,
+    "palette": [
+      "#ffffff",
+      "#ffffff",
+      "#ffffff",
+      "#ffffff"
+    ]
+  }
+}

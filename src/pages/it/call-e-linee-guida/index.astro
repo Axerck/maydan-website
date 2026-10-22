@@ -1,5 +1,10 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import { inlineMd } from "../../../lib/inline-md";
+import callData from "../../../data/call-e-linee-guida-it.json";
+import type { CallELineeGuidaData } from "../../../data/types";
+
+const data = callData as CallELineeGuidaData;
 ---
 
 <Layout
@@ -9,34 +14,32 @@ import Layout from "../../../layouts/Layout.astro";
 	<!-- <h1>Call & Linee Guida</h1> -->
 
 	<section class="home-card">
-		<h2>Ultime Call for Papers</h2>
+		<h2>{data.active_call.section_title}</h2>
 		<article class="call-item">
 			<div class="call-image">
-				<img
-					src="/img/copertina-cfp-giornate-studio-2027.jpg"
-					alt="Call for Papers – Le giornate di studio di Maydan e SeSaMO, terza edizione"
-				/>
+				<img src={data.active_call.image} alt={data.active_call.image_alt} />
 			</div>
 			<div class="call-content">
 				<header>
 					<h3>
-						<a href="/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-terza-edizione.pdf"
-							>Call for Papers – Le giornate di studio di Maydan e SeSaMO
-							– terza edizione</a
-						>
+						<a href={data.active_call.pdf_link}>{data.active_call.title}</a>
 					</h3>
 				</header>
 				<p class="scadenze">
-					✦ Napoli, 18–19 febbraio 2027 – Università di Napoli
-					L'Orientale<br />
-					✦ Scadenza per l'invio delle proposte: 23/10/2026<br />
-					✦ Comunicazione accettazione delle proposte: 07/12/2026
+					{
+						data.active_call.deadlines.map((d, i) => (
+							<Fragment>
+								✦ <Fragment set:html={inlineMd(d)} />
+								{i < data.active_call.deadlines.length - 1 && <br />}
+							</Fragment>
+						))
+					}
 				</p>
-				<p>
-					<a href="/it/attivita/giornate-maydan-sesamo-2027"
-						>Leggi tutto &rarr;</a
-					>
-				</p>
+				{data.active_call.more_link && (
+					<p>
+						<a href={data.active_call.more_link}>{data.active_call.more_label || "Leggi tutto"} &rarr;</a>
+					</p>
+				)}
 				<!-- <p>Descrizione call</p> -->
 			</div>
 		</article>
@@ -45,36 +48,18 @@ import Layout from "../../../layouts/Layout.astro";
 	<br />
 
 	<section class="home-card">
-		<h2>Linee Guida per gli Autori</h2>
+		<h2>{data.linee_guida.section_title}</h2>
 
 		<ul class="documents-list">
-			<li>
-				<a href="/pdf/calls/Linee-guida-2.pdf" target="_blank"
-					>Linee guida per autrici e autori (PDF)</a
-				>
-			</li>
-			<li>
-				<a href="/pdf/calls/Codice-etico.pdf" target="_blank"
-					>Codice etico (PDF)</a
-				>
-			</li>
-			<li>
-				<a
-					href="/pdf/calls/processo-di-revisione-def.pdf"
-					target="_blank">Processo di revisione (PDF)</a
-				>
-			</li>
-			<li>
-				<a
-					href="/pdf/calls/Peer-review-evaluation-report-.pdf"
-					target="_blank">Questionario per la revisione (PDF)</a
-				>
-			</li>
-			<li>
-				<a href="/pdf/calls/template-abstract-1.pdf" target="_blank"
-					>Template per abstract (PDF)</a
-				>
-			</li>
+			{
+				data.linee_guida.documents.map((doc) => (
+					<li>
+						<a href={doc.pdf} target="_blank">
+							{doc.label}
+						</a>
+					</li>
+				))
+			}
 		</ul>
 	</section>
 
@@ -110,106 +95,23 @@ import Layout from "../../../layouts/Layout.astro";
 	<br />
 
 	<section class="past-calls">
-		<h2>Call for Papers Passate</h2>
+		<h2>{data.past_calls.section_title}</h2>
 
 		<div class="call-list">
-			<!-- Item 0: Vol 6 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img src="/img/Call-for-papers_3-scaled.jpg" alt="Call Vol 6" />
-				</div>
-				<div class="call-content">
-					<h3>
-						<a href="/pdf/calls/Call-for-papers-3_Maydan-n-6-FINALE.pdf"
-							>CALL FOR PAPERS VOL.6 (2026/27)</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 1 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img
-						src="/img/Call-for-Paper-5-scaled.jpg"
-						alt="Call Giornate Studio 2"
-					/>
-				</div>
-				<div class="call-content">
-					<h3>
-						<a
-							href="/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-seconda-edizione.pdf"
-							>CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E
-							SESAMO – SECONDA EDIZIONE</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 2 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img
-						src="/img/CallForPapers_maydan_e_sesamo_prima_edizione.jpg"
-						alt="Call Giornate Studio"
-					/>
-				</div>
-				<div class="call-content">
-					<h3>
-						<a
-							href="/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-2.pdf"
-							>CALL FOR PAPERS – LE GIORNATE DI STUDIO DI MAYDAN E
-							SESAMO</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 3 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img
-						src="/img/call_for_papers_giornate_di_studio_prima_edizione.jpg"
-						alt="Giornate di Studio 1"
-					/>
-				</div>
-				<div class="call-content">
-					<h3>
-						<a
-							href="/pdf/calls/Le-giornate-di-studio-di-Maydan-Call-for-papers_prima_edizione.pdf"
-							>CALL FOR PAPERS – GIORNATE DI STUDIO (01 ed.)</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 4: Vol 2 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img src="/img/copertina-call-2-1.jpg" alt="Call Vol 2" />
-				</div>
-				<div class="call-content">
-					<h3>
-						<a href="/pdf/calls/call-for-papers-vol-2.pdf"
-							>CALL FOR PAPERS VOL.2</a
-						>
-					</h3>
-				</div>
-			</article>
-
-			<!-- Item 5: Vol 1 -->
-			<article class="call-item">
-				<div class="call-image">
-					<img src="/img/call01_maydan.jpg" alt="Call Vol 1" />
-				</div>
-				<div class="call-content">
-					<h3>
-						<a href="/pdf/calls/call-for-papers-01-maydan.-pdf.pdf"
-							>CALL FOR PAPERS VOL.1</a
-						>
-					</h3>
-				</div>
-			</article>
+			{
+				data.past_calls.items.map((item) => (
+					<article class="call-item">
+						<div class="call-image">
+							<img src={item.image} alt={item.image_alt} />
+						</div>
+						<div class="call-content">
+							<h3>
+								<a href={item.pdf_link}>{item.title}</a>
+							</h3>
+						</div>
+					</article>
+				))
+			}
 		</div>
 	</section>
 

@@ -1,10 +1,12 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
-import { pastBoards } from "../../../../data/structure";
-import { teamMembers } from "../../../../data/team";
+import teamData from "../../../../data/team.json";
+
+const teamMembers = teamData.members;
 
 export async function getStaticPaths() {
-  return pastBoards.map((board) => ({
+  const { passati } = await import("../../../../lib/comitati");
+  return passati.map((board) => ({
     params: { year: board.year },
     props: { board },
   }));
@@ -26,7 +28,9 @@ const { board } = Astro.props;
   <br />
 
   {
-    board.groups.map((group) => (
+    board.groups
+      .filter((group) => group.members.some((m) => teamMembers.some((t) => t.slug === m.slug)))
+      .map((group) => (
       <section class="committee-section">
         <h2>{group.title}</h2>
         <ul>

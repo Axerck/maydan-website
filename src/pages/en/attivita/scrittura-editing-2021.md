@@ -4,6 +4,11 @@ title: "Writing, Editing, and Scientific Research"
 date: "2021-03-05"
 description: "Seminar cycle on academic writing, editing, and scientific dissemination."
 cover: "/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_1.jpeg"
+image_gallery:
+  - url: "/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_1.jpeg"
+    alt: "Poster Part 1"
+  - url: "/img/attivita/locandina_seminario-scrittura_editing_divulgazione scientifica_2.jpeg"
+    alt: "Poster Part 2"
 ---
 
 The seminar cycle, organized with Professors Daniela Pioppi and Antonia Soriente (University “L’Orientale”) and with the patronage of SeSaMO, is aimed at students and PhD candidates interested in improving their academic writing.

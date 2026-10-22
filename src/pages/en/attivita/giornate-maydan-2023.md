@@ -4,6 +4,13 @@ title: "Maydan Study Days"
 date: "2023-02-09"
 description: "First in-person event by Maydan dedicated to reflections on Arab, Semitic, and Islamic worlds."
 cover: "/img/attivita/locandina_giornate di studio di maydan.webp"
+image_gallery:
+  - titolo: "Poster"
+    url: "/img/attivita/locandina_giornate di studio di maydan.webp"
+    alt: "Study Days poster"
+  - titolo: "Programme"
+    url: "/img/attivita/programma_giornate di studio di maydan.webp"
+    alt: "Study Days programme"
 ---
 
 The Maydan study days, organized in collaboration with SeSaMO, the Department of Cultures, Politics and Society of the University of Turin, and the University of Bologna, are the first in-person event promoted by the journal.

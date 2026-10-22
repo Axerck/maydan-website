@@ -1,5 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import homepageData from "../../data/homepage-en.json";
+import { inlineMd } from "../../lib/inline-md";
+import callData from "../../data/call-e-linee-guida-en.json";
+import type { HomepageData, CallELineeGuidaData } from "../../data/types";
+
+const data = homepageData as HomepageData;
+// Il riquadro in cima mostra la call attiva della pagina «Call»: si aggiorna in un posto solo
+const call = (callData as CallELineeGuidaData).active_call;
 ---
 
 <Layout
@@ -11,25 +19,27 @@ import Layout from "../../layouts/Layout.astro";
     <div class="hero-inner">
       <div class="hero-layout">
         <div class="hero-text">
-          <!-- <h1>Call for Papers</h1> -->
-          <h2>Call for Papers – Maydan and SeSaMO Study Days, 3rd edition</h2>
+          <h2>{call.title}</h2>
           <p>
-            <strong>Naples, 18–19 February 2027</strong> – University of Naples L'Orientale<br />
-            <strong>Deadline for proposals:</strong> 23/10/2026
+            {call.deadlines.map((d, i) => (
+              <Fragment><Fragment set:html={inlineMd(d)} />{i < call.deadlines.length - 1 && <br />}</Fragment>
+            ))}
           </p>
           <a
-            href="/pdf/calls/Call-for-Papers-Le-giornate-di-studio-di-Maydan-e-SeSaMO-terza-edizione.pdf"
+            href={call.pdf_link}
             class="btn-primary"
             target="_blank">Download the Call (PDF)</a
           >
-          <a href="/en/attivita/giornate-maydan-sesamo-2027" class="card-link" style="margin-left: 1rem"
-            >Read more &rarr;</a
-          >
+          {call.more_link && (
+            <a href={call.more_link} class="card-link" style="margin-left: 1rem"
+              >{call.more_label || "Read more"} &rarr;</a
+            >
+          )}
         </div>
         <div class="hero-image">
           <img
-            src="/img/copertina-cfp-giornate-studio-2027.jpg"
-            alt="Call for Papers – Maydan and SeSaMO Study Days, third edition"
+            src={call.image}
+            alt={call.image_alt}
           />
         </div>
       </div>
@@ -40,70 +50,99 @@ import Layout from "../../layouts/Layout.astro";
   <section class="home-grid">
     <!-- Latest Issue -->
     <article class="home-card" id="numeri">
-      <h2>Maydan vol. 5, 2025</h2>
+      <h2>{data.latest_issue_card.title}</h2>
       <div class="card-images">
         <img
-          src="/img/copertina5_compressed_page-0001-1.jpg"
-          alt="Vol 5 Cover"
+          src={data.latest_issue_card.image}
+          alt={data.latest_issue_card.image_alt}
         />
       </div>
-      <p>
-        Issue dedicated to new perspectives on Arab, Semitic, and Islamic
-        studies.
-      </p>
-      <a href="/en/pubblicazioni/vol-5" class="card-link">Go to Issue &rarr;</a>
+      <p>{data.latest_issue_card.description}</p>
+      <a href={data.latest_issue_card.link} class="card-link">{data.latest_issue_card.link_label} &rarr;</a>
     </article>
 
     <!-- Editorial Board Statement -->
     <article class="home-card">
       <div class="card-images">
-        <img src="/img/melone_comunicato.jpg" alt="Maydan Statement" />
+        <img src={data.comunicato_card.image} alt={data.comunicato_card.image_alt} />
       </div>
-      <h2>Editorial Board Statement</h2>
-      <p>Statement on the decolonization of knowledge and colonial violence.</p>
-      <a href="/it/comunicato" class="card-link">Read the statement &rarr;</a>
+      <h2>{data.comunicato_card.title}</h2>
+      <p>{data.comunicato_card.description}</p>
+      <a href={data.comunicato_card.link} class="card-link">{data.comunicato_card.link_label} &rarr;</a>
     </article>
 
     <!-- Other Activities -->
     <section class="home-card" id="attivita">
-      <h2>Activities</h2>
+      <h2>{data.activities_card.title}</h2>
       <ul class="activity-list">
-        <li><a href="/en/attivita/questionario-precariato-2025">Questionnaire on Precarity Among PhD Candidates</a></li>
-        <li>Maydan and SeSaMO Study Days</li>
-        <li>Online Seminars and Training</li>
-        <li>Annual Call for Papers</li>
+        {data.activities_card.items.map((item) => (
+          <li>
+            {item.link ? (
+              <a href={item.link}>{item.label}</a>
+            ) : (
+              item.label
+            )}
+          </li>
+        ))}
       </ul>
-      <a href="/en/attivita" class="card-link">Discover all activities &rarr;</a
+      <a href={data.activities_card.main_link} class="card-link">{data.activities_card.main_link_label} &rarr;</a
       >
+
+      {data.activities_card.altro_section &&
+        data.activities_card.altro_section.items &&
+        data.activities_card.altro_section.items.length > 0 && (
+          <div class="altro-section">
+            <h3>{data.activities_card.altro_section.title}</h3>
+            <ul class="activity-list">
+              {data.activities_card.altro_section.items.map((item) => (
+                <li>
+                  {item.link ? (
+                    <a href={item.link}>{item.label}</a>
+                  ) : (
+                    item.label
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
     </section>
   </section>
 
+  <style>
+    .altro-section {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    .altro-section h3 {
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.8rem;
+      color: #333;
+      text-transform: none;
+      font-weight: bold;
+    }
+  </style>
+
   <!-- Collaborations -->
   <section class="collaborazioni">
-    <h2>Maydan collaborates with:</h2>
+    <h2>{data.collaborations.title}</h2>
     <div class="collab-logos">
-      <a
-        href="https://halqa.hypotheses.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/img/logo-halqa-transparent-4.png"
-          alt="Halqa Logo"
-          style="max-width: 120px; height: auto;"
-        />
-      </a>
-      <a
-        href="https://www.sesamoitalia.it/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/img/logo-sesamo-societa1.png"
-          alt="SeSaMO Logo"
-          style="max-width: 120px; height: auto;"
-        />
-      </a>
+      {data.collaborations.logos.map((logo) => (
+        <a
+          href={logo.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={logo.image}
+            alt={`${logo.name} Logo`}
+            style="max-width: 120px; height: auto;"
+          />
+        </a>
+      ))}
     </div>
   </section>
 </Layout>

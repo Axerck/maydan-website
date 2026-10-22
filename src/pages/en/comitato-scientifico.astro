@@ -1,5 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import comitato from "../../data/comitato-scientifico.json";
+
+// Elenco modificabile dal CMS (Comitato scientifico → src/data/comitato-scientifico.json)
+const membri = comitato.members;
 ---
 
 <Layout
@@ -7,147 +11,21 @@ import Layout from "../../layouts/Layout.astro";
 	description="Members of the international scientific committee of the Maydan journal, from various Italian and international universities."
 >
 	<ul class="committee-list">
-		<li>
-			<strong>
-				<a
-					href="https://phd.uniroma1.it/web/ADA-BARBARO_nC2742_IT.aspx"
-					target="_blank"
-					rel="noopener"
-				>
-					Ada Barbaro
-				</a>
-			</strong>
-			– <em>Sapienza University of Rome</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="https://sites.google.com/a/uniroma1.it/mariocasari/home"
-					target="_blank"
-					rel="noopener"
-				>
-					Mario Casari
-				</a>
-			</strong>
-			– <em>Sapienza University of Rome</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="http://docenti.unior.it/index2.php?user_id=ldanna&content_id_start=1&parLingua="
-					target="_blank"
-					rel="noopener"
-				>
-					Luca D’Anna
-				</a>
-			</strong>
-			– <em>University of Naples “L’Orientale”</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="https://www.didattica-cps.unito.it/do/docenti.pl/Alias?rosita.diperi#tab-profilo"
-					target="_blank"
-					rel="noopener"
-				>
-					Rosita Di Peri
-				</a>
-			</strong>
-			– <em>University of Turin</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="https://dices.unical.it/storage/teachers/francesco.leccese/"
-					target="_blank"
-					rel="noopener"
-				>
-					Francesco Alfonso Leccese
-				</a>
-			</strong>
-			– <em>University of Calabria</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="http://docenti.unior.it/index2.php?content_id=18963&content_id_start=1&ID_Utente=2978"
-					target="_blank"
-					rel="noopener"
-				>
-					Lea Nocera
-				</a>
-			</strong>
-			– <em>University of Naples “L’Orientale”</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="http://docenti.unior.it/index2.php?user_id=dpioppi&content_id_start=1"
-					target="_blank"
-					rel="noopener"
-				>
-					Daniela Pioppi
-				</a>
-			</strong>
-			– <em>University of Naples “L’Orientale”</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="https://unior.academia.edu/ValentinaSchiattarella"
-					target="_blank"
-					rel="noopener"
-				>
-					Valentina Schiattarella
-				</a>
-			</strong>
-			– <em>University of Naples “L’Orientale”</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="https://www.unive.it/data/persone/10128697"
-					target="_blank"
-					rel="noopener"
-				>
-					Simone Sibilio
-				</a>
-			</strong>
-			– <em>Ca’ Foscari University of Venice</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="http://docenti.unior.it/index2.php?content_id=17829&content_id_start=1&ID_Utente=2816"
-					target="_blank"
-					rel="noopener"
-				>
-					Antonia Soriente
-				</a>
-			</strong>
-			– <em>University of Naples “L’Orientale”</em>
-		</li>
-
-		<li>
-			<strong>
-				<a
-					href="https://www.unive.it/data/persone/22991279"
-					target="_blank"
-					rel="noopener"
-				>
-					Francesco Vacchiano
-				</a>
-			</strong>
-			– <em>Ca’ Foscari University of Venice</em>
-		</li>
+		{
+			membri.map((m) => (
+				<li>
+					<strong>
+						{m.url ? (
+							<a href={m.url} target="_blank" rel="noopener">
+								{m.name}
+							</a>
+						) : (
+							m.name
+						)}
+					</strong>
+					{(m.affiliation_en || m.affiliation) && <Fragment> – <em>{m.affiliation_en || m.affiliation}</em></Fragment>}
+				</li>
+			))
+		}
 	</ul>
 </Layout>

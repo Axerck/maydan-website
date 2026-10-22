@@ -2,13 +2,19 @@
 import "../styles/custom.css";
 import { ui } from "../data/ui";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { Instagram, Facebook, Heart } from "lucide-react";
+import { Instagram, Facebook, Heart, LogIn } from "lucide-react";
+import Logo from "../components/Logo.astro";
+
+// Pagina d'accesso al CMS (servizio maydan-cms-auth sull'account Cloudflare di Maydan)
+const PAGINA_ACCESSO = "https://maydan-cms-auth.maydan-gestionale.workers.dev/accedi";
 
 interface Props {
 	title?: string;
 	description?: string;
 	image?: string;
 	ogType?: string;
+	/** Pagine da non indicizzare (es. la 404): niente canonical né hreflang */
+	noindex?: boolean;
 }
 
 const {
@@ -16,6 +22,7 @@ const {
 	description = "Sito ufficiale della rivista accademica Maydan, dedicato agli studi sui mondi arabi, semitici e islamici.",
 	image = "/logo.png",
 	ogType = "website",
+	noindex = false,
 } = Astro.props;
 const currentLocale = Astro.currentLocale || "it";
 const year = new Date().getFullYear();
@@ -25,14 +32,25 @@ const t = currentLocale in ui ? ui[currentLocale as keyof typeof ui] : ui.it;
 // Helper to get localized path
 const tPath = (path: string) => getRelativeLocaleUrl(currentLocale, path);
 
+// Le pagine che esistono davvero (anche quelle con [slug]): per non mandare il cambio lingua su una pagina che non c'è
+const ROUTES = Object.keys(import.meta.glob("../pages/**/*.{astro,md}")).map((f) => {
+	const route = f.replace(/^\.\.\/pages/, "").replace(/\.(astro|md)$/, "").replace(/\/index$/, "") || "/";
+	return new RegExp("^" + route.replace(/\[[^\]]+\]/g, "[^/]+") + "/?$");
+});
+const exists = (path: string) => ROUTES.some((r) => r.test(path));
+
 // Helper to switch language
-const switchLang = (targetLang: string) => {
+const switchPath = (targetLang: string) => {
 	const currentPath = Astro.url.pathname;
 	// Remove the current locale prefix (e.g. /it/ or /en/)
 	const pathWithoutLocale =
 		currentPath.replace(`/${currentLocale}`, "") || "/";
 	return getRelativeLocaleUrl(targetLang, pathWithoutLocale);
 };
+const hasTranslation = (targetLang: string) => exists(switchPath(targetLang));
+// Senza traduzione si va alla homepage dell'altra lingua
+const switchLang = (targetLang: string) =>
+	hasTranslation(targetLang) ? switchPath(targetLang) : getRelativeLocaleUrl(targetLang, "/");
 // Make canonical dynamic based on current request origin, but strip 'www.'
 const originUrl = new URL(Astro.url.pathname, Astro.url.origin);
 originUrl.hostname = originUrl.hostname.replace(/^www\./, "");
@@ -94,15 +112,16 @@ const periodicaJsonLd = {
 		<title>{title}</title>
 		<meta
 			name="robots"
-			content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+			content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
 		/>
 
 		<!-- SEO Basics -->
 		<meta name="description" content={description} />
-		<link rel="canonical" href={canonicalURL} />
-		<link rel="alternate" hreflang="it" href={alternateIt} />
-		<link rel="alternate" hreflang="en" href={alternateEn} />
-		<link rel="alternate" hreflang="x-default" href={alternateIt} />
+		{!noindex && <link rel="canonical" href={canonicalURL} />}
+		{!noindex && hasTranslation("it") && <link rel="alternate" hreflang="it" href={alternateIt} />}
+		{!noindex && hasTranslation("en") && <link rel="alternate" hreflang="en" href={alternateEn} />}
+		{!noindex && hasTranslation("it") && <link rel="alternate" hreflang="x-default" href={alternateIt} />}
+		<link rel="alternate" type="application/rss+xml" title="Maydan" href={`/${currentLocale}/rss.xml`} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={ogType} />
@@ -170,11 +189,7 @@ const periodicaJsonLd = {
 			<div class="header-main">
 				<div class="site-logo">
 					<a href={tPath("/")}>
-						<img
-							src="/logo_palestina/maydan.svg"
-							alt="Maydan Logo"
-							class="logo-img"
-						/>
+						<Logo class="logo-img" />
 					</a>
 				</div>
 
@@ -266,6 +281,11 @@ const periodicaJsonLd = {
 						<span>Sostienici</span>
 						<Heart size={18} aria-hidden="true" />
 					</a>
+					<!-- Accesso della redazione: pagina del servizio d'accesso (pannello, GitHub o email) -->
+					<a href={PAGINA_ACCESSO} class="footer-login" rel="nofollow">
+						<LogIn size={16} aria-hidden="true" />
+						<span>{t.login}</span>
+					</a>
 					<div class="social-links">
 						<a
 							href="https://www.instagram.com/rivistamaydan/"
@@ -285,6 +305,10 @@ const periodicaJsonLd = {
 						</a>
 					</div>
 				</div>
+			</div>
+			<!-- Credito: il sito è fatto con e-newsletter, servizio di Luigi Sausa -->
+			<div class="footer-credito">
+				{t.made_with} <a href="https://e-newsletter.eu" class="footer-credito-logo" target="_blank" rel="noopener"><img src="/img/e-newsletter.svg" alt="e-newsletter" width="110" height="20" loading="lazy" /></a>, {t.service_by} <a href="https://luigisausa.me" target="_blank" rel="noopener">Luigi Sausa</a>
 			</div>
 		</footer>
 	</body>
