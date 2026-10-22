@@ -10,7 +10,9 @@ export const ui = {
             contacts: "CONTATTI"
         },
         support: "Sostienici",
-        login: "Accedi"
+        login: "Accedi",
+        made_with: "Sito creato con",
+        service_by: "un servizio di"
     },
     en: {
         nav: {
@@ -23,6 +25,8 @@ export const ui = {
             contacts: "CONTACTS"
         },
         support: "Support us",
-        login: "Log in"
+        login: "Log in",
+        made_with: "Website made with",
+        service_by: "a service by"
     },
 } as const;
